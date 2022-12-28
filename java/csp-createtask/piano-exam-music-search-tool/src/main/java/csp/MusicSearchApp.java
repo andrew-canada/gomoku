@@ -81,7 +81,6 @@ public class MusicSearchApp {
 	 */
 	private SearchOptions captureSearchOptions(BufferedReader br) throws IOException {
 		SearchOptions searchOptions = new SearchOptions();
-		searchOptions.setAllOptionsUsed(true);
 		System.out.println("Press the \"Enter\" key to skip a criterion:");
 		System.out.println("What piece level (5-10) would you like to try? (this field is required)");
 		String level = br.readLine();
@@ -95,15 +94,9 @@ public class MusicSearchApp {
 
 		System.out.println("What piece speed would you like? (slow, medium, fast, extremely fast)");
 		searchOptions.setSpeed(br.readLine());
-		if (searchOptions.getSpeed().equals("")) {
-			searchOptions.setAllOptionsUsed(false);
-		}
 
 		System.out.println("What music character would you like to try? (sad, frantic, happy, peaceful, majestic)");
 		searchOptions.setMusicCharacter(br.readLine());
-		if (searchOptions.getMusicCharacter().equals("")) {
-			searchOptions.setAllOptionsUsed(false);
-		}
 
 		System.out.println(
 				"How many results (if applicable) would you like to display? (Press the \"Enter\" key for all)");
@@ -128,21 +121,26 @@ public class MusicSearchApp {
 	private List<PianoPiece> searchMusic(SearchOptions searchOptions, List<PianoPiece> pianoPieceList) {
 
 		List<PianoPiece> searchResultList = new ArrayList<>();
+		// no need to check level, input validation guarantees level is never empty
+		boolean searchWithLevelOnly = searchOptions.getMusicCharacter().equals("")
+				&& searchOptions.getSpeed().equals("");
+		boolean searchWithAllOptions = !searchOptions.getMusicCharacter().equals("")
+				&& !searchOptions.getSpeed().equals("");
 
 		for (PianoPiece pianoPiece : pianoPieceList) {
 			if (searchOptions.getNumResults() != searchResultList.size()) {
 				// level is never empty, due to input validation in captureSearchOptions method
 				// only need to check level once instead of checking inside each if
 				if (pianoPiece.getLevel().equalsIgnoreCase(searchOptions.getLevel())) {
-					if (searchOptions.getMusicCharacter().equals("") && searchOptions.getSpeed().equals("")) {
+					if (searchWithLevelOnly) {
 						// user only entered level
 						searchResultList.add(pianoPiece);
-					} else if (searchOptions.isAllOptionsUsed()
+					} else if (searchWithAllOptions
 							&& pianoPiece.getMusicCharacter().equalsIgnoreCase(searchOptions.getMusicCharacter())
 							&& pianoPiece.getSpeed().equalsIgnoreCase(searchOptions.getSpeed())) {
 						// user entered level, musicCharacter, and speed
 						searchResultList.add(pianoPiece);
-					} else if (!searchOptions.isAllOptionsUsed()
+					} else if (!searchWithAllOptions
 							&& (pianoPiece.getMusicCharacter().equalsIgnoreCase(searchOptions.getMusicCharacter())
 									|| pianoPiece.getSpeed().equalsIgnoreCase(searchOptions.getSpeed()))) {
 						// user entered level and either musicCharacter or speed

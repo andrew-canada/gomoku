@@ -10,7 +10,6 @@ public class SearchOptions {
 	private String speed;
 	private String musicCharacter;
 	private int numResults;
-	private boolean allOptionsUsed;
 
 	public String getLevel() {
 		return level;
@@ -44,11 +43,4 @@ public class SearchOptions {
 		this.numResults = numResults;
 	}
 
-	public boolean isAllOptionsUsed() {
-		return allOptionsUsed;
-	}
-
-	public void setAllOptionsUsed(boolean allOptionsUsed) {
-		this.allOptionsUsed = allOptionsUsed;
-	}
 }
