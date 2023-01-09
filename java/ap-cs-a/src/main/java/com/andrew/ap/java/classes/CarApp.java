@@ -13,9 +13,9 @@ public class CarApp {
         List<Object> nums = new ArrayList<>();
         nums.add(a);
         nums.add(b);
-        for (int val : nums) {
-            System.out.println(val);
-        }
+//        for (int val : nums) {
+//            System.out.println(val);
+//        }
         System.out.println(2 / 0.0);
         System.out.println(0.0 / 0.0);
         System.out.println(Integer.MAX_VALUE);

@@ -1,11 +1,11 @@
-package com.andrew.ap.java.recursion;
+package com.andrew.java.algo.sorting;
 
 import java.util.Arrays;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import com.andrew.ap.java.recursion.MergeSorter;
+import com.andrew.java.algo.sorting.MergeSorter;
 
 class MergeSorterTest {
 

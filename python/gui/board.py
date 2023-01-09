@@ -43,7 +43,7 @@ class GameBoard(UserControl):
 
         board = GridView(
             expand=1,
-            runs_count=10,
+            runs_count=7,
             max_extent=150,
             spacing=5,
             run_spacing=5,
@@ -60,6 +60,7 @@ class GameBoard(UserControl):
                                     # value=f"{icons.CIRCLE_ROUNDED}",
                                     size=12,
                                     width=100,
+                                    height=100,
                                     no_wrap=True,
                                     text_align="center",
                                     color=colors.ON_SURFACE_VARIANT,
@@ -90,6 +91,7 @@ class GameBoard(UserControl):
                                             #value=f"{icons.CIRCLE_ROUNDED}",
                                             size=12,
                                             width=100,
+                                            height=100,
                                             no_wrap=True,
                                             text_align="center",
                                             color=colors.ON_SURFACE_VARIANT,

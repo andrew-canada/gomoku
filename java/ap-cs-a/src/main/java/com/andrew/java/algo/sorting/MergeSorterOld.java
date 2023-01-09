@@ -1,4 +1,4 @@
-package com.andrew.ap.java.recursion;
+package com.andrew.java.algo.sorting;
 
 import java.util.Arrays;
 

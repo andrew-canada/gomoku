@@ -11,6 +11,7 @@ class SelectionSorterTest {
 
     DebugDuck[] unsortedDucks = { new DebugDuck("d3", 3), new DebugDuck("d2", 2), new DebugDuck("d1", 1) };
     DebugDuck[] sortedDucks = { new DebugDuck("d1", 1), new DebugDuck("d2", 2), new DebugDuck("d3", 3) };
+    int[] nums = { 1, 7, 8, 6, 4, 2, 7, 4 };
 
     @Test
     void testSortDuckArr() {
@@ -18,6 +19,16 @@ class SelectionSorterTest {
         Arrays.stream(newSortedDucks).forEach(System.out::print);
 
         Assertions.assertArrayEquals(sortedDucks, newSortedDucks);
+    }
+
+    @Test
+    void testSelectionSortV1() {
+        Assertions.assertArrayEquals(new int[] { 1, 2, 4, 4, 6, 7, 7, 8 }, SelectionSorterV1.selectionSort(nums));
+    }
+
+    @Test
+    void testSelectionSortV2() {
+        Assertions.assertArrayEquals(new int[] { 1, 2, 4, 4, 6, 7, 7, 8 }, SelectionSorterV2.selectionSort(nums));
     }
 
 }
