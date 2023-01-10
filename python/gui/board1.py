@@ -187,7 +187,7 @@ def main(page: Page):
                                                             bgcolor=colors.BLUE_GREY_100,
 
                                                             color=colors.BLACK,
-                                                            on_click=lambda _: page.go("/home"),
+                                                            on_click=lambda _: page.go("/"),
                                                         ),
                                                         ElevatedButton(
                                                             text="exit",
