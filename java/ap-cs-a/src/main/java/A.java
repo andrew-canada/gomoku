@@ -18,6 +18,20 @@ public class A {
         for (int[] a1 : arr) {
             Arrays.stream(a1).forEach(System.out::print);
         }
+        System.out.println(getNumber(1));
+    }
+
+    private static double getNumber(int i) {
+        if (i == 1) {
+            return 1;
+        } else {
+            return 1;
+        }
+
+    }
+
+    private static boolean isTrue(int i) {
+        return Math.random() < 0.4;
     }
 
 }
