@@ -35,15 +35,18 @@ from flet import (
 
 os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
 
+
 def play_again(e):
     print("play again")
+
 
 def exit(e):
     print("exit")
 
+
 class GameBoard(UserControl):
     x = 1
-    play_with_bot=True
+    play_with_bot = True
     not_occupied_cells = ["1|1", "2|2", "3|2", "6|4", "5|5"]
 
     def __init__(self, expand=False, height=500):
@@ -53,7 +56,6 @@ class GameBoard(UserControl):
             self.expand = expand
         else:
             self.height = height
-
 
     def build(self):
 
@@ -99,18 +101,19 @@ class GameBoard(UserControl):
             e.control.bgcolor = colors.RED
             self.x = 1
         self.update()
-        
+
         random_index = random.randint(1, len(self.not_occupied_cells))
         bot_move = self.not_occupied_cells.pop(random_index).split('|')
         r = int(bot_move[0])
         c = int(bot_move[1])
         if self.play_with_bot:
             time.sleep(0.5)
-            self.controls[0].content.controls[r].controls[c].bgcolor=colors.RED
+            self.controls[0].content.controls[r].controls[c].bgcolor = colors.RED
             self.x = 1
             self.update()
         print("Copy to clipboard:", icon_key)
-        
+
+
 def main(page: Page):
     page.title = "Chinese Connect 5"
 
@@ -121,7 +124,8 @@ def main(page: Page):
                 "/",
                 [
                     Text("welcome to 连五子"),
-                    ElevatedButton("play", on_click=lambda _: page.go("/board")),
+                    ElevatedButton(
+                        "play", on_click=lambda _: page.go("/board")),
                 ],
             )
         )
@@ -137,7 +141,7 @@ def main(page: Page):
                             controls=[
                                 GameBoard(expand=True),
                                 Container(
-                                    alignment = alignment.top_left,
+                                    alignment=alignment.top_left,
                                     width=300,
                                     bgcolor=colors.WHITE,
                                     border_radius=border_radius.all(20),
@@ -145,10 +149,11 @@ def main(page: Page):
                                     content=Column(
                                         controls=[
                                             Container(
-                                                alignment = alignment.top_left,
+                                                alignment=alignment.top_left,
                                                 width=300,
                                                 bgcolor=colors.RED,
-                                                border_radius=border_radius.all(20),
+                                                border_radius=border_radius.all(
+                                                    20),
                                                 padding=20,
                                                 content=Column(
                                                     controls=[
@@ -159,26 +164,29 @@ def main(page: Page):
                                             Container(
                                                 width=300,
                                                 bgcolor=colors.GREEN,
-                                                border_radius=border_radius.all(20),
+                                                border_radius=border_radius.all(
+                                                    20),
                                                 padding=20,
                                                 content=Column(
                                                     controls=[
                                                         Text("Player2"),
                                                     ]
                                                 )
-                                            ), 
+                                            ),
                                             Container(
-                                                alignment = alignment.bottom_center,
+                                                alignment=alignment.bottom_center,
                                                 width=300,
                                                 height=200,
                                                 bgcolor=colors.WHITE,
-                                                border_radius=border_radius.all(20),
+                                                border_radius=border_radius.all(
+                                                    20),
                                                 padding=20,
-                                            ),                                                                                    
+                                            ),
                                             Container(
                                                 width=300,
                                                 bgcolor=colors.GREEN,
-                                                border_radius=border_radius.all(20),
+                                                border_radius=border_radius.all(
+                                                    20),
                                                 padding=20,
                                                 content=Column(
                                                     controls=[
@@ -187,17 +195,18 @@ def main(page: Page):
                                                             bgcolor=colors.BLUE_GREY_100,
 
                                                             color=colors.BLACK,
-                                                            on_click=lambda _: page.go("/"),
+                                                            on_click=lambda _: page.go(
+                                                                "/"),
                                                         ),
                                                         ElevatedButton(
                                                             text="exit",
                                                             bgcolor=colors.RED,
                                                             color=colors.BLACK,
                                                             on_click=exit,
-                                                        ),                                        
+                                                        ),
                                                     ]
                                                 )
-                                            ),                             
+                                            ),
                                         ]
                                     )
                                 )
@@ -210,5 +219,6 @@ def main(page: Page):
 
     page.on_route_change = route_change
     page.go(page.route)
+
 
 flet.app(target=main)
