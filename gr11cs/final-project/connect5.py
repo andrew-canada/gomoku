@@ -2,6 +2,9 @@ import flet as ft
 
 
 class Board(ft.UserControl):
+    unavailable_spots = []
+    is_player1 = True
+
     def create_grid(self, size: int):
         column = []
         row = []
@@ -10,7 +13,7 @@ class Board(ft.UserControl):
                 row.append(
                     ft.ElevatedButton(
                         style=ft.ButtonStyle(shape=ft.CircleBorder()),
-                        bgcolor=ft.colors.GREEN_100,
+                        bgcolor=ft.colors.WHITE,
                         on_click=self.make_move,
                         data="({}, {})".format(i, j)
                     )
@@ -31,13 +34,31 @@ class Board(ft.UserControl):
             content=ft.Column(controls=self.create_grid(10)),
             width=770,
             height=520,
-            bgcolor=ft.colors.CYAN_100,
+            bgcolor=ft.colors.BLUE,
             border_radius=10,
             padding=10
         )
 
     def make_move(self, e):
-        print("clicked")
+        print(e.control.data)
+        while self.unavailable_spots.count(e.control.data) != 0:
+            print("That spot is taken. Try again.")
+        if self.is_player1:
+            e.control.bgcolor = ft.colors.YELLOW
+        else:
+            e.control.bgcolor = ft.colors.RED
+        self.is_player1 = not self.is_player1
+        self.unavailable_spots.append(e.control.data)
+        self.update()
+
+    def is_won(self, e):
+        max_adjacent = 0
+        for i in range(1, 6):
+            if self.is_player1:
+                pass
+            else:
+                pass
+        return max_adjacent == 5
 
 
 def main(page: ft.page):
@@ -121,16 +142,11 @@ def main(page: ft.page):
                 ft.View(
                     "/board",
                     [
-                        ft.Text(
-                            "Board",
-                            bgcolor=ft.colors.AMBER_100,
-                            size=50
-                        ),
+                        Board(),
                         ft.ElevatedButton(
                             "Back to Main Menu",
                             on_click=lambda _: page.go("/")
                         ),
-                        Board()
                     ]
                 )
             )
