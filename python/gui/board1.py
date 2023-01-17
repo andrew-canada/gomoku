@@ -34,7 +34,7 @@ from flet import (
 # logging.basicConfig(level=logging.INFO)
 
 os.environ["FLET_WS_MAX_MESSAGE_SIZE"] = "8000000"
-
+play1_name = "no name"
 
 def play_again(e):
     print("play again")
@@ -117,6 +117,10 @@ class GameBoard(UserControl):
 def main(page: Page):
     page.title = "Chinese Connect 5"
 
+    def textbox_changed(e):
+        global play1_name
+        play1_name = e.control.value
+
     def route_change(route):
 
         page.views.append(
@@ -124,6 +128,10 @@ def main(page: Page):
                 "/",
                 [
                     Text("welcome to 连五子"),
+                    TextField(
+                        label="Textbox with 'change' event:",
+                        on_change=textbox_changed,
+                    ),
                     ElevatedButton(
                         "play", on_click=lambda _: page.go("/board")),
                 ],
@@ -157,7 +165,7 @@ def main(page: Page):
                                                 padding=20,
                                                 content=Column(
                                                     controls=[
-                                                        Text("Player1"),
+                                                        Text(play1_name),
                                                     ]
                                                 )
                                             ),
