@@ -187,7 +187,15 @@ def create_2player_interface(e):
         [
 
 
-
+            ft.TextField(
+                label="Player 2, enter your name (default name is \"player 2\"):",
+                data="p2",
+                on_change=set_player_name
+            ),
+            ft.ElevatedButton(
+                "Play!",
+                on_click=lambda _: page.go("/game")
+            ),
         ]
     )
     e.page.update()
@@ -215,15 +223,12 @@ def create_welcome_view(page: ft.page):
                     on_change=set_player_name
                 ),
 
-                ft.TextField(
-                    label="Player 2, enter your name (default name is \"player 2\"):",
-                    data="p2",
-                    on_change=set_player_name
-                ),
                 ft.ElevatedButton(
-                    "Play!",
+                    "Play with another human", on_click=create_2player_interface),
+                ft.ElevatedButton(
+                    "Play with engine",
                     on_click=lambda _: page.go("/game")
-                ),
+                )
             ]
         )
     ]
