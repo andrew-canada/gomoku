@@ -4,6 +4,7 @@ import flet as ft
 class Board(ft.UserControl):
     unavailable_spots = []
     is_player1 = True
+    board = ft.Container
 
     def create_grid(self, size: int):
         column = []
@@ -30,7 +31,7 @@ class Board(ft.UserControl):
     # must be called build
     # Exception: Board.build() method must be implemented and returning either Control or List[Control].
     def build(self):
-        return ft.Container(
+        self.board = ft.Container(
             content=ft.Column(controls=self.create_grid(10)),
             width=770,
             height=520,
@@ -38,27 +39,125 @@ class Board(ft.UserControl):
             border_radius=10,
             padding=10
         )
+        return self.board
 
     def make_move(self, e):
-        print(e.control.data)
+        row = int(e.control.data[1])
+        column = int(e.control.data[4])
+        print(row, column)
         while self.unavailable_spots.count(e.control.data) != 0:
             print("That spot is taken. Try again.")
         if self.is_player1:
             e.control.bgcolor = ft.colors.YELLOW
         else:
             e.control.bgcolor = ft.colors.RED
-        self.is_player1 = not self.is_player1
-        self.unavailable_spots.append(e.control.data)
+
+        if self.is_won(row, column):
+            print("won")
+            if self.is_player1:
+                player = "player 1"
+            else:
+                player = "player 2"
+            self.page.views.append(
+                ft.View(
+                    ft.Text(
+                        player+"won!"
+                    )
+                )
+            )
+        elif len(self.unavailable_spots.count) == len(self.board.content.controls)**2:
+            print("board full")
+        else:
+            self.unavailable_spots.append(e.control.data)
+            self.is_player1 = not self.is_player1
         self.update()
 
-    def is_won(self, e):
-        max_adjacent = 0
+    def is_won(self, row, column):
+        num_in_row = 1
+        current_color = self.board.content.controls[row].controls[column].bgcolor
+        enter_dir1 = True
+        enter_dir2 = True
+        grid_side_length = len(self.board.content.controls)
+        # left or right
         for i in range(1, 6):
-            if self.is_player1:
-                pass
+            if column-i < 0:
+                enter_dir1 = False
+            if column+i >= grid_side_length:
+                enter_dir2 = False
+
+            if enter_dir1 and current_color == self.board.content.controls[row].controls[column-i].bgcolor:
+                num_in_row += 1
             else:
-                pass
-        return max_adjacent == 5
+                enter_dir1 = False
+            if enter_dir2 and current_color == self.board.content.controls[row].controls[column+i].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir2 = False
+        if num_in_row == 5:
+            return True
+
+        # up or down
+        num_in_row = 1
+        enter_dir1 = True
+        enter_dir2 = True
+        for i in range(1, 6):
+            if row-i < 0:
+                enter_dir1 = False
+            if row+i >= grid_side_length:
+                enter_dir2 = False
+
+            if enter_dir1 and current_color == self.board.content.controls[row-i].controls[column].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir1 = False
+            if enter_dir2 and current_color == self.board.content.controls[row+i].controls[column].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir2 = False
+        if num_in_row == 5:
+            return True
+
+        # major diagonal (top left to bottom right)
+        num_in_row = 1
+        enter_dir1 = True
+        enter_dir2 = True
+        for i in range(1, 6):
+            if row+i < 0 or column-i < 0:
+                enter_dir1 = False
+            if row+i >= grid_side_length or column+i >= grid_side_length:
+                enter_dir2 = False
+
+            if enter_dir1 and current_color == self.board.content.controls[row-i].controls[column-i].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir1 = False
+            if enter_dir2 and current_color == self.board.content.controls[row+i].controls[column+i].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir2 = False
+        if num_in_row == 5:
+            return True
+
+        # minor diagonal (bottom left to top right)
+        num_in_row = 1
+        enter_dir1 = True
+        enter_dir2 = True
+        for i in range(1, 6):
+            if row+i >= grid_side_length or column-i < 0:
+                enter_dir1 = False
+            if row-i < 0 or column+i >= grid_side_length:
+                enter_dir2 = False
+
+            if enter_dir1 and current_color == self.board.content.controls[row+i].controls[column-i].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir1 = False
+            if enter_dir2 and current_color == self.board.content.controls[row-i].controls[column+i].bgcolor:
+                num_in_row += 1
+            else:
+                enter_dir2 = False
+
+        return num_in_row == 5
 
 
 def main(page: ft.page):
