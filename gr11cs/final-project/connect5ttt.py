@@ -2,6 +2,7 @@ import flet as ft
 
 player1_name = "player 1"
 player2_name = "player 2"
+is_bot=False
 
 
 class Board(ft.UserControl):
@@ -47,8 +48,13 @@ class Board(ft.UserControl):
         return self.board
 
     def make_move(self, e):
+
         if self.is_game_over == True:
             return
+
+        if is_bot:
+            print("i am bot")
+
         row = int(e.control.data[1])
         column = int(e.control.data[4])
         print(row, column)
@@ -170,7 +176,7 @@ class Board(ft.UserControl):
 
 
 def set_player_name(e):
-    print("aaa")
+    print(e.control.value)
     global player1_name, player2_name
     if e.control.data == "p1":
         player1_name = e.control.value
@@ -183,25 +189,30 @@ def clear_board(e):
 
 
 def create_2player_interface(e):
-    e.page.controls.append(
-        [
-
-
+    e.page.views[0].controls[0].controls.append(
             ft.TextField(
                 label="Player 2, enter your name (default name is \"player 2\"):",
                 data="p2",
                 on_change=set_player_name
             ),
-            ft.ElevatedButton(
-                "Play!",
-                on_click=lambda _: page.go("/game")
-            ),
-        ]
+    )
+    e.page.views[0].controls[0].controls.append(
+        ft.ElevatedButton(
+            "Play!",
+            on_click=lambda _: e.page.go("/game")
+        ),
     )
     e.page.update()
 
+def play_with_bot(e):
+    print(e)
+    global is_bot
+    is_bot = True
+    f = lambda _: e.page.go("/game")
+
 
 def create_welcome_view(page: ft.page):
+
     return [
         ft.Column(
             controls=[
@@ -224,17 +235,19 @@ def create_welcome_view(page: ft.page):
                 ),
 
                 ft.ElevatedButton(
-                    "Play with another human", on_click=create_2player_interface),
+                    "Play with another human",
+                    on_click=create_2player_interface
+                ),
                 ft.ElevatedButton(
                     "Play with engine",
-                    on_click=lambda _: page.go("/game")
+                    on_click=play_with_bot
                 )
             ]
         )
     ]
 
 
-def create_game_view(page: ft.page, player1_name: str, player2_name: str):
+def create_game_view(page: ft.page):
     return [
         ft.Row(
             vertical_alignment=ft.CrossAxisAlignment.START,
@@ -281,7 +294,7 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
                                     controls=[
                                         ft.ElevatedButton(
                                             "Play Again",
-                                            # on_click=clear_board
+                                            on_click=clear_board
                                         ),
                                         ft.ElevatedButton(
                                             "Back to Main Menu",
@@ -303,6 +316,7 @@ def main(page: ft.page):
     page.title = "Connect 5"
 
     def route_change(route):
+        page.views.clear()
         page.views.append(
             ft.View(
                 "/",
@@ -314,14 +328,19 @@ def main(page: ft.page):
             page.views.append(
                 ft.View(
                     "/game",
-                    create_game_view(page, player1_name,
-                                     player2_name)
+                    create_game_view(page)
                 )
             )
 
         page.update()
 
+    def view_pop(view):
+        page.views.pop()
+        top_view = page.views[-1]
+        page.go(top_view.route)
+
     page.on_route_change = route_change
+    page.on_view_pop = view_pop
     page.go(page.route)
 
 
