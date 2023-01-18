@@ -2,7 +2,7 @@ import flet as ft
 
 player1_name = "player 1"
 player2_name = "player 2"
-is_bot=False
+is_bot = False
 
 
 class Board(ft.UserControl):
@@ -190,11 +190,11 @@ def clear_board(e):
 
 def create_2player_interface(e):
     e.page.views[0].controls[0].controls.append(
-            ft.TextField(
-                label="Player 2, enter your name (default name is \"player 2\"):",
-                data="p2",
-                on_change=set_player_name
-            ),
+        ft.TextField(
+            label="Player 2, enter your name (default name is \"player 2\"):",
+            data="p2",
+            on_change=set_player_name
+        ),
     )
     e.page.views[0].controls[0].controls.append(
         ft.ElevatedButton(
@@ -204,11 +204,12 @@ def create_2player_interface(e):
     )
     e.page.update()
 
+
 def play_with_bot(e):
     print(e)
     global is_bot
     is_bot = True
-    f = lambda _: e.page.go("/game")
+    def f(_): return e.page.go("/game")
 
 
 def create_welcome_view(page: ft.page):

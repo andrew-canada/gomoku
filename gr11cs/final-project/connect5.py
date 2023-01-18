@@ -10,6 +10,7 @@ class Board(ft.UserControl):
     board = ft.Container
     is_game_over = False
     is_clear = False
+    is_play_with_bot = False
 
     def create_grid(self, size: int):
         column = []
@@ -208,6 +209,7 @@ def clear_board(e):
 
 def create_2player_interface(e):
     e.control.page.views[1].controls[0].controls.pop()
+    e.control.page.views[1].controls[0].controls.pop()
     e.control.page.views[1].controls[0].controls.append(
         ft.TextField(
             label="Player 2, enter your name (default name is \"player 2\"):",
@@ -253,11 +255,18 @@ def create_welcome_view(page: ft.page):
                 ),
                 ft.ElevatedButton(
                     "Play solo!",
-                    on_click=lambda _: page.go("/game")
+                    # on_click=lambda _: page.go("/game")
+                    on_click=play_with_bot
                 ),
             ]
         )
     ]
+
+
+def play_with_bot(page: ft.page):
+    global is_play_with_bot
+    is_play_with_bot = True
+    page.go("/game")
 
 
 def create_game_view(page: ft.page, player1_name: str, player2_name: str):
