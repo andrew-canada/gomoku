@@ -5,10 +5,11 @@ player2_name = "player 2"
 
 
 class Board(ft.UserControl):
-    unavailable_spots = []
+    available_spots = []
     is_player1 = True
     board = ft.Container
     is_game_over = False
+    is_clear = False
 
     def create_grid(self, size: int):
         column = []
@@ -23,6 +24,7 @@ class Board(ft.UserControl):
                         data="({}, {})".format(i, j)
                     )
                 )
+                self.available_spots.append("({}, {})".format(i, j))
             column.append(
                 ft.Row(
                     controls=row
@@ -52,33 +54,55 @@ class Board(ft.UserControl):
         row = int(e.control.data[1])
         column = int(e.control.data[4])
         print(row, column)
-        while self.unavailable_spots.count(e.control.data) != 0:
-            print("That spot is taken. Try again.")
-        if self.is_player1:
-            e.control.bgcolor = ft.colors.YELLOW
-        else:
-            e.control.bgcolor = ft.colors.RED
-
-        if self.is_won(row, column):
-            self.is_game_over = True
-            print("won")
+        if self.available_spots.count(e.control.data) != 0:
             if self.is_player1:
-                player = player1_name
+                e.control.bgcolor = ft.colors.YELLOW
             else:
-                player = player2_name
-            self.controls[0].content.controls.append(
+                e.control.bgcolor = ft.colors.RED
+
+            if self.is_won(row, column):
+                self.is_game_over = True
+                print("won")
+                if self.is_player1:
+                    player = player1_name
+                else:
+                    player = player2_name
+                self.controls[0].content.controls.insert(
+                    10,
+                    ft.Row(
+                        controls=[
+                            ft.Text("GAME OVER! {} WON!".format(player),
+                                    style=ft.TextThemeStyle.DISPLAY_LARGE)
+                        ])
+                )
+            elif len(self.available_spots) == 0:
+                self.controls[0].content.controls.insert(
+                    10,
+                    ft.Row(
+                        controls=[
+                            ft.Text("GAME OVER!. TIED GAME!. BOARD IS FULL!",
+                                    style=ft.TextThemeStyle.DISPLAY_LARGE)
+                        ])
+                )
+                self.is_game_over = True
+            else:
+                if self.is_clear:
+                    self.controls[0].content.controls.pop(-1)
+                self.available_spots.remove(e.control.data)
+                self.is_player1 = not self.is_player1
+                self.is_clear = False
+
+        else:
+            self.is_clear = True
+            self.controls[0].content.controls.insert(
+                10,
                 ft.Row(
                     controls=[
-                        ft.Text("game over. {} won".format(player),
+                        ft.Text("THAT SPOT IS TAKEN! TRY ANOTHER SPOT!",
                                 style=ft.TextThemeStyle.DISPLAY_LARGE)
                     ])
             )
-        elif len(self.unavailable_spots) == len(self.board.content.controls)**2:
-            print("board full")
-            self.is_game_over = True
-        else:
-            self.unavailable_spots.append(e.control.data)
-            self.is_player1 = not self.is_player1
+
         self.update()
 
     def is_won(self, row, column):
@@ -183,12 +207,20 @@ def clear_board(e):
 
 
 def create_2player_interface(e):
-    e.page.controls.append(
-        [
+    e.control.page.views[1].controls[0].controls.pop()
+    e.control.page.views[1].controls[0].controls.append(
+        ft.TextField(
+            label="Player 2, enter your name (default name is \"player 2\"):",
+            data="p2",
+            on_change=set_player_name
+        ),
+    )
 
-
-
-        ]
+    e.control.page.views[1].controls[0].controls.append(
+        ft.ElevatedButton(
+            "Play!",
+            on_click=lambda _: e.control.page.go("/game")
+        )
     )
     e.page.update()
 
@@ -215,13 +247,12 @@ def create_welcome_view(page: ft.page):
                     on_change=set_player_name
                 ),
 
-                ft.TextField(
-                    label="Player 2, enter your name (default name is \"player 2\"):",
-                    data="p2",
-                    on_change=set_player_name
+                ft.ElevatedButton(
+                    "Play with another person",
+                    on_click=create_2player_interface
                 ),
                 ft.ElevatedButton(
-                    "Play!",
+                    "Play solo!",
                     on_click=lambda _: page.go("/game")
                 ),
             ]
@@ -255,7 +286,7 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
                             ft.Container(
                                 alignment=ft.alignment.top_left,
                                 width=300,
-                                bgcolor=ft.colors.BLUE,
+                                bgcolor=ft.colors.RED,
                                 border_radius=ft.border_radius.all(
                                     20),
                                 padding=20,
@@ -306,6 +337,7 @@ def main(page: ft.page):
         )
 
         if page.route == "/game":
+            page.views.clear()
             page.views.append(
                 ft.View(
                     "/game",
@@ -316,6 +348,12 @@ def main(page: ft.page):
 
         page.update()
 
+    def view_pop(view):
+        page.views.pop()
+        top_view = page.views[-1]
+        page.go(top_view.route)
+
+    page.on_view_pop = view_pop
     page.on_route_change = route_change
     page.go(page.route)
 
