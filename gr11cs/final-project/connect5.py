@@ -1,16 +1,21 @@
 import flet as ft
+import random
+import time
 
 player1_name = "player 1"
 player2_name = "player 2"
+is_play_with_bot = False
 
 
 class Board(ft.UserControl):
+    global is_play_with_bot
+    global player1_name
+    global player2_name
     available_spots = []
     is_player1 = True
     board = ft.Container
     is_game_over = False
     is_clear = False
-    is_play_with_bot = False
 
     def create_grid(self, size: int):
         column = []
@@ -52,14 +57,30 @@ class Board(ft.UserControl):
     def make_move(self, e):
         if self.is_game_over == True:
             return
-        row = int(e.control.data[1])
-        column = int(e.control.data[4])
+
+        move = e.control.data
+        row = int(move[1])
+        column = int(move[4])
+
+        self.update_board_move(move, row, column)
+
+        if is_play_with_bot:
+            move = self.available_spots[random.randint(
+                0, len(self.available_spots)-1)]
+            row = int(move[1])
+            column = int(move[4])
+            self.update_board_move(move, row, column)
+
+    def update_board_move(self, move, row, column):
+        print(is_play_with_bot)
         print(row, column)
-        if self.available_spots.count(e.control.data) != 0:
+        if self.available_spots.count(move) != 0:
             if self.is_player1:
-                e.control.bgcolor = ft.colors.YELLOW
+                self.controls[0].content.controls[row].controls[column].bgcolor = ft.colors.YELLOW
             else:
-                e.control.bgcolor = ft.colors.RED
+                if is_play_with_bot:
+                    time.sleep(0.5)
+                self.controls[0].content.controls[row].controls[column].bgcolor = ft.colors.RED
 
             if self.is_won(row, column):
                 self.is_game_over = True
@@ -89,7 +110,7 @@ class Board(ft.UserControl):
             else:
                 if self.is_clear:
                     self.controls[0].content.controls.pop(-1)
-                self.available_spots.remove(e.control.data)
+                self.available_spots.remove(move)
                 self.is_player1 = not self.is_player1
                 self.is_clear = False
 
@@ -204,7 +225,8 @@ def set_player_name(e):
 
 
 def clear_board(e):
-    e.page = []
+    e.page.views[0].controls[0].controls[0] = Board()
+    e.page.update()
 
 
 def create_2player_interface(e):
@@ -255,7 +277,6 @@ def create_welcome_view(page: ft.page):
                 ),
                 ft.ElevatedButton(
                     "Play solo!",
-                    # on_click=lambda _: page.go("/game")
                     on_click=play_with_bot
                 ),
             ]
@@ -263,10 +284,31 @@ def create_welcome_view(page: ft.page):
     ]
 
 
-def play_with_bot(page: ft.page):
+def play_with_bot(e):
+    global player2_name
+    player2_name = "gomuku bot"
     global is_play_with_bot
     is_play_with_bot = True
-    page.go("/game")
+    e.page.go("/game")
+
+
+def clear_all_variables_except_bot():
+    global player1_name
+    player1_name = "player 1"
+    global player2_name
+    player2_name = "player 2"
+    Board.available_spots = []
+    Board.is_player1 = True
+    Board.board = ft.Container
+    Board.is_game_over = False
+    Board.is_clear = False
+
+
+def reset_and_return_to_menu(e):
+    clear_all_variables_except_bot()
+    global is_play_with_bot
+    is_play_with_bot = False
+    e.page.go("/")
 
 
 def create_game_view(page: ft.page, player1_name: str, player2_name: str):
@@ -316,11 +358,11 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
                                     controls=[
                                         ft.ElevatedButton(
                                             "Play Again",
-                                            # on_click=clear_board
+                                            on_click=clear_board
                                         ),
                                         ft.ElevatedButton(
                                             "Back to Main Menu",
-                                            on_click=lambda _: page.go("/")
+                                            on_click=reset_and_return_to_menu
                                         )
                                     ]
                                 )
