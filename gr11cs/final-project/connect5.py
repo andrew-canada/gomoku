@@ -38,6 +38,8 @@ class Board(ft.UserControl):
             )
             # using clear() will enpty everything because same reference
             row = []
+        column.append(ft.Row(height=20))
+        column.append(ft.Container())
         return column
 
     # must be called build
@@ -54,6 +56,39 @@ class Board(ft.UserControl):
         )
         return self.board
 
+    def update_adjacent_spots(self, adjacent_spots, row, column):
+        new_move = "({}, {})".format(row, column)
+        if self.available_spots.count(new_move) > 0:
+            adjacent_spots.append(new_move)
+        return adjacent_spots
+
+    def get_adjacent_spots(self, row, column):
+        adjacent_spots = []
+
+        if row-1 >= 0:
+            self.update_adjacent_spots(adjacent_spots, row-1, column)
+
+            if column-1 >= 0:
+                self.update_adjacent_spots(adjacent_spots, row-1, column-1)
+
+                self.update_adjacent_spots(adjacent_spots, row, column-1)
+
+            if column+1 < len(self.controls[0].content.controls):
+                self.update_adjacent_spots(adjacent_spots, row-1, column+1)
+
+                self.update_adjacent_spots(adjacent_spots, row, column+1)
+
+        if row+1 < len(self.available_spots):
+            self.update_adjacent_spots(adjacent_spots, row+1, column)
+
+            if column-1 >= 0:
+                self.update_adjacent_spots(adjacent_spots, row+1, column-1)
+
+            if column+1 < len(self.controls[0].content.controls):
+                self.update_adjacent_spots(adjacent_spots, row+1, column+1)
+
+        return adjacent_spots
+
     def make_move(self, e):
         if self.is_game_over == True:
             return
@@ -64,57 +99,16 @@ class Board(ft.UserControl):
 
         self.update_board_move(move, row, column)
 
-        if is_play_with_bot:
+        if is_play_with_bot and not self.is_player1:
             new_move = ""
-            adjacent_spots = []
-            if row-1 >= 0:
-                new_move = "({}, {})".format(row-1, column)
-                if self.available_spots.count(new_move) > 0:
-                    adjacent_spots.append(new_move)
+            adjacent_spots = self.get_adjacent_spots(row, column)
 
-                if column-1 >= 0:
-                    new_move = "({}, {})".format(row-1, column-1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-                    new_move = "({}, {})".format(row, column-1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-                if column+1 < len(self.available_spots[0]):
-                    new_move = "({}, {})".format(row-1, column+1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-                    new_move = "({}, {})".format(row, column+1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-            if row+1 < len(self.available_spots):
-                new_move = "({}, {})".format(row+1, column)
-                if self.available_spots.count(new_move) > 0:
-                    adjacent_spots.append(new_move)
-
-                if column-1 >= 0:
-                    new_move = "({}, {})".format(row+1, column-1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-                    new_move = "({}, {})".format(row, column-1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-                if column+1 < len(self.available_spots[0]):
-                    new_move = "({}, {})".format(row+1, column+1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-                    new_move = "({}, {})".format(row, column+1)
-                    if self.available_spots.count(new_move) > 0:
-                        adjacent_spots.append(new_move)
-
-            move = adjacent_spots[random.randint(
-                0, len(adjacent_spots)-1)]
+            if len(adjacent_spots) > 0:
+                move = adjacent_spots[random.randint(
+                    0, len(adjacent_spots)-1)]
+            else:
+                move = self.available_spots[random.randint(
+                    0, len(self.available_spots)-1)]
             row = int(move[1])
             column = int(move[4])
             self.update_board_move(move, row, column)
@@ -122,13 +116,14 @@ class Board(ft.UserControl):
     def update_board_move(self, move, row, column):
         print(is_play_with_bot)
         print(row, column)
-        if self.available_spots.count(move) != 0:
+        if self.available_spots.count(move) > 0:
             if self.is_player1:
                 self.controls[0].content.controls[row].controls[column].bgcolor = ft.colors.YELLOW
             else:
-                if is_play_with_bot:
+                if is_play_with_bot and not self.is_player1:
                     time.sleep(0.5)
                 self.controls[0].content.controls[row].controls[column].bgcolor = ft.colors.RED
+            self.available_spots.remove(move)
 
             if self.is_won(row, column):
                 self.is_game_over = True
@@ -137,42 +132,69 @@ class Board(ft.UserControl):
                     player = player1_name
                 else:
                     player = player2_name
-                self.controls[0].content.controls.insert(
-                    10,
-                    ft.Row(
+                self.controls[0].content.controls[11] = ft.Container(
+                    border_radius=ft.border_radius.all(20),
+                    padding=20,
+                    bgcolor=ft.colors.BLACK,
+                    width=800,
+                    content=ft.Row(
+                        alignment=ft.MainAxisAlignment.CENTER,
                         scroll=ft.ScrollMode.ALWAYS,
                         controls=[
-                            ft.Text("GAME OVER! {} WON!".format(player),
-                                    style=ft.TextThemeStyle.DISPLAY_LARGE)
-                        ])
+                            ft.Text(
+                                "GAME OVER! {} WON!".format(player),
+                                style=ft.TextThemeStyle.DISPLAY_SMALL,
+                                color=ft.colors.WHITE,
+                                text_align=ft.TextAlign.CENTER
+                            )
+                        ]
+                    )
                 )
+
             elif len(self.available_spots) == 0:
-                self.controls[0].content.controls.insert(
-                    10,
-                    ft.Row(
+                self.controls[0].content.controls[11] = ft.Container(
+                    border_radius=ft.border_radius.all(20),
+                    padding=20,
+                    bgcolor=ft.colors.BLACK,
+                    width=800,
+                    content=ft.Row(
+                        alignment=ft.MainAxisAlignment.CENTER,
                         scroll=ft.ScrollMode.ALWAYS,
                         controls=[
-                            ft.Text("GAME OVER!. TIED GAME!. BOARD IS FULL!",
-                                    style=ft.TextThemeStyle.DISPLAY_LARGE)
-                        ])
+                            ft.Text(
+                                "GAME OVER!. TIED GAME!. BOARD IS FULL!",
+                                style=ft.TextThemeStyle.DISPLAY_SMALL,
+                                color=ft.colors.WHITE,
+                                text_align=ft.TextAlign.CENTER
+                            )
+                        ]
+                    )
                 )
+
                 self.is_game_over = True
             else:
                 if self.is_clear:
-                    self.controls[0].content.controls.pop(-1)
-                self.available_spots.remove(move)
+                    self.controls[0].content.controls[11] = ft.Container()
                 self.is_player1 = not self.is_player1
                 self.is_clear = False
 
         else:
             self.is_clear = True
-            self.controls[0].content.controls.insert(
-                10,
-                ft.Row(
+            self.controls[0].content.controls[11] = ft.Container(
+                border_radius=ft.border_radius.all(20),
+                padding=20,
+                bgcolor=ft.colors.BLACK,
+                width=800,
+                content=ft.Row(
+                    alignment=ft.MainAxisAlignment.CENTER,
                     scroll=ft.ScrollMode.ALWAYS,
                     controls=[
-                        ft.Text("THAT SPOT IS TAKEN! TRY ANOTHER SPOT!",
-                                style=ft.TextThemeStyle.DISPLAY_LARGE)
+                        ft.Text(
+                            "THAT SPOT IS TAKEN! TRY ANOTHER SPOT!",
+                            style=ft.TextThemeStyle.DISPLAY_SMALL,
+                            color=ft.colors.WHITE,
+                            text_align=ft.TextAlign.CENTER
+                        )
                     ])
             )
 
@@ -183,7 +205,7 @@ class Board(ft.UserControl):
         current_color = self.board.content.controls[row].controls[column].bgcolor
         enter_dir1 = True
         enter_dir2 = True
-        grid_side_length = len(self.board.content.controls)
+        grid_side_length = len(self.board.content.controls[00].controls)
         # left or right
         for i in range(1, 6):
             if column-i < 0:
@@ -228,7 +250,7 @@ class Board(ft.UserControl):
         enter_dir1 = True
         enter_dir2 = True
         for i in range(1, 6):
-            if row+i < 0 or column-i < 0:
+            if row-i < 0 or column-i < 0:
                 enter_dir1 = False
             if row+i >= grid_side_length or column+i >= grid_side_length:
                 enter_dir2 = False
@@ -305,17 +327,27 @@ def create_welcome_view(page: ft.page):
         ft.Column(
             scroll=ft.ScrollMode.ALWAYS,
             controls=[
-                ft.Text(
-                    "Gomoku (Connect 5)",
-                    bgcolor=ft.colors.AMBER_100,
-                    size=50,
-                    weight=ft.FontWeight.BOLD
-                ),
+                ft.Container
+                (
+                    bgcolor=ft.colors.BLUE,
+                    border_radius=ft.border_radius.all(
+                        20),
+                    padding=20,
+                    content=ft.Column(
+                        controls=[
+                            ft.Text(
+                                "Gomoku (Connect 5)",
+                                size=50,
+                                weight=ft.FontWeight.BOLD
+                            ),
 
-                ft.Text(
-                    "Welcome",
-                    bgcolor=ft.colors.AMBER_100,
-                    size=50
+                            ft.Text(
+                                "Welcome",
+                                size=50
+                            )
+                        ]
+                    )
+
                 ),
                 ft.TextField(
                     label="Player 1, enter your name (default name is \"player 1\"):",
