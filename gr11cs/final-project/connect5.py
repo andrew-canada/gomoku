@@ -65,8 +65,56 @@ class Board(ft.UserControl):
         self.update_board_move(move, row, column)
 
         if is_play_with_bot:
-            move = self.available_spots[random.randint(
-                0, len(self.available_spots)-1)]
+            new_move = ""
+            adjacent_spots = []
+            if row-1 >= 0:
+                new_move = "({}, {})".format(row-1, column)
+                if self.available_spots.count(new_move) > 0:
+                    adjacent_spots.append(new_move)
+
+                if column-1 >= 0:
+                    new_move = "({}, {})".format(row-1, column-1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+                    new_move = "({}, {})".format(row, column-1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+                if column+1 < len(self.available_spots[0]):
+                    new_move = "({}, {})".format(row-1, column+1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+                    new_move = "({}, {})".format(row, column+1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+            if row+1 < len(self.available_spots):
+                new_move = "({}, {})".format(row+1, column)
+                if self.available_spots.count(new_move) > 0:
+                    adjacent_spots.append(new_move)
+
+                if column-1 >= 0:
+                    new_move = "({}, {})".format(row+1, column-1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+                    new_move = "({}, {})".format(row, column-1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+                if column+1 < len(self.available_spots[0]):
+                    new_move = "({}, {})".format(row+1, column+1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+                    new_move = "({}, {})".format(row, column+1)
+                    if self.available_spots.count(new_move) > 0:
+                        adjacent_spots.append(new_move)
+
+            move = adjacent_spots[random.randint(
+                0, len(adjacent_spots)-1)]
             row = int(move[1])
             column = int(move[4])
             self.update_board_move(move, row, column)
@@ -92,6 +140,7 @@ class Board(ft.UserControl):
                 self.controls[0].content.controls.insert(
                     10,
                     ft.Row(
+                        scroll=ft.ScrollMode.ALWAYS,
                         controls=[
                             ft.Text("GAME OVER! {} WON!".format(player),
                                     style=ft.TextThemeStyle.DISPLAY_LARGE)
@@ -101,6 +150,7 @@ class Board(ft.UserControl):
                 self.controls[0].content.controls.insert(
                     10,
                     ft.Row(
+                        scroll=ft.ScrollMode.ALWAYS,
                         controls=[
                             ft.Text("GAME OVER!. TIED GAME!. BOARD IS FULL!",
                                     style=ft.TextThemeStyle.DISPLAY_LARGE)
@@ -119,6 +169,7 @@ class Board(ft.UserControl):
             self.controls[0].content.controls.insert(
                 10,
                 ft.Row(
+                    scroll=ft.ScrollMode.ALWAYS,
                     controls=[
                         ft.Text("THAT SPOT IS TAKEN! TRY ANOTHER SPOT!",
                                 style=ft.TextThemeStyle.DISPLAY_LARGE)
@@ -252,6 +303,7 @@ def create_2player_interface(e):
 def create_welcome_view(page: ft.page):
     return [
         ft.Column(
+            scroll=ft.ScrollMode.ALWAYS,
             controls=[
                 ft.Text(
                     "Gomoku (Connect 5)",
@@ -314,6 +366,7 @@ def reset_and_return_to_menu(e):
 def create_game_view(page: ft.page, player1_name: str, player2_name: str):
     return [
         ft.Row(
+            scroll=ft.ScrollMode.ALWAYS,
             vertical_alignment=ft.CrossAxisAlignment.START,
             alignment=ft.MainAxisAlignment.CENTER,
             controls=[
@@ -324,6 +377,7 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
                 ft.Container(
                     alignment=ft.alignment.top_left,
                     content=ft.Column(
+                        scroll=ft.ScrollMode.ALWAYS,
                         controls=[
                             ft.Container(
                                 alignment=ft.alignment.top_left,
@@ -355,6 +409,7 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
                                     20),
                                 padding=20,
                                 content=ft.Column(
+                                    scroll=ft.ScrollMode.ALWAYS,
                                     controls=[
                                         ft.ElevatedButton(
                                             "Play Again",
@@ -378,8 +433,10 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
 def main(page: ft.page):
 
     page.title = "Connect 5"
+    page.scroll = ft.ScrollMode.ALWAYS
 
     def route_change(route):
+        page.scroll = ft.ScrollMode.ALWAYS
         page.views.append(
             ft.View(
                 "/",
@@ -388,6 +445,7 @@ def main(page: ft.page):
         )
 
         if page.route == "/game":
+            page.scroll = ft.ScrollMode.ALWAYS
             page.views.clear()
             page.views.append(
                 ft.View(
