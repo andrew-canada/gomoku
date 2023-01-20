@@ -27,6 +27,11 @@ class LinearSearcherTest {
 	List<Student> sortedStudents = new ArrayList<Student>(Arrays.asList(new Student(-1, "a"), new Student(1, "joe"),
 			new Student(3, "john"), new Student(5, "bob"), new Student(10, "b")));
 
+	Student[] unsortedStudentsArr = { new Student(1, "joe"), new Student(5, "bob"), new Student(3, "john"),
+			new Student(-1, "a"), new Student(10, "b") };
+	Student[] sortedStudentsArr = { new Student(-1, "a"), new Student(1, "joe"), new Student(3, "john"),
+			new Student(5, "bob"), new Student(10, "b") };
+
 	@BeforeEach
 	void setUp() throws Exception {
 		ls = new LinearSearcher();
@@ -95,5 +100,11 @@ class LinearSearcherTest {
 				SequentialSearcherV2.sequentialSearchUnsorted(sortedStudents, new Student(1, "joe")));
 		Assertions.assertEquals(-1,
 				SequentialSearcherV2.sequentialSearchUnsorted(sortedStudents, new Student(11, "bb")));
+	}
+
+	@Test
+	void testSequentialSearchSortedV3() {
+		Assertions.assertEquals(1, LinearSearcherV3.linearSearchUnsorted(sortedStudentsArr, new Student(1, "joe")));
+		Assertions.assertEquals(-1, LinearSearcherV3.linearSearchUnsorted(sortedStudentsArr, new Student(11, "bb")));
 	}
 }

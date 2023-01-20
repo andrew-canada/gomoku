@@ -1,52 +1,73 @@
 import flet as ft
 import random
-import time
 
+# global variables for in-game variables
 player1_name = "player 1"
 player2_name = "player 2"
 is_play_with_bot = False
 
 
+# class to represent the game board
+# UserControl allows the programmer to create an instance of the class
 class Board(ft.UserControl):
     global is_play_with_bot
     global player1_name
     global player2_name
+    # array to store which moves are valid
     available_spots = []
     is_player1 = True
     board = ft.Container
     is_game_over = False
     is_clear = False
 
-    def create_grid(self, size: int):
+    # self is implicitly passed, representing who called the function
+    def create_grid(self, size: int) -> list[ft.Row]:
+        """
+        Returns a square 2D array representing the game board
+
+        >>> create_grid(10)
+        # creates a square 2D array
+        """
         column = []
         row = []
         for i in range(size):
+            # store each row of buttons in an array
             for j in range(size):
                 row.append(
+                    # ft.ElevatedButton is a clickable button
                     ft.ElevatedButton(
                         style=ft.ButtonStyle(shape=ft.CircleBorder()),
                         bgcolor=ft.colors.WHITE,
                         on_click=self.make_move,
+                        # used to store coordinates
                         data="({}, {})".format(i, j)
                     )
                 )
                 self.available_spots.append("({}, {})".format(i, j))
+            # put the rows into the column array to create a 2D array board
             column.append(
                 ft.Row(
                     controls=row
                 )
             )
-            # using clear() will enpty everything because same reference
             row = []
+        # ft.Row represents a vertical array (used for padding here)
         column.append(ft.Row(height=20))
+        # ft.Container is a space where data can be added (will later be used to display messages)
         column.append(ft.Container())
+        # return the 2D array representing the board
         return column
 
-    # must be called build
-    # Exception: Board.build() method must be implemented and returning either Control or List[Control].
-    def build(self):
+    # there must be a constructor called build
+    def build(self) -> ft.Container:
+        """
+        """
+
+        # self refers to member variables within this class (Board)
         self.board = ft.Container(
             alignment=ft.alignment.top_left,
+            # content represents the data inside the container
+            # puts the 2D array into an ft.Column object
             content=ft.Column(controls=self.create_grid(10)),
             width=770,
             height=530,
@@ -120,8 +141,6 @@ class Board(ft.UserControl):
             if self.is_player1:
                 self.controls[0].content.controls[row].controls[column].bgcolor = ft.colors.YELLOW
             else:
-                if is_play_with_bot and not self.is_player1:
-                    time.sleep(0.5)
                 self.controls[0].content.controls[row].controls[column].bgcolor = ft.colors.RED
             self.available_spots.remove(move)
 
@@ -298,6 +317,7 @@ def set_player_name(e):
 
 
 def clear_board(e):
+    Board.available_spots = []
     e.page.views[0].controls[0].controls[0] = Board()
     e.page.update()
 
@@ -306,10 +326,13 @@ def create_2player_interface(e):
     e.control.page.views[1].controls[0].controls.pop()
     e.control.page.views[1].controls[0].controls.pop()
     e.control.page.views[1].controls[0].controls.append(
-        ft.TextField(
-            label="Player 2, enter your name (default name is \"player 2\"):",
-            data="p2",
-            on_change=set_player_name
+        ft.Container(
+            width=850,
+            content=ft.TextField(
+                label="Player 2, enter your name (default name is \"player 2\"):",
+                data="p2",
+                on_change=set_player_name
+            )
         ),
     )
 
@@ -336,7 +359,7 @@ def create_welcome_view(page: ft.page):
                     content=ft.Column(
                         controls=[
                             ft.Text(
-                                "Gomoku (Connect 5)",
+                                "Gomoku (Connect 5)\nBy: Andrew Peng",
                                 size=50,
                                 weight=ft.FontWeight.BOLD
                             ),
@@ -347,12 +370,24 @@ def create_welcome_view(page: ft.page):
                             )
                         ]
                     )
-
                 ),
-                ft.TextField(
-                    label="Player 1, enter your name (default name is \"player 1\"):",
-                    data="p1",
-                    on_change=set_player_name
+                ft.Container(
+                    bgcolor=ft.colors.BLUE_100,
+                    border_radius=ft.border_radius.all(20),
+                    padding=20,
+                    content=ft.Text
+                    (
+                        "Create an unbroken chain of exactly 5 stones, vertically, horizontally, or diagonally, to win.\nPlace stones onto any empty space on the board.",
+                        size=20,
+                    )
+                ),
+                ft.Container(
+                    width=850,
+                    content=ft.TextField(
+                        label="Player 1, enter your name (default name is \"player 1\"):",
+                        data="p1",
+                        on_change=set_player_name
+                    )
                 ),
 
                 ft.ElevatedButton(
@@ -472,7 +507,7 @@ def main(page: ft.page):
         page.views.append(
             ft.View(
                 "/",
-                create_welcome_view(page)
+                create_welcome_view(page),
             )
         )
 
