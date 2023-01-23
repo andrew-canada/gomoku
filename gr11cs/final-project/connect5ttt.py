@@ -205,7 +205,15 @@ def set_player_name(e):
 
 
 def clear_board(e):
-    e.page = []
+    print("a")
+    print(e.page.views[0].controls[0].controls[0])
+
+    b = Board()
+    print(b)
+
+    e.page.views[0].controls[0].controls[0]=b
+    e.page.update()
+    print(e.data)
 
 
 def create_2player_interface(e):
@@ -317,7 +325,7 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str):
                                     controls=[
                                         ft.ElevatedButton(
                                             "Play Again",
-                                            # on_click=clear_board
+                                            on_click=clear_board
                                         ),
                                         ft.ElevatedButton(
                                             "Back to Main Menu",

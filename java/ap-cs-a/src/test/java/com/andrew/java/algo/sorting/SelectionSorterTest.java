@@ -17,6 +17,17 @@ class SelectionSorterTest {
     List<Student> students = new ArrayList<>(Arrays.asList(new Student(123, "joe"), new Student(400, "john"),
             new Student(-600, "bob"), new Student(0, "steve"), new Student(0, "no")));
 
+    List<CashDonor> donorsByDonation = new ArrayList<>(
+            Arrays.asList(new CashDonor("steve", -55, -55), new CashDonor("steve", -55, -55),
+                    new CashDonor("steve", -55, -55),
+                    new CashDonor("steve", -55, -55), new CashDonor("joe", 1, 1), new CashDonor("john", 350, 350),
+                    new CashDonor("bob", 500, 500)));
+    List<CashDonor> unsortedDonors = new ArrayList<>(
+            Arrays.asList(new CashDonor("steve", -55, -55),
+                    new CashDonor("bob", 500, 500), new CashDonor("steve", -55, -55),
+                    new CashDonor("steve", -55, -55),
+                    new CashDonor("steve", -55, -55), new CashDonor("joe", 1, 1), new CashDonor("john", 350, 350)));
+
     @Test
     void testSortDuckArr() {
         DebugDuck[] newSortedDucks = SelectionSorter.sortDuckArr(unsortedDucks);
@@ -36,12 +47,21 @@ class SelectionSorterTest {
     }
 
     @Test
-    void testSelectionSortV4() {
+    void testSelectionSortV3() {
         List<Student> sortedStudents = SelectionSorterV3.selectionSort(students);
         Assertions.assertEquals(Arrays.asList(new Student(-600, "bob"), new Student(0, "steve"),
                 new Student(0, "no"),
                 new Student(123, "joe"), new Student(400, "john")), sortedStudents);
         sortedStudents.stream().forEach(System.out::println);
+    }
+
+    @Test
+    void testSelectionSortV4() {
+        List<CashDonor> sortedDonors = SelectionSorterV4.selectionSort(unsortedDonors);
+        Assertions.assertEquals(donorsByDonation, sortedDonors);
+
+        System.out.println();
+        donorsByDonation.stream().forEach(System.out::println);
     }
 
 }
