@@ -1,8 +1,10 @@
 import flet as ft
 
+BOARD_SIZE = 10
 player1_name = "player 1"
 player2_name = "player 2"
 is_play_with_bot = False
+
 
 class Board(ft.UserControl):
     global is_play_with_bot
@@ -40,7 +42,7 @@ class Board(ft.UserControl):
     def build(self):
         self.board = ft.Container(
             alignment=ft.alignment.top_left,
-            content=ft.Column(controls=self.create_grid(10)),
+            content=ft.Column(controls=self.create_grid(BOARD_SIZE)),
             width=770,
             height=530,
             bgcolor=ft.colors.BLUE,
@@ -211,7 +213,7 @@ def clear_board(e):
     b = Board()
     print(b)
 
-    e.page.views[0].controls[0].controls[0]=b
+    e.page.views[0].controls[0].controls[0] = b
     e.page.update()
     print(e.data)
 

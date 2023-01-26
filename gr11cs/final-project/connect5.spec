@@ -41,5 +41,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
-    version='C:\\Users\\peng\\AppData\\Local\\Temp\\d3602de6-d307-4bff-8405-5fd6c1240a88',
+    version='C:\\Users\\peng\\AppData\\Local\\Temp\\1553181b-85e1-42a3-abba-f6f1ea6c0b13',
 )

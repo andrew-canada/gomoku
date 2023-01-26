@@ -2,20 +2,25 @@
 
 Two players, one blue player and one red player, alternate turns to place one stone of their color
 on any empty spot on the board. The board contains 10 spots per side.
-The blue player always goes first. The blue player has a choice of either playing against
-another player (on the same device) or against an engine. The winner is the first player to
-create an unbroken chain of 5 stones, vertically, horizontally, or diagonally.
+The blue player always goes first. The blue player, on the same device, can either play against
+another player or against an engine. The winner is the first player to
+create an unbroken chain of exactly 5 stones, vertically, horizontally, or diagonally.
 """
+
 
 __author__ = "Andrew Peng"
 
+
 import flet as ft
 import random
+
 
 # global variables for in-game variables
 player1_name = "player 1"
 player2_name = "player 2"
 is_play_with_bot = False
+# constant to store board size (always 10)
+BOARD_SIZE = 10
 
 
 # class to represent the game board
@@ -33,6 +38,7 @@ class Board(ft.UserControl):
     is_clear = False
 
     # self is implicitly passed, representing who called the function
+
     def create_grid(self, size: int) -> list[ft.Row]:
         """
         Returns a square 2D array representing the game board
@@ -40,6 +46,7 @@ class Board(ft.UserControl):
         >>> create_grid(10)
         # creates a square 2D array
         """
+
         column = []
         row = []
         for i in range(size):
@@ -72,9 +79,10 @@ class Board(ft.UserControl):
         return column
 
     # there must be a constructor called build
+
     def build(self) -> ft.Container:
         """
-        Returns a the board, a ft.Container object containing the 2D array from create_grid()
+        Returns the board, an ft.Container object containing the 2D array from create_grid()
 
         >>> build()
         # returns an ft.Container
@@ -85,7 +93,7 @@ class Board(ft.UserControl):
             alignment=ft.alignment.top_left,
             # content represents the data inside the container
             # puts the 2D array into an ft.Column object
-            content=ft.Column(controls=self.create_grid(10)),
+            content=ft.Column(controls=self.create_grid(BOARD_SIZE)),
             width=770,
             height=530,
             bgcolor=ft.colors.BLUE,
@@ -152,6 +160,7 @@ class Board(ft.UserControl):
 
     # both self and e are implicitly passed
     # e is the event that triggers this action (in this case, a button click)
+
     def make_move(self, e: ft.Event):
         """
         Store the current move and place it on the board with the update_board_move method
@@ -398,7 +407,7 @@ class Board(ft.UserControl):
         return num_in_row == 5
 
 
-def set_player_name(e):
+def set_player_name(e: ft.Event):
     """
     Sets the values of the global player name variables
 
@@ -409,14 +418,14 @@ def set_player_name(e):
 
     global player1_name, player2_name
     if e.control.data == "p1":
-        player1_name = e.control.value
+        player1_name = e.control.value if e.control.value != "" else "player 1"
     else:
-        player2_name = e.control.value
+        player2_name = e.control.value if e.control.value != "" else "player 2"
 
 
-def clear_board(e):
+def clear_board(e: ft.Event):
     """
-    Reset the board and the available_spots array to their intial empty values
+    Reset the board and the available_spots array to their initial empty values
 
     >>> clear_board
     # the board object's buttons revert back to their initial colors and available_spots is empty
@@ -430,7 +439,7 @@ def clear_board(e):
 def create_2player_interface(e):
     """
     Create the appropriate ft.TextField and button for 2-player mode
-    Append the newly created strutures to the board
+    Append the newly created structures to the board
 
     >>> create_2player_interface
     # a new ft.TextField and button are displayed
@@ -534,7 +543,7 @@ def create_welcome_view(page: ft.page) -> list[ft.Column]:
     ]
 
 
-def play_with_bot(e):
+def play_with_bot(e: ft.Event):
     """
     Sets variables to the appropriate state for playing with bot
 
@@ -570,7 +579,7 @@ def clear_all_variables_except_bot():
     Board.is_clear = False
 
 
-def reset_and_return_to_menu(e):
+def reset_and_return_to_menu(e: ft.Event):
     """
     Clears all variables and goes to welcome page
     This function is used when the player clicks the "return to main menu" button on the game page
@@ -586,7 +595,7 @@ def reset_and_return_to_menu(e):
     e.page.go("/")
 
 
-def create_game_view(page: ft.page, player1_name: str, player2_name: str) -> list[ft.Row]:
+def create_game_view(page: ft.Page, player1_name: str, player2_name: str) -> list[ft.Row]:
     """
     Returns an array containing the data (main container is ft.Row) for the game page
 
@@ -660,9 +669,10 @@ def create_game_view(page: ft.page, player1_name: str, player2_name: str) -> lis
     ]
 
 
-def main(page: ft.page):
+def main(page: ft.Page):
     """
     The driver function for the game
+    The ft.Page object is implicitly passed when an app instance is created.
     """
 
     page.title = "Connect 5"
@@ -696,7 +706,7 @@ def main(page: ft.page):
 
         page.update()
 
-    def view_pop(view):
+    def view_pop(view: ft.View):
         """
         Upon entering a new view, pop the previous views from the stack
         Implicitly called
