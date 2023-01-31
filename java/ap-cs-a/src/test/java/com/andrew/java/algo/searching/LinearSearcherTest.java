@@ -9,6 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.andrew.java.algo.array.DebugDuck;
+import com.andrew.java.algo.sorting.CashDonor;
 import com.andrew.java.algo.sorting.Student;
 
 class LinearSearcherTest {
@@ -31,6 +32,13 @@ class LinearSearcherTest {
 			new Student(-1, "a"), new Student(10, "b") };
 	Student[] sortedStudentsArr = { new Student(-1, "a"), new Student(1, "joe"), new Student(3, "john"),
 			new Student(5, "bob"), new Student(10, "b") };
+
+	List<CashDonor> donorsByDonation = new ArrayList<>(Arrays.asList(new CashDonor("steve", -55, -55),
+			new CashDonor("steve", -55, -55), new CashDonor("steve", -55, -55), new CashDonor("steve", -55, -55),
+			new CashDonor("joe", 1, 1), new CashDonor("john", 350, 350), new CashDonor("bob", 500, 500)));
+	List<CashDonor> unsortedDonors = new ArrayList<>(Arrays.asList(new CashDonor("steve", -55, -55),
+			new CashDonor("bob", 500, 500), new CashDonor("steve", -55, -55), new CashDonor("steve", -55, -55),
+			new CashDonor("steve", -55, -55), new CashDonor("joe", 1, 1), new CashDonor("john", 350, 350)));
 
 	@BeforeEach
 	void setUp() throws Exception {
@@ -103,8 +111,29 @@ class LinearSearcherTest {
 	}
 
 	@Test
+	void testSequentialSearchUnsortedV3() {
+		Assertions.assertEquals(0, LinearSearcherV3.linearSearchUnsorted(unsortedStudentsArr, new Student(1, "joe")));
+		Assertions.assertEquals(-1, LinearSearcherV3.linearSearchUnsorted(unsortedStudentsArr, new Student(11, "bb")));
+	}
+
+	@Test
 	void testSequentialSearchSortedV3() {
-		Assertions.assertEquals(1, LinearSearcherV3.linearSearchUnsorted(sortedStudentsArr, new Student(1, "joe")));
-		Assertions.assertEquals(-1, LinearSearcherV3.linearSearchUnsorted(sortedStudentsArr, new Student(11, "bb")));
+		Assertions.assertEquals(1, LinearSearcherV3.linearSearchSorted(sortedStudentsArr, new Student(1, "joe")));
+		Assertions.assertEquals(-1, LinearSearcherV3.linearSearchSorted(sortedStudentsArr, new Student(11, "bb")));
+	}
+
+	@Test
+	void testLinearSearchUnsortedV4() {
+		Assertions.assertEquals(-1,
+				LinearSearcherV4.linearSearchUnsorted(unsortedDonors, new CashDonor("stev", -55, -55)));
+		Assertions.assertEquals(5, LinearSearcherV4.linearSearchUnsorted(unsortedDonors, new CashDonor("joe", 1, 1)));
+	}
+
+	@Test
+	void testLinearSearchSortedV4() {
+		Assertions.assertEquals(0,
+				LinearSearcherV4.linearSearchSorted(donorsByDonation, new CashDonor("steve", -55, -55)));
+		Assertions.assertEquals(5,
+				LinearSearcherV4.linearSearchSorted(donorsByDonation, new CashDonor("john", 350, 350)));
 	}
 }

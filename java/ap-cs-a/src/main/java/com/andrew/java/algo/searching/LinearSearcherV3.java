@@ -17,7 +17,7 @@ public class LinearSearcherV3 {
 
 	public static int linearSearchSorted(Student[] students, Student target) {
 		int arrLength = students.length;
-		if (students[0].compareTo(target) < 0 || target.compareTo(students[arrLength - 1]) > 0) {
+		if (target.compareTo(students[0]) < 0 || target.compareTo(students[arrLength - 1]) > 0) {
 			return -1;
 		}
 		for (int i = 0; i < arrLength; i++) {
