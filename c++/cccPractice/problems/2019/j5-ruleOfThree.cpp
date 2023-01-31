@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <stack>
+#include <algorithm>
 
 char word1[51];
 char word2[51];
@@ -11,7 +12,8 @@ std::vector<std::string> visited;
 std::stack<std::string> positions;
 std::string currentPos;
 int steps;
-int currentSteps = 0;
+int currentSteps;
+std::string tmpPos;
 
 int main()
 {
@@ -27,31 +29,55 @@ int main()
     scanf("%d %s %s", &steps, &word1, &word2);
     std::string startPos = word1;
     std::string endPos = word2;
+    int stepDepth = steps;
 
+    std::stack<std::string> positions;
     positions.push(startPos);
-    while (currentSteps < steps)
-    {
-        currentPos = positions.top();
 
-        if (currentPos == endPos)
+    while (true)
+    {
+        while (currentSteps < steps)
         {
-            while (!positions.empty())
+            currentPos = positions.top();
+            if (currentPos == endPos)
             {
-                printf("%s\n", positions.top().c_str());
-                positions.pop();
+                while (!positions.empty())
+                {
+                    printf("%s\n", positions.top().c_str());
+                    positions.pop();
+                }
+                return 0;
             }
-        }
-        if (std::find(visited.begin(), visited.end(), currentPos) == visited.end())
-        {
+
             for (int i = 0; i < 3; i++)
             {
-                if (currentPos.find(visited[i]) != std::string::npos)
+                if (currentPos.find(start[i]) != std::string::npos)
                 {
-                    int index = currentPos.find(visited[i]);
-                    positions.push(currentPos.substr(0, index) + end[i] + currentPos.substr(index + 1));
+                    int index = currentPos.find(start[i]);
+                    tmpPos = currentPos.substr(0, index) + end[i] + currentPos.substr(index + start[i].size());
+                    if (std::find(visited.begin(), visited.end(), tmpPos) == visited.end())
+                    {
+                        positions.push(tmpPos);
+                        if (positions.top() == endPos)
+                        {
+                            while (!positions.empty())
+                            {
+                                printf("%s\n", positions.top().c_str());
+                                positions.pop();
+                            }
+                            return 0;
+                        }
+                        break;
+                    }
                 }
             }
             visited.push_back(currentPos);
+            currentSteps += 1;
         }
+        positions.pop();
+        currentSteps -= 1;
+        stepDepth -= 1;
+        visited.erase(visited.begin() + stepDepth);
+        visited.push_back(tmpPos);
     }
 }
