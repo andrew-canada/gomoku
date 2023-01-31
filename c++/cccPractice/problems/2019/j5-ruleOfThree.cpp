@@ -1,19 +1,21 @@
 #include <stdio.h>
 #include <string>
 #include <vector>
-#include <stack>
+#include <deque>
 #include <algorithm>
+#include <utility>
 
 char word1[51];
 char word2[51];
 std::string start[3];
 std::string end[3];
 std::vector<std::string> visited;
-std::stack<std::string> positions;
+std::deque<std::pair<int, int>> nums;
 std::string currentPos;
 int steps;
 int currentSteps;
 std::string tmpPos;
+bool first = true;
 
 int main()
 {
@@ -30,21 +32,39 @@ int main()
     std::string startPos = word1;
     std::string endPos = word2;
     int stepDepth = steps;
+    // int stepDepth = 0;
 
-    std::stack<std::string> positions;
-    positions.push(startPos);
+    std::deque<std::string> positions;
 
     while (true)
     {
         while (currentSteps < steps)
         {
-            currentPos = positions.top();
+            stepDepth = positions.size();
+            if (first)
+            {
+                currentPos = startPos;
+            }
+            else
+            {
+                // if (tmpPos == visited.back())
+                // {
+                //     currentPos = startPos;
+                // }
+                // else
+                // {
+                currentPos = positions.back();
+                //}
+            }
+            first = false;
             if (currentPos == endPos)
             {
+                // positions.erase(positions.begin());
                 while (!positions.empty())
                 {
-                    printf("%s\n", positions.top().c_str());
-                    positions.pop();
+                    printf("%d %d %s\n", nums.front().first, nums.front().second, positions.front().c_str());
+                    positions.pop_front();
+                    nums.pop_front();
                 }
                 return 0;
             }
@@ -55,15 +75,21 @@ int main()
                 {
                     int index = currentPos.find(start[i]);
                     tmpPos = currentPos.substr(0, index) + end[i] + currentPos.substr(index + start[i].size());
-                    if (std::find(visited.begin(), visited.end(), tmpPos) == visited.end())
+                    if ((visited.size() == 0) || (tmpPos == visited.at(0)) || (std::find(visited.begin(), visited.end(), tmpPos) == visited.end()))
                     {
-                        positions.push(tmpPos);
-                        if (positions.top() == endPos)
+                        currentSteps += 1;
+                        positions.push_back(tmpPos);
+                        // visited.push_back(currentPos);
+                        visited.push_back(currentPos);
+                        nums.push_back(std::make_pair(i + 1, index + 1));
+                        if (positions.back() == endPos)
                         {
+                            // positions.erase(positions.begin());
                             while (!positions.empty())
                             {
-                                printf("%s\n", positions.top().c_str());
-                                positions.pop();
+                                printf("%d %d %s\n", nums.front().first, nums.front().second, positions.front().c_str());
+                                positions.pop_front();
+                                nums.pop_front();
                             }
                             return 0;
                         }
@@ -71,13 +97,15 @@ int main()
                     }
                 }
             }
-            visited.push_back(currentPos);
-            currentSteps += 1;
         }
-        positions.pop();
+        positions.pop_back();
+        nums.pop_back();
         currentSteps -= 1;
+        // visited.erase(visited.begin() + stepDepth);
+        // stepDepth += 1;
+        // visited.erase(visited.begin() + stepDepth);
+        visited.erase(visited.end());
         stepDepth -= 1;
-        visited.erase(visited.begin() + stepDepth);
         visited.push_back(tmpPos);
     }
 }
