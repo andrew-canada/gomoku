@@ -63,6 +63,7 @@ int main()
             if (currentPos == endPos)
             {
                 // positions.erase(positions.begin());
+                positions.pop_front();
                 while (!positions.empty())
                 {
                     printf("%d %d %s\n", nums.front().first, nums.front().second, positions.front().c_str());
@@ -89,6 +90,7 @@ int main()
                         if (positions.back() == endPos)
                         {
                             // positions.erase(positions.begin());
+                            positions.pop_front();
                             while (!positions.empty())
                             {
                                 printf("%d %d %s\n", nums.front().first, nums.front().second, positions.front().c_str());
@@ -114,21 +116,14 @@ int main()
                 }
             }
         }
-        printf("%d\n", numPushed);
-        for (int i = 0; i < visited.size(); i++)
-        {
-            printf("%s ", visited[i].c_str());
-        }
-        printf("\n");
-        for (int i = 0; i < positions.size(); i++)
-        {
-            printf("%s ", positions[i].c_str());
-        }
-        printf("\n");
 
-        positions.pop_back();
-        nums.pop_back();
+        if (positions.size() > steps)
+        {
+            positions.pop_back();
+            nums.pop_back();
+        }
         currentSteps -= 1;
+
         // visited.erase(visited.begin() + stepDepth);
         // stepDepth += 1;
         if (!notFound)
@@ -141,18 +136,6 @@ int main()
         {
             positions.erase(positions.begin() + numPushed);
         }
-
-        printf("%d\n", numPushed);
-        for (int i = 0; i < visited.size(); i++)
-        {
-            printf("%s ", visited[i].c_str());
-        }
-        printf("\n");
-        for (int i = 0; i < positions.size(); i++)
-        {
-            printf("%s ", positions[i].c_str());
-        }
-        printf("\n");
 
         notFound = false;
         numPushed = 0;
