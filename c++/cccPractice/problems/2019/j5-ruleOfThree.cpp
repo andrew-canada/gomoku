@@ -16,6 +16,8 @@ int steps;
 int currentSteps;
 std::string tmpPos;
 bool first = true;
+int numPushed = 0;
+bool notFound;
 
 int main()
 {
@@ -35,6 +37,7 @@ int main()
     // int stepDepth = 0;
 
     std::deque<std::string> positions;
+    positions.push_back(startPos);
 
     while (true)
     {
@@ -75,8 +78,9 @@ int main()
                 {
                     int index = currentPos.find(start[i]);
                     tmpPos = currentPos.substr(0, index) + end[i] + currentPos.substr(index + start[i].size());
-                    if ((visited.size() == 0) || (tmpPos == visited.at(0)) || (std::find(visited.begin(), visited.end(), tmpPos) == visited.end()))
+                    if ((visited.size() == 0) || /*(tmpPos == visited.at(0)) ||*/ (std::find(visited.begin(), visited.end(), tmpPos) == visited.end()))
                     {
+                        numPushed += 1;
                         currentSteps += 1;
                         positions.push_back(tmpPos);
                         // visited.push_back(currentPos);
@@ -96,16 +100,61 @@ int main()
                         break;
                     }
                 }
+                if (i == 2)
+                {
+                    numPushed += 1;
+                    currentSteps += 1;
+                    positions.push_back(tmpPos);
+                    // visited.push_back(currentPos);
+                    visited.push_back(currentPos);
+                    // dummy value
+                    nums.push_back(std::make_pair(1, 1));
+                    notFound = true;
+                    break;
+                }
             }
         }
+        printf("%d\n", numPushed);
+        for (int i = 0; i < visited.size(); i++)
+        {
+            printf("%s ", visited[i].c_str());
+        }
+        printf("\n");
+        for (int i = 0; i < positions.size(); i++)
+        {
+            printf("%s ", positions[i].c_str());
+        }
+        printf("\n");
+
         positions.pop_back();
         nums.pop_back();
         currentSteps -= 1;
         // visited.erase(visited.begin() + stepDepth);
         // stepDepth += 1;
-        // visited.erase(visited.begin() + stepDepth);
-        visited.erase(visited.end());
+        if (!notFound)
+        {
+            visited.erase(visited.end());
+        }
         stepDepth -= 1;
         visited.push_back(tmpPos);
+        if (numPushed < positions.size() && notFound)
+        {
+            positions.erase(positions.begin() + numPushed);
+        }
+
+        printf("%d\n", numPushed);
+        for (int i = 0; i < visited.size(); i++)
+        {
+            printf("%s ", visited[i].c_str());
+        }
+        printf("\n");
+        for (int i = 0; i < positions.size(); i++)
+        {
+            printf("%s ", positions[i].c_str());
+        }
+        printf("\n");
+
+        notFound = false;
+        numPushed = 0;
     }
 }

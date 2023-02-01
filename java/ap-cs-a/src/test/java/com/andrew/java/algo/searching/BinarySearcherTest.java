@@ -102,4 +102,20 @@ class BinarySearcherTest {
 		Assertions.assertEquals(-1, BinarySearcherV3.searchIteratively(sortedStudentsArr, new Student(11, "bb")));
 	}
 
+	@Test
+	void testBinarySearchRecursiveV4() {
+		Assertions.assertEquals(6,
+				BinarySearcherV4.binarySearchRecursively(donorsByDonation, new CashDonor("bob", 500, 500)));
+		Assertions.assertEquals(4,
+				BinarySearcherV4.binarySearchRecursively(donorsByDonation, new CashDonor("joe", 1, 1)));
+	}
+
+	@Test
+	void testBinarySearchIterativeV4() {
+		Assertions.assertEquals(6,
+				BinarySearcherV4.binarySearchIteratively(donorsByDonation, new CashDonor("bob", 500, 500)));
+		Assertions.assertEquals(4,
+				BinarySearcherV4.binarySearchIteratively(donorsByDonation, new CashDonor("joe", 1, 1)));
+	}
+
 }
