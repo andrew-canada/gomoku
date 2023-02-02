@@ -14,5 +14,23 @@ int main()
         {
             scanf("%d", &lengths[j]);
         }
+
+        int set;
+        for (set = 0; set < (1 << bars); set++)
+        {
+            int sum = 0;
+            for (int bar = 0; bar < bars; bar++)
+            {
+                if (set & (1 << bar))
+                {
+                    sum += lengths[bar];
+                }
+            }
+            if (sum == l)
+            {
+                break;
+            }
+        }
+        printf(set < (1 << bars) ? "YES\n" : "NO\n");
     }
 }
