@@ -5,22 +5,28 @@
 #include <algorithm>
 #include <utility>
 
+#define LOCAL
+
 char word1[51];
 char word2[51];
 std::string start[3];
 std::string end[3];
 std::vector<std::string> visited;
 std::deque<std::pair<int, int>> nums;
-std::string currentPos;
+std::string currentSequence;
 int steps;
 int currentSteps;
-std::string tmpPos;
-bool first = true;
+std::string tempSequence;
 int numPushed = 0;
 bool notFound;
 
 int main()
 {
+#ifdef LOCAL:
+    freopen("in.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+#endif
+
     for (int i = 0; i < 3; i++)
     {
         scanf("%s %s", &word1, &word2);
@@ -31,43 +37,26 @@ int main()
     }
 
     scanf("%d %s %s", &steps, &word1, &word2);
-    std::string startPos = word1;
-    std::string endPos = word2;
+    std::string startSequence = word1;
+    std::string endSequence = word2;
     int stepDepth = steps;
-    // int stepDepth = 0;
 
-    std::deque<std::string> positions;
-    positions.push_back(startPos);
+    std::deque<std::string> sequenceQueue;
+    sequenceQueue.push_back(startSequence);
 
     while (true)
     {
         while (currentSteps < steps)
         {
-            stepDepth = positions.size();
-            if (first)
+            currentSequence = sequenceQueue.back();
+
+            if (currentSequence == endSequence)
             {
-                currentPos = startPos;
-            }
-            else
-            {
-                // if (tmpPos == visited.back())
-                // {
-                //     currentPos = startPos;
-                // }
-                // else
-                // {
-                currentPos = positions.back();
-                //}
-            }
-            first = false;
-            if (currentPos == endPos)
-            {
-                // positions.erase(positions.begin());
-                positions.pop_front();
-                while (!positions.empty())
+                sequenceQueue.pop_front();
+                while (!sequenceQueue.empty())
                 {
-                    printf("%d %d %s\n", nums.front().first, nums.front().second, positions.front().c_str());
-                    positions.pop_front();
+                    printf("%d %d %s\n", nums.front().first, nums.front().second, sequenceQueue.front().c_str());
+                    sequenceQueue.pop_front();
                     nums.pop_front();
                 }
                 return 0;
@@ -75,26 +64,24 @@ int main()
 
             for (int i = 0; i < 3; i++)
             {
-                if (currentPos.find(start[i]) != std::string::npos)
+                if (currentSequence.find(start[i]) != std::string::npos)
                 {
-                    int index = currentPos.find(start[i]);
-                    tmpPos = currentPos.substr(0, index) + end[i] + currentPos.substr(index + start[i].size());
-                    if ((visited.size() == 0) || /*(tmpPos == visited.at(0)) ||*/ (std::find(visited.begin(), visited.end(), tmpPos) == visited.end()))
+                    int index = currentSequence.find(start[i]);
+                    tempSequence = currentSequence.substr(0, index) + end[i] + currentSequence.substr(index + start[i].size());
+                    if ((std::find(visited.begin(), visited.end(), tempSequence) == visited.end()))
                     {
                         numPushed += 1;
                         currentSteps += 1;
-                        positions.push_back(tmpPos);
-                        // visited.push_back(currentPos);
-                        visited.push_back(currentPos);
+                        sequenceQueue.push_back(tempSequence);
+                        visited.push_back(currentSequence);
                         nums.push_back(std::make_pair(i + 1, index + 1));
-                        if (positions.back() == endPos)
+                        if (sequenceQueue.back() == endSequence)
                         {
-                            // positions.erase(positions.begin());
-                            positions.pop_front();
-                            while (!positions.empty())
+                            sequenceQueue.pop_front();
+                            while (!sequenceQueue.empty())
                             {
-                                printf("%d %d %s\n", nums.front().first, nums.front().second, positions.front().c_str());
-                                positions.pop_front();
+                                printf("%d %d %s\n", nums.front().first, nums.front().second, sequenceQueue.front().c_str());
+                                sequenceQueue.pop_front();
                                 nums.pop_front();
                             }
                             return 0;
@@ -106,9 +93,8 @@ int main()
                 {
                     numPushed += 1;
                     currentSteps += 1;
-                    positions.push_back(tmpPos);
-                    // visited.push_back(currentPos);
-                    visited.push_back(currentPos);
+                    sequenceQueue.push_back(tempSequence);
+                    visited.push_back(currentSequence);
                     // dummy value
                     nums.push_back(std::make_pair(1, 1));
                     notFound = true;
@@ -117,24 +103,21 @@ int main()
             }
         }
 
-        if (positions.size() > steps)
+        if (sequenceQueue.size() > steps)
         {
-            positions.pop_back();
+            sequenceQueue.pop_back();
             nums.pop_back();
         }
         currentSteps -= 1;
 
-        // visited.erase(visited.begin() + stepDepth);
-        // stepDepth += 1;
         if (!notFound)
         {
             visited.erase(visited.end());
         }
-        stepDepth -= 1;
-        visited.push_back(tmpPos);
-        if (numPushed < positions.size() && notFound)
+        visited.push_back(tempSequence);
+        if (numPushed < sequenceQueue.size() && notFound)
         {
-            positions.erase(positions.begin() + numPushed);
+            sequenceQueue.erase(sequenceQueue.begin() + numPushed);
         }
 
         notFound = false;
