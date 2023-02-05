@@ -77,4 +77,13 @@ class InsertionSorterTest {
 		sortResult.stream().forEach(System.out::println);
 	}
 
+	@Test
+	void testInsertionSortV5() {
+		List<CashDonor> sortResult = InsertionSorterV5.insertionSort(unsortedDonors);
+
+		Assertions.assertEquals(donorsByDonation, sortResult);
+
+		sortResult.stream().forEach(System.out::println);
+	}
+
 }
