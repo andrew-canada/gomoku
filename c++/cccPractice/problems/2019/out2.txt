@@ -1,0 +1,3822 @@
+1000000
+current seq: A | 2 0 A BBA
+tempseq: BBA
+never visited
+1000002
+current seq: BBA | 0 0 B AA
+tempseq: AABA
+never visited
+1000004
+current seq: AABA | 0 2 B AA
+tempseq: AAAAA
+never visited
+1000006
+current seq: AAAAA | 2 0 A BBA
+tempseq: BBAAAAA
+never visited
+1000008
+current seq: BBAAAAA | 0 0 B AA
+tempseq: AABAAAAA
+never visited
+1000010
+current seq: AABAAAAA | 0 2 B AA
+tempseq: AAAAAAAAA
+never visited
+1000012
+current seq: AAAAAAAAA | 2 0 A BBA
+tempseq: BBAAAAAAAAA
+never visited
+1000014
+current seq: BBAAAAAAAAA | 0 0 B AA
+tempseq: AABAAAAAAAAA
+never visited
+1000016
+current seq: AABAAAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAAAA
+never visited
+1000018
+current seq: AAAAAAAAAAAAA | 2 0 A BBA
+tempseq: BBAAAAAAAAAAAAA
+never visited
+1000020
+1000021
+current seq: AAAAAAAAAAAAA | 2 0 A BBA
+tempseq: BBAAAAAAAAAAAAA
+1000022
+current seq: AABAAAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AABAAAAAAAAA | 1 1 ABA B
+tempseq: ABAAAAAAAA
+never visited
+1000024
+current seq: ABAAAAAAAA | 0 1 B AA
+tempseq: AAAAAAAAAAA
+never visited
+1000026
+1000027
+current seq: ABAAAAAAAA | 0 1 B AA
+tempseq: AAAAAAAAAAA
+current seq: ABAAAAAAAA | 1 0 ABA B
+tempseq: BAAAAAAA
+never visited
+1000029
+1000030
+current seq: ABAAAAAAAA | 0 1 B AA
+tempseq: AAAAAAAAAAA
+current seq: ABAAAAAAAA | 1 0 ABA B
+tempseq: BAAAAAAA
+current seq: ABAAAAAAAA | 2 0 A BBA
+tempseq: BBABAAAAAAAA
+never visited
+1000032
+1000033
+current seq: ABAAAAAAAA | 0 1 B AA
+tempseq: AAAAAAAAAAA
+current seq: ABAAAAAAAA | 1 0 ABA B
+tempseq: BAAAAAAA
+current seq: ABAAAAAAAA | 2 0 A BBA
+tempseq: BBABAAAAAAAA
+1000034
+current seq: AABAAAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AABAAAAAAAAA | 1 1 ABA B
+tempseq: ABAAAAAAAA
+current seq: AABAAAAAAAAA | 2 0 A BBA
+tempseq: BBAABAAAAAAAAA
+never visited
+1000036
+current seq: BBAABAAAAAAAAA | 0 0 B AA
+tempseq: AABAABAAAAAAAAA
+never visited
+1000038
+1000039
+current seq: BBAABAAAAAAAAA | 0 0 B AA
+tempseq: AABAABAAAAAAAAA
+current seq: BBAABAAAAAAAAA | 1 3 ABA B
+tempseq: BBABAAAAAAAA
+current seq: BBAABAAAAAAAAA | 2 2 A BBA
+tempseq: BBBBAABAAAAAAAAA
+never visited
+1000041
+1000042
+current seq: BBAABAAAAAAAAA | 0 0 B AA
+tempseq: AABAABAAAAAAAAA
+current seq: BBAABAAAAAAAAA | 1 3 ABA B
+tempseq: BBABAAAAAAAA
+current seq: BBAABAAAAAAAAA | 2 2 A BBA
+tempseq: BBBBAABAAAAAAAAA
+1000043
+current seq: AABAAAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AABAAAAAAAAA | 1 1 ABA B
+tempseq: ABAAAAAAAA
+current seq: AABAAAAAAAAA | 2 0 A BBA
+tempseq: BBAABAAAAAAAAA
+1000044
+current seq: BBAAAAAAAAA | 0 0 B AA
+tempseq: AABAAAAAAAAA
+current seq: BBAAAAAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAAAAAA
+never visited
+1000046
+current seq: BBBBAAAAAAAAA | 0 0 B AA
+tempseq: AABBBAAAAAAAAA
+never visited
+1000048
+current seq: AABBBAAAAAAAAA | 0 2 B AA
+tempseq: AAAABBAAAAAAAAA
+never visited
+1000050
+1000051
+current seq: AABBBAAAAAAAAA | 0 2 B AA
+tempseq: AAAABBAAAAAAAAA
+current seq: AABBBAAAAAAAAA | 2 0 A BBA
+tempseq: BBAABBBAAAAAAAAA
+never visited
+1000053
+1000054
+current seq: AABBBAAAAAAAAA | 0 2 B AA
+tempseq: AAAABBAAAAAAAAA
+current seq: AABBBAAAAAAAAA | 2 0 A BBA
+tempseq: BBAABBBAAAAAAAAA
+1000055
+current seq: BBBBAAAAAAAAA | 0 0 B AA
+tempseq: AABBBAAAAAAAAA
+current seq: BBBBAAAAAAAAA | 2 4 A BBA
+tempseq: BBBBBBAAAAAAAAA
+never visited
+1000057
+current seq: BBBBBBAAAAAAAAA | 0 0 B AA
+tempseq: AABBBBBAAAAAAAAA
+never visited
+1000059
+1000060
+current seq: BBBBBBAAAAAAAAA | 0 0 B AA
+tempseq: AABBBBBAAAAAAAAA
+current seq: BBBBBBAAAAAAAAA | 2 6 A BBA
+tempseq: BBBBBBBBAAAAAAAAA
+never visited
+1000062
+1000063
+current seq: BBBBBBAAAAAAAAA | 0 0 B AA
+tempseq: AABBBBBAAAAAAAAA
+current seq: BBBBBBAAAAAAAAA | 2 6 A BBA
+tempseq: BBBBBBBBAAAAAAAAA
+1000064
+current seq: BBBBAAAAAAAAA | 0 0 B AA
+tempseq: AABBBAAAAAAAAA
+current seq: BBBBAAAAAAAAA | 2 4 A BBA
+tempseq: BBBBBBAAAAAAAAA
+1000065
+current seq: BBAAAAAAAAA | 0 0 B AA
+tempseq: AABAAAAAAAAA
+current seq: BBAAAAAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAAAAAA
+1000066
+current seq: AAAAAAAAA | 2 0 A BBA
+tempseq: BBAAAAAAAAA
+1000067
+current seq: AABAAAAA | 0 2 B AA
+tempseq: AAAAAAAAA
+current seq: AABAAAAA | 1 1 ABA B
+tempseq: ABAAAA
+never visited
+1000069
+current seq: ABAAAA | 0 1 B AA
+tempseq: AAAAAAA
+never visited
+1000071
+current seq: AAAAAAA | 2 0 A BBA
+tempseq: BBAAAAAAA
+never visited
+1000073
+current seq: BBAAAAAAA | 0 0 B AA
+tempseq: AABAAAAAAA
+never visited
+1000075
+current seq: AABAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAA
+current seq: AABAAAAAAA | 1 1 ABA B
+tempseq: ABAAAAAA
+never visited
+1000077
+1000078
+current seq: AABAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAA
+current seq: AABAAAAAAA | 1 1 ABA B
+tempseq: ABAAAAAA
+current seq: AABAAAAAAA | 2 0 A BBA
+tempseq: BBAABAAAAAAA
+never visited
+1000080
+1000081
+current seq: AABAAAAAAA | 0 2 B AA
+tempseq: AAAAAAAAAAA
+current seq: AABAAAAAAA | 1 1 ABA B
+tempseq: ABAAAAAA
+current seq: AABAAAAAAA | 2 0 A BBA
+tempseq: BBAABAAAAAAA
+1000082
+current seq: BBAAAAAAA | 0 0 B AA
+tempseq: AABAAAAAAA
+current seq: BBAAAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAAAA
+never visited
+1000084
+current seq: BBBBAAAAAAA | 0 0 B AA
+tempseq: AABBBAAAAAAA
+never visited
+1000086
+1000087
+current seq: BBBBAAAAAAA | 0 0 B AA
+tempseq: AABBBAAAAAAA
+current seq: BBBBAAAAAAA | 2 4 A BBA
+tempseq: BBBBBBAAAAAAA
+never visited
+1000089
+1000090
+current seq: BBBBAAAAAAA | 0 0 B AA
+tempseq: AABBBAAAAAAA
+current seq: BBBBAAAAAAA | 2 4 A BBA
+tempseq: BBBBBBAAAAAAA
+1000091
+current seq: BBAAAAAAA | 0 0 B AA
+tempseq: AABAAAAAAA
+current seq: BBAAAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAAAA
+1000092
+current seq: AAAAAAA | 2 0 A BBA
+tempseq: BBAAAAAAA
+1000093
+current seq: ABAAAA | 0 1 B AA
+tempseq: AAAAAAA
+current seq: ABAAAA | 1 0 ABA B
+tempseq: BAAA
+never visited
+1000095
+current seq: BAAA | 0 0 B AA
+tempseq: AAAAA
+current seq: BAAA | 2 1 A BBA
+tempseq: BBBAAA
+never visited
+1000097
+current seq: BBBAAA | 0 0 B AA
+tempseq: AABBAAA
+never visited
+1000099
+current seq: AABBAAA | 0 2 B AA
+tempseq: AAAABAAA
+never visited
+1000101
+1000102
+current seq: AABBAAA | 0 2 B AA
+tempseq: AAAABAAA
+current seq: AABBAAA | 2 0 A BBA
+tempseq: BBAABBAAA
+never visited
+1000104
+1000105
+current seq: AABBAAA | 0 2 B AA
+tempseq: AAAABAAA
+current seq: AABBAAA | 2 0 A BBA
+tempseq: BBAABBAAA
+1000106
+current seq: BBBAAA | 0 0 B AA
+tempseq: AABBAAA
+current seq: BBBAAA | 2 3 A BBA
+tempseq: BBBBBAAA
+never visited
+1000108
+current seq: BBBBBAAA | 0 0 B AA
+tempseq: AABBBBAAA
+never visited
+1000110
+1000111
+current seq: BBBBBAAA | 0 0 B AA
+tempseq: AABBBBAAA
+current seq: BBBBBAAA | 2 5 A BBA
+tempseq: BBBBBBBAAA
+never visited
+1000113
+1000114
+current seq: BBBBBAAA | 0 0 B AA
+tempseq: AABBBBAAA
+current seq: BBBBBAAA | 2 5 A BBA
+tempseq: BBBBBBBAAA
+1000115
+current seq: BBBAAA | 0 0 B AA
+tempseq: AABBAAA
+current seq: BBBAAA | 2 3 A BBA
+tempseq: BBBBBAAA
+1000116
+current seq: BAAA | 0 0 B AA
+tempseq: AAAAA
+current seq: BAAA | 2 1 A BBA
+tempseq: BBBAAA
+1000117
+current seq: ABAAAA | 0 1 B AA
+tempseq: AAAAAAA
+current seq: ABAAAA | 1 0 ABA B
+tempseq: BAAA
+current seq: ABAAAA | 2 0 A BBA
+tempseq: BBABAAAA
+never visited
+1000119
+current seq: BBABAAAA | 0 0 B AA
+tempseq: AABABAAAA
+never visited
+1000121
+current seq: AABABAAAA | 0 2 B AA
+tempseq: AAAAABAAAA
+never visited
+1000123
+current seq: AAAAABAAAA | 0 5 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAABAAAA | 1 4 ABA B
+tempseq: AAAABAAA
+current seq: AAAAABAAAA | 2 0 A BBA
+tempseq: BBAAAAABAAAA
+never visited
+1000125
+1000126
+current seq: AAAAABAAAA | 0 5 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAABAAAA | 1 4 ABA B
+tempseq: AAAABAAA
+current seq: AAAAABAAAA | 2 0 A BBA
+tempseq: BBAAAAABAAAA
+1000127
+current seq: AABABAAAA | 0 2 B AA
+tempseq: AAAAABAAAA
+current seq: AABABAAAA | 1 1 ABA B
+tempseq: ABBAAAA
+never visited
+1000129
+current seq: ABBAAAA | 0 1 B AA
+tempseq: AAABAAAA
+never visited
+1000131
+1000132
+current seq: ABBAAAA | 0 1 B AA
+tempseq: AAABAAAA
+current seq: ABBAAAA | 2 0 A BBA
+tempseq: BBABBAAAA
+never visited
+1000134
+1000135
+current seq: ABBAAAA | 0 1 B AA
+tempseq: AAABAAAA
+current seq: ABBAAAA | 2 0 A BBA
+tempseq: BBABBAAAA
+1000136
+current seq: AABABAAAA | 0 2 B AA
+tempseq: AAAAABAAAA
+current seq: AABABAAAA | 1 1 ABA B
+tempseq: ABBAAAA
+current seq: AABABAAAA | 2 0 A BBA
+tempseq: BBAABABAAAA
+never visited
+1000138
+current seq: BBAABABAAAA | 0 0 B AA
+tempseq: AABAABABAAAA
+never visited
+1000140
+1000141
+current seq: BBAABABAAAA | 0 0 B AA
+tempseq: AABAABABAAAA
+current seq: BBAABABAAAA | 1 3 ABA B
+tempseq: BBABBAAAA
+current seq: BBAABABAAAA | 2 2 A BBA
+tempseq: BBBBAABABAAAA
+never visited
+1000143
+1000144
+current seq: BBAABABAAAA | 0 0 B AA
+tempseq: AABAABABAAAA
+current seq: BBAABABAAAA | 1 3 ABA B
+tempseq: BBABBAAAA
+current seq: BBAABABAAAA | 2 2 A BBA
+tempseq: BBBBAABABAAAA
+1000145
+current seq: AABABAAAA | 0 2 B AA
+tempseq: AAAAABAAAA
+current seq: AABABAAAA | 1 1 ABA B
+tempseq: ABBAAAA
+current seq: AABABAAAA | 2 0 A BBA
+tempseq: BBAABABAAAA
+1000146
+current seq: BBABAAAA | 0 0 B AA
+tempseq: AABABAAAA
+current seq: BBABAAAA | 1 2 ABA B
+tempseq: BBBAAA
+current seq: BBABAAAA | 2 2 A BBA
+tempseq: BBBBABAAAA
+never visited
+1000148
+current seq: BBBBABAAAA | 0 0 B AA
+tempseq: AABBBABAAAA
+never visited
+1000150
+current seq: AABBBABAAAA | 0 2 B AA
+tempseq: AAAABBABAAAA
+never visited
+1000152
+1000153
+current seq: AABBBABAAAA | 0 2 B AA
+tempseq: AAAABBABAAAA
+current seq: AABBBABAAAA | 1 5 ABA B
+tempseq: AABBBBAAA
+current seq: AABBBABAAAA | 2 0 A BBA
+tempseq: BBAABBBABAAAA
+never visited
+1000155
+1000156
+current seq: AABBBABAAAA | 0 2 B AA
+tempseq: AAAABBABAAAA
+current seq: AABBBABAAAA | 1 5 ABA B
+tempseq: AABBBBAAA
+current seq: AABBBABAAAA | 2 0 A BBA
+tempseq: BBAABBBABAAAA
+1000157
+current seq: BBBBABAAAA | 0 0 B AA
+tempseq: AABBBABAAAA
+current seq: BBBBABAAAA | 1 4 ABA B
+tempseq: BBBBBAAA
+current seq: BBBBABAAAA | 2 4 A BBA
+tempseq: BBBBBBABAAAA
+never visited
+1000159
+current seq: BBBBBBABAAAA | 0 0 B AA
+tempseq: AABBBBBABAAAA
+never visited
+1000161
+1000162
+current seq: BBBBBBABAAAA | 0 0 B AA
+tempseq: AABBBBBABAAAA
+current seq: BBBBBBABAAAA | 1 6 ABA B
+tempseq: BBBBBBBAAA
+current seq: BBBBBBABAAAA | 2 6 A BBA
+tempseq: BBBBBBBBABAAAA
+never visited
+1000164
+1000165
+current seq: BBBBBBABAAAA | 0 0 B AA
+tempseq: AABBBBBABAAAA
+current seq: BBBBBBABAAAA | 1 6 ABA B
+tempseq: BBBBBBBAAA
+current seq: BBBBBBABAAAA | 2 6 A BBA
+tempseq: BBBBBBBBABAAAA
+1000166
+current seq: BBBBABAAAA | 0 0 B AA
+tempseq: AABBBABAAAA
+current seq: BBBBABAAAA | 1 4 ABA B
+tempseq: BBBBBAAA
+current seq: BBBBABAAAA | 2 4 A BBA
+tempseq: BBBBBBABAAAA
+1000167
+current seq: BBABAAAA | 0 0 B AA
+tempseq: AABABAAAA
+current seq: BBABAAAA | 1 2 ABA B
+tempseq: BBBAAA
+current seq: BBABAAAA | 2 2 A BBA
+tempseq: BBBBABAAAA
+1000168
+current seq: ABAAAA | 0 1 B AA
+tempseq: AAAAAAA
+current seq: ABAAAA | 1 0 ABA B
+tempseq: BAAA
+current seq: ABAAAA | 2 0 A BBA
+tempseq: BBABAAAA
+1000169
+current seq: AABAAAAA | 0 2 B AA
+tempseq: AAAAAAAAA
+current seq: AABAAAAA | 1 1 ABA B
+tempseq: ABAAAA
+current seq: AABAAAAA | 2 0 A BBA
+tempseq: BBAABAAAAA
+never visited
+1000171
+current seq: BBAABAAAAA | 0 0 B AA
+tempseq: AABAABAAAAA
+never visited
+1000173
+current seq: AABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAAAAA
+never visited
+1000175
+current seq: AAAAAABAAAAA | 0 6 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AAAAAABAAAAA | 1 5 ABA B
+tempseq: AAAAABAAAA
+current seq: AAAAAABAAAAA | 2 0 A BBA
+tempseq: BBAAAAAABAAAAA
+never visited
+1000177
+current seq: BBAAAAAABAAAAA | 0 0 B AA
+tempseq: AABAAAAAABAAAAA
+never visited
+1000179
+1000180
+current seq: BBAAAAAABAAAAA | 0 0 B AA
+tempseq: AABAAAAAABAAAAA
+current seq: BBAAAAAABAAAAA | 1 7 ABA B
+tempseq: BBAAAAABAAAA
+current seq: BBAAAAAABAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAAABAAAAA
+never visited
+1000182
+1000183
+current seq: BBAAAAAABAAAAA | 0 0 B AA
+tempseq: AABAAAAAABAAAAA
+current seq: BBAAAAAABAAAAA | 1 7 ABA B
+tempseq: BBAAAAABAAAA
+current seq: BBAAAAAABAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAAABAAAAA
+1000184
+current seq: AAAAAABAAAAA | 0 6 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AAAAAABAAAAA | 1 5 ABA B
+tempseq: AAAAABAAAA
+current seq: AAAAAABAAAAA | 2 0 A BBA
+tempseq: BBAAAAAABAAAAA
+1000185
+current seq: AABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAAAAA
+current seq: AABAABAAAAA | 1 1 ABA B
+tempseq: ABABAAAAA
+never visited
+1000187
+current seq: ABABAAAAA | 0 1 B AA
+tempseq: AAAABAAAAA
+never visited
+1000189
+current seq: AAAABAAAAA | 0 4 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAABAAAAA | 1 3 ABA B
+tempseq: AAABAAAA
+current seq: AAAABAAAAA | 2 0 A BBA
+tempseq: BBAAAABAAAAA
+never visited
+1000191
+1000192
+current seq: AAAABAAAAA | 0 4 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAABAAAAA | 1 3 ABA B
+tempseq: AAABAAAA
+current seq: AAAABAAAAA | 2 0 A BBA
+tempseq: BBAAAABAAAAA
+1000193
+current seq: ABABAAAAA | 0 1 B AA
+tempseq: AAAABAAAAA
+current seq: ABABAAAAA | 1 0 ABA B
+tempseq: BBAAAAA
+current seq: ABABAAAAA | 2 0 A BBA
+tempseq: BBABABAAAAA
+never visited
+1000195
+current seq: BBABABAAAAA | 0 0 B AA
+tempseq: AABABABAAAAA
+never visited
+1000197
+1000198
+current seq: BBABABAAAAA | 0 0 B AA
+tempseq: AABABABAAAAA
+current seq: BBABABAAAAA | 1 2 ABA B
+tempseq: BBBBAAAAA
+never visited
+1000200
+1000201
+current seq: BBABABAAAAA | 0 0 B AA
+tempseq: AABABABAAAAA
+current seq: BBABABAAAAA | 1 2 ABA B
+tempseq: BBBBAAAAA
+current seq: BBABABAAAAA | 2 2 A BBA
+tempseq: BBBBABABAAAAA
+never visited
+1000203
+1000204
+current seq: BBABABAAAAA | 0 0 B AA
+tempseq: AABABABAAAAA
+current seq: BBABABAAAAA | 1 2 ABA B
+tempseq: BBBBAAAAA
+current seq: BBABABAAAAA | 2 2 A BBA
+tempseq: BBBBABABAAAAA
+1000205
+current seq: ABABAAAAA | 0 1 B AA
+tempseq: AAAABAAAAA
+current seq: ABABAAAAA | 1 0 ABA B
+tempseq: BBAAAAA
+current seq: ABABAAAAA | 2 0 A BBA
+tempseq: BBABABAAAAA
+1000206
+current seq: AABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAAAAA
+current seq: AABAABAAAAA | 1 1 ABA B
+tempseq: ABABAAAAA
+current seq: AABAABAAAAA | 2 0 A BBA
+tempseq: BBAABAABAAAAA
+never visited
+1000208
+current seq: BBAABAABAAAAA | 0 0 B AA
+tempseq: AABAABAABAAAAA
+never visited
+1000210
+current seq: AABAABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAABAAAAA
+never visited
+1000212
+1000213
+current seq: AABAABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAABAAAAA
+current seq: AABAABAABAAAAA | 1 1 ABA B
+tempseq: ABABAABAAAAA
+never visited
+1000215
+1000216
+current seq: AABAABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAABAAAAA
+current seq: AABAABAABAAAAA | 1 1 ABA B
+tempseq: ABABAABAAAAA
+current seq: AABAABAABAAAAA | 2 0 A BBA
+tempseq: BBAABAABAABAAAAA
+never visited
+1000218
+1000219
+current seq: AABAABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAABAAAAA
+current seq: AABAABAABAAAAA | 1 1 ABA B
+tempseq: ABABAABAAAAA
+current seq: AABAABAABAAAAA | 2 0 A BBA
+tempseq: BBAABAABAABAAAAA
+1000220
+current seq: BBAABAABAAAAA | 0 0 B AA
+tempseq: AABAABAABAAAAA
+current seq: BBAABAABAAAAA | 1 3 ABA B
+tempseq: BBABABAAAAA
+current seq: BBAABAABAAAAA | 2 2 A BBA
+tempseq: BBBBAABAABAAAAA
+never visited
+1000222
+current seq: BBBBAABAABAAAAA | 0 0 B AA
+tempseq: AABBBAABAABAAAAA
+never visited
+1000224
+1000225
+current seq: BBBBAABAABAAAAA | 0 0 B AA
+tempseq: AABBBAABAABAAAAA
+current seq: BBBBAABAABAAAAA | 1 5 ABA B
+tempseq: BBBBABABAAAAA
+current seq: BBBBAABAABAAAAA | 2 4 A BBA
+tempseq: BBBBBBAABAABAAAAA
+never visited
+1000227
+1000228
+current seq: BBBBAABAABAAAAA | 0 0 B AA
+tempseq: AABBBAABAABAAAAA
+current seq: BBBBAABAABAAAAA | 1 5 ABA B
+tempseq: BBBBABABAAAAA
+current seq: BBBBAABAABAAAAA | 2 4 A BBA
+tempseq: BBBBBBAABAABAAAAA
+1000229
+current seq: BBAABAABAAAAA | 0 0 B AA
+tempseq: AABAABAABAAAAA
+current seq: BBAABAABAAAAA | 1 3 ABA B
+tempseq: BBABABAAAAA
+current seq: BBAABAABAAAAA | 2 2 A BBA
+tempseq: BBBBAABAABAAAAA
+1000230
+current seq: AABAABAAAAA | 0 2 B AA
+tempseq: AAAAAABAAAAA
+current seq: AABAABAAAAA | 1 1 ABA B
+tempseq: ABABAAAAA
+current seq: AABAABAAAAA | 2 0 A BBA
+tempseq: BBAABAABAAAAA
+1000231
+current seq: BBAABAAAAA | 0 0 B AA
+tempseq: AABAABAAAAA
+current seq: BBAABAAAAA | 1 3 ABA B
+tempseq: BBABAAAA
+current seq: BBAABAAAAA | 2 2 A BBA
+tempseq: BBBBAABAAAAA
+never visited
+1000233
+current seq: BBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBAABAAAAA
+never visited
+1000235
+current seq: AABBBAABAAAAA | 0 2 B AA
+tempseq: AAAABBAABAAAAA
+never visited
+1000237
+current seq: AAAABBAABAAAAA | 0 4 B AA
+tempseq: AAAAAABAABAAAAA
+current seq: AAAABBAABAAAAA | 1 7 ABA B
+tempseq: AAAABBABAAAA
+current seq: AAAABBAABAAAAA | 2 0 A BBA
+tempseq: BBAAAABBAABAAAAA
+never visited
+1000239
+1000240
+current seq: AAAABBAABAAAAA | 0 4 B AA
+tempseq: AAAAAABAABAAAAA
+current seq: AAAABBAABAAAAA | 1 7 ABA B
+tempseq: AAAABBABAAAA
+current seq: AAAABBAABAAAAA | 2 0 A BBA
+tempseq: BBAAAABBAABAAAAA
+1000241
+current seq: AABBBAABAAAAA | 0 2 B AA
+tempseq: AAAABBAABAAAAA
+current seq: AABBBAABAAAAA | 1 6 ABA B
+tempseq: AABBBABAAAA
+current seq: AABBBAABAAAAA | 2 0 A BBA
+tempseq: BBAABBBAABAAAAA
+never visited
+1000243
+current seq: BBAABBBAABAAAAA | 0 0 B AA
+tempseq: AABAABBBAABAAAAA
+never visited
+1000245
+1000246
+current seq: BBAABBBAABAAAAA | 0 0 B AA
+tempseq: AABAABBBAABAAAAA
+current seq: BBAABBBAABAAAAA | 1 8 ABA B
+tempseq: BBAABBBABAAAA
+current seq: BBAABBBAABAAAAA | 2 2 A BBA
+tempseq: BBBBAABBBAABAAAAA
+never visited
+1000248
+1000249
+current seq: BBAABBBAABAAAAA | 0 0 B AA
+tempseq: AABAABBBAABAAAAA
+current seq: BBAABBBAABAAAAA | 1 8 ABA B
+tempseq: BBAABBBABAAAA
+current seq: BBAABBBAABAAAAA | 2 2 A BBA
+tempseq: BBBBAABBBAABAAAAA
+1000250
+current seq: AABBBAABAAAAA | 0 2 B AA
+tempseq: AAAABBAABAAAAA
+current seq: AABBBAABAAAAA | 1 6 ABA B
+tempseq: AABBBABAAAA
+current seq: AABBBAABAAAAA | 2 0 A BBA
+tempseq: BBAABBBAABAAAAA
+1000251
+current seq: BBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBAABAAAAA
+current seq: BBBBAABAAAAA | 1 5 ABA B
+tempseq: BBBBABAAAA
+current seq: BBBBAABAAAAA | 2 4 A BBA
+tempseq: BBBBBBAABAAAAA
+never visited
+1000253
+current seq: BBBBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBBBAABAAAAA
+never visited
+1000255
+current seq: AABBBBBAABAAAAA | 0 2 B AA
+tempseq: AAAABBBBAABAAAAA
+never visited
+1000257
+1000258
+current seq: AABBBBBAABAAAAA | 0 2 B AA
+tempseq: AAAABBBBAABAAAAA
+current seq: AABBBBBAABAAAAA | 1 8 ABA B
+tempseq: AABBBBBABAAAA
+current seq: AABBBBBAABAAAAA | 2 0 A BBA
+tempseq: BBAABBBBBAABAAAAA
+never visited
+1000260
+1000261
+current seq: AABBBBBAABAAAAA | 0 2 B AA
+tempseq: AAAABBBBAABAAAAA
+current seq: AABBBBBAABAAAAA | 1 8 ABA B
+tempseq: AABBBBBABAAAA
+current seq: AABBBBBAABAAAAA | 2 0 A BBA
+tempseq: BBAABBBBBAABAAAAA
+1000262
+current seq: BBBBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBBBAABAAAAA
+current seq: BBBBBBAABAAAAA | 1 7 ABA B
+tempseq: BBBBBBABAAAA
+current seq: BBBBBBAABAAAAA | 2 6 A BBA
+tempseq: BBBBBBBBAABAAAAA
+never visited
+1000264
+current seq: BBBBBBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBBBBBAABAAAAA
+never visited
+1000266
+1000267
+current seq: BBBBBBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBBBBBAABAAAAA
+current seq: BBBBBBBBAABAAAAA | 1 9 ABA B
+tempseq: BBBBBBBBABAAAA
+current seq: BBBBBBBBAABAAAAA | 2 8 A BBA
+tempseq: BBBBBBBBBBAABAAAAA
+never visited
+1000269
+1000270
+current seq: BBBBBBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBBBBBAABAAAAA
+current seq: BBBBBBBBAABAAAAA | 1 9 ABA B
+tempseq: BBBBBBBBABAAAA
+current seq: BBBBBBBBAABAAAAA | 2 8 A BBA
+tempseq: BBBBBBBBBBAABAAAAA
+1000271
+current seq: BBBBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBBBAABAAAAA
+current seq: BBBBBBAABAAAAA | 1 7 ABA B
+tempseq: BBBBBBABAAAA
+current seq: BBBBBBAABAAAAA | 2 6 A BBA
+tempseq: BBBBBBBBAABAAAAA
+1000272
+current seq: BBBBAABAAAAA | 0 0 B AA
+tempseq: AABBBAABAAAAA
+current seq: BBBBAABAAAAA | 1 5 ABA B
+tempseq: BBBBABAAAA
+current seq: BBBBAABAAAAA | 2 4 A BBA
+tempseq: BBBBBBAABAAAAA
+1000273
+current seq: BBAABAAAAA | 0 0 B AA
+tempseq: AABAABAAAAA
+current seq: BBAABAAAAA | 1 3 ABA B
+tempseq: BBABAAAA
+current seq: BBAABAAAAA | 2 2 A BBA
+tempseq: BBBBAABAAAAA
+1000274
+current seq: AABAAAAA | 0 2 B AA
+tempseq: AAAAAAAAA
+current seq: AABAAAAA | 1 1 ABA B
+tempseq: ABAAAA
+current seq: AABAAAAA | 2 0 A BBA
+tempseq: BBAABAAAAA
+1000275
+current seq: BBAAAAA | 0 0 B AA
+tempseq: AABAAAAA
+current seq: BBAAAAA | 2 2 A BBA
+tempseq: BBBBAAAAA
+1000276
+current seq: AAAAA | 2 0 A BBA
+tempseq: BBAAAAA
+1000277
+current seq: AABA | 0 2 B AA
+tempseq: AAAAA
+current seq: AABA | 1 1 ABA B
+tempseq: AB
+never visited
+1000279
+current seq: AB | 0 1 B AA
+tempseq: AAA
+never visited
+1000281
+current seq: AAA | 2 0 A BBA
+tempseq: BBAAA
+never visited
+1000283
+current seq: BBAAA | 0 0 B AA
+tempseq: AABAAA
+never visited
+1000285
+current seq: AABAAA | 0 2 B AA
+tempseq: AAAAAAA
+current seq: AABAAA | 1 1 ABA B
+tempseq: ABAA
+never visited
+1000287
+current seq: ABAA | 0 1 B AA
+tempseq: AAAAA
+current seq: ABAA | 1 0 ABA B
+tempseq: BA
+never visited
+1000289
+current seq: BA | 0 0 B AA
+tempseq: AAA
+current seq: BA | 2 1 A BBA
+tempseq: BBBA
+never visited
+1000291
+current seq: BBBA | 0 0 B AA
+tempseq: AABBA
+never visited
+1000293
+1000294
+current seq: BBBA | 0 0 B AA
+tempseq: AABBA
+current seq: BBBA | 2 3 A BBA
+tempseq: BBBBBA
+never visited
+1000296
+1000297
+current seq: BBBA | 0 0 B AA
+tempseq: AABBA
+current seq: BBBA | 2 3 A BBA
+tempseq: BBBBBA
+1000298
+current seq: BA | 0 0 B AA
+tempseq: AAA
+current seq: BA | 2 1 A BBA
+tempseq: BBBA
+1000299
+current seq: ABAA | 0 1 B AA
+tempseq: AAAAA
+current seq: ABAA | 1 0 ABA B
+tempseq: BA
+current seq: ABAA | 2 0 A BBA
+tempseq: BBABAA
+never visited
+1000301
+current seq: BBABAA | 0 0 B AA
+tempseq: AABABAA
+never visited
+1000303
+current seq: AABABAA | 0 2 B AA
+tempseq: AAAAABAA
+never visited
+1000305
+1000306
+current seq: AABABAA | 0 2 B AA
+tempseq: AAAAABAA
+current seq: AABABAA | 1 1 ABA B
+tempseq: ABBAA
+never visited
+1000308
+1000309
+current seq: AABABAA | 0 2 B AA
+tempseq: AAAAABAA
+current seq: AABABAA | 1 1 ABA B
+tempseq: ABBAA
+current seq: AABABAA | 2 0 A BBA
+tempseq: BBAABABAA
+never visited
+1000311
+1000312
+current seq: AABABAA | 0 2 B AA
+tempseq: AAAAABAA
+current seq: AABABAA | 1 1 ABA B
+tempseq: ABBAA
+current seq: AABABAA | 2 0 A BBA
+tempseq: BBAABABAA
+1000313
+current seq: BBABAA | 0 0 B AA
+tempseq: AABABAA
+current seq: BBABAA | 1 2 ABA B
+tempseq: BBBA
+current seq: BBABAA | 2 2 A BBA
+tempseq: BBBBABAA
+never visited
+1000315
+current seq: BBBBABAA | 0 0 B AA
+tempseq: AABBBABAA
+never visited
+1000317
+1000318
+current seq: BBBBABAA | 0 0 B AA
+tempseq: AABBBABAA
+current seq: BBBBABAA | 1 4 ABA B
+tempseq: BBBBBA
+current seq: BBBBABAA | 2 4 A BBA
+tempseq: BBBBBBABAA
+never visited
+1000320
+1000321
+current seq: BBBBABAA | 0 0 B AA
+tempseq: AABBBABAA
+current seq: BBBBABAA | 1 4 ABA B
+tempseq: BBBBBA
+current seq: BBBBABAA | 2 4 A BBA
+tempseq: BBBBBBABAA
+1000322
+current seq: BBABAA | 0 0 B AA
+tempseq: AABABAA
+current seq: BBABAA | 1 2 ABA B
+tempseq: BBBA
+current seq: BBABAA | 2 2 A BBA
+tempseq: BBBBABAA
+1000323
+current seq: ABAA | 0 1 B AA
+tempseq: AAAAA
+current seq: ABAA | 1 0 ABA B
+tempseq: BA
+current seq: ABAA | 2 0 A BBA
+tempseq: BBABAA
+1000324
+current seq: AABAAA | 0 2 B AA
+tempseq: AAAAAAA
+current seq: AABAAA | 1 1 ABA B
+tempseq: ABAA
+current seq: AABAAA | 2 0 A BBA
+tempseq: BBAABAAA
+never visited
+1000326
+current seq: BBAABAAA | 0 0 B AA
+tempseq: AABAABAAA
+never visited
+1000328
+current seq: AABAABAAA | 0 2 B AA
+tempseq: AAAAAABAAA
+never visited
+1000330
+current seq: AAAAAABAAA | 0 6 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAAABAAA | 1 5 ABA B
+tempseq: AAAAABAA
+current seq: AAAAAABAAA | 2 0 A BBA
+tempseq: BBAAAAAABAAA
+never visited
+1000332
+1000333
+current seq: AAAAAABAAA | 0 6 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAAABAAA | 1 5 ABA B
+tempseq: AAAAABAA
+current seq: AAAAAABAAA | 2 0 A BBA
+tempseq: BBAAAAAABAAA
+1000334
+current seq: AABAABAAA | 0 2 B AA
+tempseq: AAAAAABAAA
+current seq: AABAABAAA | 1 1 ABA B
+tempseq: ABABAAA
+never visited
+1000336
+current seq: ABABAAA | 0 1 B AA
+tempseq: AAAABAAA
+current seq: ABABAAA | 1 0 ABA B
+tempseq: BBAAA
+current seq: ABABAAA | 2 0 A BBA
+tempseq: BBABABAAA
+never visited
+1000338
+1000339
+current seq: ABABAAA | 0 1 B AA
+tempseq: AAAABAAA
+current seq: ABABAAA | 1 0 ABA B
+tempseq: BBAAA
+current seq: ABABAAA | 2 0 A BBA
+tempseq: BBABABAAA
+1000340
+current seq: AABAABAAA | 0 2 B AA
+tempseq: AAAAAABAAA
+current seq: AABAABAAA | 1 1 ABA B
+tempseq: ABABAAA
+current seq: AABAABAAA | 2 0 A BBA
+tempseq: BBAABAABAAA
+never visited
+1000342
+current seq: BBAABAABAAA | 0 0 B AA
+tempseq: AABAABAABAAA
+never visited
+1000344
+1000345
+current seq: BBAABAABAAA | 0 0 B AA
+tempseq: AABAABAABAAA
+current seq: BBAABAABAAA | 1 3 ABA B
+tempseq: BBABABAAA
+current seq: BBAABAABAAA | 2 2 A BBA
+tempseq: BBBBAABAABAAA
+never visited
+1000347
+1000348
+current seq: BBAABAABAAA | 0 0 B AA
+tempseq: AABAABAABAAA
+current seq: BBAABAABAAA | 1 3 ABA B
+tempseq: BBABABAAA
+current seq: BBAABAABAAA | 2 2 A BBA
+tempseq: BBBBAABAABAAA
+1000349
+current seq: AABAABAAA | 0 2 B AA
+tempseq: AAAAAABAAA
+current seq: AABAABAAA | 1 1 ABA B
+tempseq: ABABAAA
+current seq: AABAABAAA | 2 0 A BBA
+tempseq: BBAABAABAAA
+1000350
+current seq: BBAABAAA | 0 0 B AA
+tempseq: AABAABAAA
+current seq: BBAABAAA | 1 3 ABA B
+tempseq: BBABAA
+current seq: BBAABAAA | 2 2 A BBA
+tempseq: BBBBAABAAA
+never visited
+1000352
+current seq: BBBBAABAAA | 0 0 B AA
+tempseq: AABBBAABAAA
+never visited
+1000354
+current seq: AABBBAABAAA | 0 2 B AA
+tempseq: AAAABBAABAAA
+never visited
+1000356
+1000357
+current seq: AABBBAABAAA | 0 2 B AA
+tempseq: AAAABBAABAAA
+current seq: AABBBAABAAA | 1 6 ABA B
+tempseq: AABBBABAA
+current seq: AABBBAABAAA | 2 0 A BBA
+tempseq: BBAABBBAABAAA
+never visited
+1000359
+1000360
+current seq: AABBBAABAAA | 0 2 B AA
+tempseq: AAAABBAABAAA
+current seq: AABBBAABAAA | 1 6 ABA B
+tempseq: AABBBABAA
+current seq: AABBBAABAAA | 2 0 A BBA
+tempseq: BBAABBBAABAAA
+1000361
+current seq: BBBBAABAAA | 0 0 B AA
+tempseq: AABBBAABAAA
+current seq: BBBBAABAAA | 1 5 ABA B
+tempseq: BBBBABAA
+current seq: BBBBAABAAA | 2 4 A BBA
+tempseq: BBBBBBAABAAA
+never visited
+1000363
+current seq: BBBBBBAABAAA | 0 0 B AA
+tempseq: AABBBBBAABAAA
+never visited
+1000365
+1000366
+current seq: BBBBBBAABAAA | 0 0 B AA
+tempseq: AABBBBBAABAAA
+current seq: BBBBBBAABAAA | 1 7 ABA B
+tempseq: BBBBBBABAA
+current seq: BBBBBBAABAAA | 2 6 A BBA
+tempseq: BBBBBBBBAABAAA
+never visited
+1000368
+1000369
+current seq: BBBBBBAABAAA | 0 0 B AA
+tempseq: AABBBBBAABAAA
+current seq: BBBBBBAABAAA | 1 7 ABA B
+tempseq: BBBBBBABAA
+current seq: BBBBBBAABAAA | 2 6 A BBA
+tempseq: BBBBBBBBAABAAA
+1000370
+current seq: BBBBAABAAA | 0 0 B AA
+tempseq: AABBBAABAAA
+current seq: BBBBAABAAA | 1 5 ABA B
+tempseq: BBBBABAA
+current seq: BBBBAABAAA | 2 4 A BBA
+tempseq: BBBBBBAABAAA
+1000371
+current seq: BBAABAAA | 0 0 B AA
+tempseq: AABAABAAA
+current seq: BBAABAAA | 1 3 ABA B
+tempseq: BBABAA
+current seq: BBAABAAA | 2 2 A BBA
+tempseq: BBBBAABAAA
+1000372
+current seq: AABAAA | 0 2 B AA
+tempseq: AAAAAAA
+current seq: AABAAA | 1 1 ABA B
+tempseq: ABAA
+current seq: AABAAA | 2 0 A BBA
+tempseq: BBAABAAA
+1000373
+current seq: BBAAA | 0 0 B AA
+tempseq: AABAAA
+current seq: BBAAA | 2 2 A BBA
+tempseq: BBBBAAA
+never visited
+1000375
+current seq: BBBBAAA | 0 0 B AA
+tempseq: AABBBAAA
+never visited
+1000377
+current seq: AABBBAAA | 0 2 B AA
+tempseq: AAAABBAAA
+never visited
+1000379
+current seq: AAAABBAAA | 0 4 B AA
+tempseq: AAAAAABAAA
+current seq: AAAABBAAA | 2 0 A BBA
+tempseq: BBAAAABBAAA
+never visited
+1000381
+current seq: BBAAAABBAAA | 0 0 B AA
+tempseq: AABAAAABBAAA
+never visited
+1000383
+1000384
+current seq: BBAAAABBAAA | 0 0 B AA
+tempseq: AABAAAABBAAA
+current seq: BBAAAABBAAA | 2 2 A BBA
+tempseq: BBBBAAAABBAAA
+never visited
+1000386
+1000387
+current seq: BBAAAABBAAA | 0 0 B AA
+tempseq: AABAAAABBAAA
+current seq: BBAAAABBAAA | 2 2 A BBA
+tempseq: BBBBAAAABBAAA
+1000388
+current seq: AAAABBAAA | 0 4 B AA
+tempseq: AAAAAABAAA
+current seq: AAAABBAAA | 2 0 A BBA
+tempseq: BBAAAABBAAA
+1000389
+current seq: AABBBAAA | 0 2 B AA
+tempseq: AAAABBAAA
+current seq: AABBBAAA | 2 0 A BBA
+tempseq: BBAABBBAAA
+never visited
+1000391
+current seq: BBAABBBAAA | 0 0 B AA
+tempseq: AABAABBBAAA
+never visited
+1000393
+current seq: AABAABBBAAA | 0 2 B AA
+tempseq: AAAAAABBBAAA
+never visited
+1000395
+1000396
+current seq: AABAABBBAAA | 0 2 B AA
+tempseq: AAAAAABBBAAA
+current seq: AABAABBBAAA | 1 1 ABA B
+tempseq: ABABBBAAA
+never visited
+1000398
+1000399
+current seq: AABAABBBAAA | 0 2 B AA
+tempseq: AAAAAABBBAAA
+current seq: AABAABBBAAA | 1 1 ABA B
+tempseq: ABABBBAAA
+current seq: AABAABBBAAA | 2 0 A BBA
+tempseq: BBAABAABBBAAA
+never visited
+1000401
+1000402
+current seq: AABAABBBAAA | 0 2 B AA
+tempseq: AAAAAABBBAAA
+current seq: AABAABBBAAA | 1 1 ABA B
+tempseq: ABABBBAAA
+current seq: AABAABBBAAA | 2 0 A BBA
+tempseq: BBAABAABBBAAA
+1000403
+current seq: BBAABBBAAA | 0 0 B AA
+tempseq: AABAABBBAAA
+current seq: BBAABBBAAA | 2 2 A BBA
+tempseq: BBBBAABBBAAA
+never visited
+1000405
+current seq: BBBBAABBBAAA | 0 0 B AA
+tempseq: AABBBAABBBAAA
+never visited
+1000407
+1000408
+current seq: BBBBAABBBAAA | 0 0 B AA
+tempseq: AABBBAABBBAAA
+current seq: BBBBAABBBAAA | 2 4 A BBA
+tempseq: BBBBBBAABBBAAA
+never visited
+1000410
+1000411
+current seq: BBBBAABBBAAA | 0 0 B AA
+tempseq: AABBBAABBBAAA
+current seq: BBBBAABBBAAA | 2 4 A BBA
+tempseq: BBBBBBAABBBAAA
+1000412
+current seq: BBAABBBAAA | 0 0 B AA
+tempseq: AABAABBBAAA
+current seq: BBAABBBAAA | 2 2 A BBA
+tempseq: BBBBAABBBAAA
+1000413
+current seq: AABBBAAA | 0 2 B AA
+tempseq: AAAABBAAA
+current seq: AABBBAAA | 2 0 A BBA
+tempseq: BBAABBBAAA
+1000414
+current seq: BBBBAAA | 0 0 B AA
+tempseq: AABBBAAA
+current seq: BBBBAAA | 2 4 A BBA
+tempseq: BBBBBBAAA
+never visited
+1000416
+current seq: BBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBAAA
+never visited
+1000418
+current seq: AABBBBBAAA | 0 2 B AA
+tempseq: AAAABBBBAAA
+never visited
+1000420
+current seq: AAAABBBBAAA | 0 4 B AA
+tempseq: AAAAAABBBAAA
+current seq: AAAABBBBAAA | 2 0 A BBA
+tempseq: BBAAAABBBBAAA
+never visited
+1000422
+1000423
+current seq: AAAABBBBAAA | 0 4 B AA
+tempseq: AAAAAABBBAAA
+current seq: AAAABBBBAAA | 2 0 A BBA
+tempseq: BBAAAABBBBAAA
+1000424
+current seq: AABBBBBAAA | 0 2 B AA
+tempseq: AAAABBBBAAA
+current seq: AABBBBBAAA | 2 0 A BBA
+tempseq: BBAABBBBBAAA
+never visited
+1000426
+current seq: BBAABBBBBAAA | 0 0 B AA
+tempseq: AABAABBBBBAAA
+never visited
+1000428
+1000429
+current seq: BBAABBBBBAAA | 0 0 B AA
+tempseq: AABAABBBBBAAA
+current seq: BBAABBBBBAAA | 2 2 A BBA
+tempseq: BBBBAABBBBBAAA
+never visited
+1000431
+1000432
+current seq: BBAABBBBBAAA | 0 0 B AA
+tempseq: AABAABBBBBAAA
+current seq: BBAABBBBBAAA | 2 2 A BBA
+tempseq: BBBBAABBBBBAAA
+1000433
+current seq: AABBBBBAAA | 0 2 B AA
+tempseq: AAAABBBBAAA
+current seq: AABBBBBAAA | 2 0 A BBA
+tempseq: BBAABBBBBAAA
+1000434
+current seq: BBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBAAA
+current seq: BBBBBBAAA | 2 6 A BBA
+tempseq: BBBBBBBBAAA
+never visited
+1000436
+current seq: BBBBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBBBAAA
+never visited
+1000438
+current seq: AABBBBBBBAAA | 0 2 B AA
+tempseq: AAAABBBBBBAAA
+never visited
+1000440
+1000441
+current seq: AABBBBBBBAAA | 0 2 B AA
+tempseq: AAAABBBBBBAAA
+current seq: AABBBBBBBAAA | 2 0 A BBA
+tempseq: BBAABBBBBBBAAA
+never visited
+1000443
+1000444
+current seq: AABBBBBBBAAA | 0 2 B AA
+tempseq: AAAABBBBBBAAA
+current seq: AABBBBBBBAAA | 2 0 A BBA
+tempseq: BBAABBBBBBBAAA
+1000445
+current seq: BBBBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBBBAAA
+current seq: BBBBBBBBAAA | 2 8 A BBA
+tempseq: BBBBBBBBBBAAA
+never visited
+1000447
+current seq: BBBBBBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBBBBBAAA
+never visited
+1000449
+1000450
+current seq: BBBBBBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBBBBBAAA
+current seq: BBBBBBBBBBAAA | 2 10 A BBA
+tempseq: BBBBBBBBBBBBAAA
+never visited
+1000452
+1000453
+current seq: BBBBBBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBBBBBAAA
+current seq: BBBBBBBBBBAAA | 2 10 A BBA
+tempseq: BBBBBBBBBBBBAAA
+1000454
+current seq: BBBBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBBBAAA
+current seq: BBBBBBBBAAA | 2 8 A BBA
+tempseq: BBBBBBBBBBAAA
+1000455
+current seq: BBBBBBAAA | 0 0 B AA
+tempseq: AABBBBBAAA
+current seq: BBBBBBAAA | 2 6 A BBA
+tempseq: BBBBBBBBAAA
+1000456
+current seq: BBBBAAA | 0 0 B AA
+tempseq: AABBBAAA
+current seq: BBBBAAA | 2 4 A BBA
+tempseq: BBBBBBAAA
+1000457
+current seq: BBAAA | 0 0 B AA
+tempseq: AABAAA
+current seq: BBAAA | 2 2 A BBA
+tempseq: BBBBAAA
+1000458
+current seq: AAA | 2 0 A BBA
+tempseq: BBAAA
+1000459
+current seq: AB | 0 1 B AA
+tempseq: AAA
+current seq: AB | 2 0 A BBA
+tempseq: BBAB
+never visited
+1000461
+current seq: BBAB | 0 0 B AA
+tempseq: AABAB
+never visited
+1000463
+current seq: AABAB | 0 2 B AA
+tempseq: AAAAAB
+never visited
+1000465
+current seq: AAAAAB | 0 5 B AA
+tempseq: AAAAAAA
+current seq: AAAAAB | 2 0 A BBA
+tempseq: BBAAAAAB
+never visited
+1000467
+current seq: BBAAAAAB | 0 0 B AA
+tempseq: AABAAAAAB
+never visited
+1000469
+current seq: AABAAAAAB | 0 2 B AA
+tempseq: AAAAAAAAAB
+never visited
+1000471
+current seq: AAAAAAAAAB | 0 9 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAAAAAAB | 2 0 A BBA
+tempseq: BBAAAAAAAAAB
+never visited
+1000473
+1000474
+current seq: AAAAAAAAAB | 0 9 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAAAAAAB | 2 0 A BBA
+tempseq: BBAAAAAAAAAB
+1000475
+current seq: AABAAAAAB | 0 2 B AA
+tempseq: AAAAAAAAAB
+current seq: AABAAAAAB | 1 1 ABA B
+tempseq: ABAAAAB
+never visited
+1000477
+current seq: ABAAAAB | 0 1 B AA
+tempseq: AAAAAAAB
+never visited
+1000479
+1000480
+current seq: ABAAAAB | 0 1 B AA
+tempseq: AAAAAAAB
+current seq: ABAAAAB | 1 0 ABA B
+tempseq: BAAAB
+never visited
+1000482
+1000483
+current seq: ABAAAAB | 0 1 B AA
+tempseq: AAAAAAAB
+current seq: ABAAAAB | 1 0 ABA B
+tempseq: BAAAB
+current seq: ABAAAAB | 2 0 A BBA
+tempseq: BBABAAAAB
+never visited
+1000485
+1000486
+current seq: ABAAAAB | 0 1 B AA
+tempseq: AAAAAAAB
+current seq: ABAAAAB | 1 0 ABA B
+tempseq: BAAAB
+current seq: ABAAAAB | 2 0 A BBA
+tempseq: BBABAAAAB
+1000487
+current seq: AABAAAAAB | 0 2 B AA
+tempseq: AAAAAAAAAB
+current seq: AABAAAAAB | 1 1 ABA B
+tempseq: ABAAAAB
+current seq: AABAAAAAB | 2 0 A BBA
+tempseq: BBAABAAAAAB
+never visited
+1000489
+current seq: BBAABAAAAAB | 0 0 B AA
+tempseq: AABAABAAAAAB
+never visited
+1000491
+1000492
+current seq: BBAABAAAAAB | 0 0 B AA
+tempseq: AABAABAAAAAB
+current seq: BBAABAAAAAB | 1 3 ABA B
+tempseq: BBABAAAAB
+current seq: BBAABAAAAAB | 2 2 A BBA
+tempseq: BBBBAABAAAAAB
+never visited
+1000494
+1000495
+current seq: BBAABAAAAAB | 0 0 B AA
+tempseq: AABAABAAAAAB
+current seq: BBAABAAAAAB | 1 3 ABA B
+tempseq: BBABAAAAB
+current seq: BBAABAAAAAB | 2 2 A BBA
+tempseq: BBBBAABAAAAAB
+1000496
+current seq: AABAAAAAB | 0 2 B AA
+tempseq: AAAAAAAAAB
+current seq: AABAAAAAB | 1 1 ABA B
+tempseq: ABAAAAB
+current seq: AABAAAAAB | 2 0 A BBA
+tempseq: BBAABAAAAAB
+1000497
+current seq: BBAAAAAB | 0 0 B AA
+tempseq: AABAAAAAB
+current seq: BBAAAAAB | 2 2 A BBA
+tempseq: BBBBAAAAAB
+never visited
+1000499
+current seq: BBBBAAAAAB | 0 0 B AA
+tempseq: AABBBAAAAAB
+never visited
+1000501
+current seq: AABBBAAAAAB | 0 2 B AA
+tempseq: AAAABBAAAAAB
+never visited
+1000503
+1000504
+current seq: AABBBAAAAAB | 0 2 B AA
+tempseq: AAAABBAAAAAB
+current seq: AABBBAAAAAB | 2 0 A BBA
+tempseq: BBAABBBAAAAAB
+never visited
+1000506
+1000507
+current seq: AABBBAAAAAB | 0 2 B AA
+tempseq: AAAABBAAAAAB
+current seq: AABBBAAAAAB | 2 0 A BBA
+tempseq: BBAABBBAAAAAB
+1000508
+current seq: BBBBAAAAAB | 0 0 B AA
+tempseq: AABBBAAAAAB
+current seq: BBBBAAAAAB | 2 4 A BBA
+tempseq: BBBBBBAAAAAB
+never visited
+1000510
+current seq: BBBBBBAAAAAB | 0 0 B AA
+tempseq: AABBBBBAAAAAB
+never visited
+1000512
+1000513
+current seq: BBBBBBAAAAAB | 0 0 B AA
+tempseq: AABBBBBAAAAAB
+current seq: BBBBBBAAAAAB | 2 6 A BBA
+tempseq: BBBBBBBBAAAAAB
+never visited
+1000515
+1000516
+current seq: BBBBBBAAAAAB | 0 0 B AA
+tempseq: AABBBBBAAAAAB
+current seq: BBBBBBAAAAAB | 2 6 A BBA
+tempseq: BBBBBBBBAAAAAB
+1000517
+current seq: BBBBAAAAAB | 0 0 B AA
+tempseq: AABBBAAAAAB
+current seq: BBBBAAAAAB | 2 4 A BBA
+tempseq: BBBBBBAAAAAB
+1000518
+current seq: BBAAAAAB | 0 0 B AA
+tempseq: AABAAAAAB
+current seq: BBAAAAAB | 2 2 A BBA
+tempseq: BBBBAAAAAB
+1000519
+current seq: AAAAAB | 0 5 B AA
+tempseq: AAAAAAA
+current seq: AAAAAB | 2 0 A BBA
+tempseq: BBAAAAAB
+1000520
+current seq: AABAB | 0 2 B AA
+tempseq: AAAAAB
+current seq: AABAB | 1 1 ABA B
+tempseq: ABB
+never visited
+1000522
+current seq: ABB | 0 1 B AA
+tempseq: AAAB
+never visited
+1000524
+current seq: AAAB | 0 3 B AA
+tempseq: AAAAA
+current seq: AAAB | 2 0 A BBA
+tempseq: BBAAAB
+never visited
+1000526
+current seq: BBAAAB | 0 0 B AA
+tempseq: AABAAAB
+never visited
+1000528
+current seq: AABAAAB | 0 2 B AA
+tempseq: AAAAAAAB
+current seq: AABAAAB | 1 1 ABA B
+tempseq: ABAAB
+never visited
+1000530
+1000531
+current seq: AABAAAB | 0 2 B AA
+tempseq: AAAAAAAB
+current seq: AABAAAB | 1 1 ABA B
+tempseq: ABAAB
+current seq: AABAAAB | 2 0 A BBA
+tempseq: BBAABAAAB
+never visited
+1000533
+1000534
+current seq: AABAAAB | 0 2 B AA
+tempseq: AAAAAAAB
+current seq: AABAAAB | 1 1 ABA B
+tempseq: ABAAB
+current seq: AABAAAB | 2 0 A BBA
+tempseq: BBAABAAAB
+1000535
+current seq: BBAAAB | 0 0 B AA
+tempseq: AABAAAB
+current seq: BBAAAB | 2 2 A BBA
+tempseq: BBBBAAAB
+never visited
+1000537
+current seq: BBBBAAAB | 0 0 B AA
+tempseq: AABBBAAAB
+never visited
+1000539
+1000540
+current seq: BBBBAAAB | 0 0 B AA
+tempseq: AABBBAAAB
+current seq: BBBBAAAB | 2 4 A BBA
+tempseq: BBBBBBAAAB
+never visited
+1000542
+1000543
+current seq: BBBBAAAB | 0 0 B AA
+tempseq: AABBBAAAB
+current seq: BBBBAAAB | 2 4 A BBA
+tempseq: BBBBBBAAAB
+1000544
+current seq: BBAAAB | 0 0 B AA
+tempseq: AABAAAB
+current seq: BBAAAB | 2 2 A BBA
+tempseq: BBBBAAAB
+1000545
+current seq: AAAB | 0 3 B AA
+tempseq: AAAAA
+current seq: AAAB | 2 0 A BBA
+tempseq: BBAAAB
+1000546
+current seq: ABB | 0 1 B AA
+tempseq: AAAB
+current seq: ABB | 2 0 A BBA
+tempseq: BBABB
+never visited
+1000548
+current seq: BBABB | 0 0 B AA
+tempseq: AABABB
+never visited
+1000550
+current seq: AABABB | 0 2 B AA
+tempseq: AAAAABB
+never visited
+1000552
+current seq: AAAAABB | 0 5 B AA
+tempseq: AAAAAAAB
+current seq: AAAAABB | 2 0 A BBA
+tempseq: BBAAAAABB
+never visited
+1000554
+1000555
+current seq: AAAAABB | 0 5 B AA
+tempseq: AAAAAAAB
+current seq: AAAAABB | 2 0 A BBA
+tempseq: BBAAAAABB
+1000556
+current seq: AABABB | 0 2 B AA
+tempseq: AAAAABB
+current seq: AABABB | 1 1 ABA B
+tempseq: ABBB
+never visited
+1000558
+current seq: ABBB | 0 1 B AA
+tempseq: AAABB
+never visited
+1000560
+1000561
+current seq: ABBB | 0 1 B AA
+tempseq: AAABB
+current seq: ABBB | 2 0 A BBA
+tempseq: BBABBB
+never visited
+1000563
+1000564
+current seq: ABBB | 0 1 B AA
+tempseq: AAABB
+current seq: ABBB | 2 0 A BBA
+tempseq: BBABBB
+1000565
+current seq: AABABB | 0 2 B AA
+tempseq: AAAAABB
+current seq: AABABB | 1 1 ABA B
+tempseq: ABBB
+current seq: AABABB | 2 0 A BBA
+tempseq: BBAABABB
+never visited
+1000567
+current seq: BBAABABB | 0 0 B AA
+tempseq: AABAABABB
+never visited
+1000569
+1000570
+current seq: BBAABABB | 0 0 B AA
+tempseq: AABAABABB
+current seq: BBAABABB | 1 3 ABA B
+tempseq: BBABBB
+current seq: BBAABABB | 2 2 A BBA
+tempseq: BBBBAABABB
+never visited
+1000572
+1000573
+current seq: BBAABABB | 0 0 B AA
+tempseq: AABAABABB
+current seq: BBAABABB | 1 3 ABA B
+tempseq: BBABBB
+current seq: BBAABABB | 2 2 A BBA
+tempseq: BBBBAABABB
+1000574
+current seq: AABABB | 0 2 B AA
+tempseq: AAAAABB
+current seq: AABABB | 1 1 ABA B
+tempseq: ABBB
+current seq: AABABB | 2 0 A BBA
+tempseq: BBAABABB
+1000575
+current seq: BBABB | 0 0 B AA
+tempseq: AABABB
+current seq: BBABB | 2 2 A BBA
+tempseq: BBBBABB
+never visited
+1000577
+current seq: BBBBABB | 0 0 B AA
+tempseq: AABBBABB
+never visited
+1000579
+current seq: AABBBABB | 0 2 B AA
+tempseq: AAAABBABB
+never visited
+1000581
+1000582
+current seq: AABBBABB | 0 2 B AA
+tempseq: AAAABBABB
+current seq: AABBBABB | 2 0 A BBA
+tempseq: BBAABBBABB
+never visited
+1000584
+1000585
+current seq: AABBBABB | 0 2 B AA
+tempseq: AAAABBABB
+current seq: AABBBABB | 2 0 A BBA
+tempseq: BBAABBBABB
+1000586
+current seq: BBBBABB | 0 0 B AA
+tempseq: AABBBABB
+current seq: BBBBABB | 2 4 A BBA
+tempseq: BBBBBBABB
+never visited
+1000588
+current seq: BBBBBBABB | 0 0 B AA
+tempseq: AABBBBBABB
+never visited
+1000590
+1000591
+current seq: BBBBBBABB | 0 0 B AA
+tempseq: AABBBBBABB
+current seq: BBBBBBABB | 2 6 A BBA
+tempseq: BBBBBBBBABB
+never visited
+1000593
+1000594
+current seq: BBBBBBABB | 0 0 B AA
+tempseq: AABBBBBABB
+current seq: BBBBBBABB | 2 6 A BBA
+tempseq: BBBBBBBBABB
+1000595
+current seq: BBBBABB | 0 0 B AA
+tempseq: AABBBABB
+current seq: BBBBABB | 2 4 A BBA
+tempseq: BBBBBBABB
+1000596
+current seq: BBABB | 0 0 B AA
+tempseq: AABABB
+current seq: BBABB | 2 2 A BBA
+tempseq: BBBBABB
+1000597
+current seq: ABB | 0 1 B AA
+tempseq: AAAB
+current seq: ABB | 2 0 A BBA
+tempseq: BBABB
+1000598
+current seq: AABAB | 0 2 B AA
+tempseq: AAAAAB
+current seq: AABAB | 1 1 ABA B
+tempseq: ABB
+current seq: AABAB | 2 0 A BBA
+tempseq: BBAABAB
+never visited
+1000600
+current seq: BBAABAB | 0 0 B AA
+tempseq: AABAABAB
+never visited
+1000602
+current seq: AABAABAB | 0 2 B AA
+tempseq: AAAAAABAB
+never visited
+1000604
+current seq: AAAAAABAB | 0 6 B AA
+tempseq: AAAAAAAAAB
+current seq: AAAAAABAB | 1 5 ABA B
+tempseq: AAAAABB
+current seq: AAAAAABAB | 2 0 A BBA
+tempseq: BBAAAAAABAB
+never visited
+1000606
+current seq: BBAAAAAABAB | 0 0 B AA
+tempseq: AABAAAAAABAB
+never visited
+1000608
+1000609
+current seq: BBAAAAAABAB | 0 0 B AA
+tempseq: AABAAAAAABAB
+current seq: BBAAAAAABAB | 1 7 ABA B
+tempseq: BBAAAAABB
+current seq: BBAAAAAABAB | 2 2 A BBA
+tempseq: BBBBAAAAAABAB
+never visited
+1000611
+1000612
+current seq: BBAAAAAABAB | 0 0 B AA
+tempseq: AABAAAAAABAB
+current seq: BBAAAAAABAB | 1 7 ABA B
+tempseq: BBAAAAABB
+current seq: BBAAAAAABAB | 2 2 A BBA
+tempseq: BBBBAAAAAABAB
+1000613
+current seq: AAAAAABAB | 0 6 B AA
+tempseq: AAAAAAAAAB
+current seq: AAAAAABAB | 1 5 ABA B
+tempseq: AAAAABB
+current seq: AAAAAABAB | 2 0 A BBA
+tempseq: BBAAAAAABAB
+1000614
+current seq: AABAABAB | 0 2 B AA
+tempseq: AAAAAABAB
+current seq: AABAABAB | 1 1 ABA B
+tempseq: ABABAB
+never visited
+1000616
+current seq: ABABAB | 0 1 B AA
+tempseq: AAAABAB
+never visited
+1000618
+current seq: AAAABAB | 0 4 B AA
+tempseq: AAAAAAAB
+current seq: AAAABAB | 1 3 ABA B
+tempseq: AAABB
+current seq: AAAABAB | 2 0 A BBA
+tempseq: BBAAAABAB
+never visited
+1000620
+1000621
+current seq: AAAABAB | 0 4 B AA
+tempseq: AAAAAAAB
+current seq: AAAABAB | 1 3 ABA B
+tempseq: AAABB
+current seq: AAAABAB | 2 0 A BBA
+tempseq: BBAAAABAB
+1000622
+current seq: ABABAB | 0 1 B AA
+tempseq: AAAABAB
+current seq: ABABAB | 1 0 ABA B
+tempseq: BBAB
+current seq: ABABAB | 2 0 A BBA
+tempseq: BBABABAB
+never visited
+1000624
+current seq: BBABABAB | 0 0 B AA
+tempseq: AABABABAB
+never visited
+1000626
+1000627
+current seq: BBABABAB | 0 0 B AA
+tempseq: AABABABAB
+current seq: BBABABAB | 1 2 ABA B
+tempseq: BBBBAB
+never visited
+1000629
+1000630
+current seq: BBABABAB | 0 0 B AA
+tempseq: AABABABAB
+current seq: BBABABAB | 1 2 ABA B
+tempseq: BBBBAB
+current seq: BBABABAB | 2 2 A BBA
+tempseq: BBBBABABAB
+never visited
+1000632
+1000633
+current seq: BBABABAB | 0 0 B AA
+tempseq: AABABABAB
+current seq: BBABABAB | 1 2 ABA B
+tempseq: BBBBAB
+current seq: BBABABAB | 2 2 A BBA
+tempseq: BBBBABABAB
+1000634
+current seq: ABABAB | 0 1 B AA
+tempseq: AAAABAB
+current seq: ABABAB | 1 0 ABA B
+tempseq: BBAB
+current seq: ABABAB | 2 0 A BBA
+tempseq: BBABABAB
+1000635
+current seq: AABAABAB | 0 2 B AA
+tempseq: AAAAAABAB
+current seq: AABAABAB | 1 1 ABA B
+tempseq: ABABAB
+current seq: AABAABAB | 2 0 A BBA
+tempseq: BBAABAABAB
+never visited
+1000637
+current seq: BBAABAABAB | 0 0 B AA
+tempseq: AABAABAABAB
+never visited
+1000639
+current seq: AABAABAABAB | 0 2 B AA
+tempseq: AAAAAABAABAB
+never visited
+1000641
+1000642
+current seq: AABAABAABAB | 0 2 B AA
+tempseq: AAAAAABAABAB
+current seq: AABAABAABAB | 1 1 ABA B
+tempseq: ABABAABAB
+never visited
+1000644
+1000645
+current seq: AABAABAABAB | 0 2 B AA
+tempseq: AAAAAABAABAB
+current seq: AABAABAABAB | 1 1 ABA B
+tempseq: ABABAABAB
+current seq: AABAABAABAB | 2 0 A BBA
+tempseq: BBAABAABAABAB
+never visited
+1000647
+1000648
+current seq: AABAABAABAB | 0 2 B AA
+tempseq: AAAAAABAABAB
+current seq: AABAABAABAB | 1 1 ABA B
+tempseq: ABABAABAB
+current seq: AABAABAABAB | 2 0 A BBA
+tempseq: BBAABAABAABAB
+1000649
+current seq: BBAABAABAB | 0 0 B AA
+tempseq: AABAABAABAB
+current seq: BBAABAABAB | 1 3 ABA B
+tempseq: BBABABAB
+current seq: BBAABAABAB | 2 2 A BBA
+tempseq: BBBBAABAABAB
+never visited
+1000651
+current seq: BBBBAABAABAB | 0 0 B AA
+tempseq: AABBBAABAABAB
+never visited
+1000653
+1000654
+current seq: BBBBAABAABAB | 0 0 B AA
+tempseq: AABBBAABAABAB
+current seq: BBBBAABAABAB | 1 5 ABA B
+tempseq: BBBBABABAB
+current seq: BBBBAABAABAB | 2 4 A BBA
+tempseq: BBBBBBAABAABAB
+never visited
+1000656
+1000657
+current seq: BBBBAABAABAB | 0 0 B AA
+tempseq: AABBBAABAABAB
+current seq: BBBBAABAABAB | 1 5 ABA B
+tempseq: BBBBABABAB
+current seq: BBBBAABAABAB | 2 4 A BBA
+tempseq: BBBBBBAABAABAB
+1000658
+current seq: BBAABAABAB | 0 0 B AA
+tempseq: AABAABAABAB
+current seq: BBAABAABAB | 1 3 ABA B
+tempseq: BBABABAB
+current seq: BBAABAABAB | 2 2 A BBA
+tempseq: BBBBAABAABAB
+1000659
+current seq: AABAABAB | 0 2 B AA
+tempseq: AAAAAABAB
+current seq: AABAABAB | 1 1 ABA B
+tempseq: ABABAB
+current seq: AABAABAB | 2 0 A BBA
+tempseq: BBAABAABAB
+1000660
+current seq: BBAABAB | 0 0 B AA
+tempseq: AABAABAB
+current seq: BBAABAB | 1 3 ABA B
+tempseq: BBABB
+current seq: BBAABAB | 2 2 A BBA
+tempseq: BBBBAABAB
+never visited
+1000662
+current seq: BBBBAABAB | 0 0 B AA
+tempseq: AABBBAABAB
+never visited
+1000664
+current seq: AABBBAABAB | 0 2 B AA
+tempseq: AAAABBAABAB
+never visited
+1000666
+current seq: AAAABBAABAB | 0 4 B AA
+tempseq: AAAAAABAABAB
+current seq: AAAABBAABAB | 1 7 ABA B
+tempseq: AAAABBABB
+current seq: AAAABBAABAB | 2 0 A BBA
+tempseq: BBAAAABBAABAB
+never visited
+1000668
+1000669
+current seq: AAAABBAABAB | 0 4 B AA
+tempseq: AAAAAABAABAB
+current seq: AAAABBAABAB | 1 7 ABA B
+tempseq: AAAABBABB
+current seq: AAAABBAABAB | 2 0 A BBA
+tempseq: BBAAAABBAABAB
+1000670
+current seq: AABBBAABAB | 0 2 B AA
+tempseq: AAAABBAABAB
+current seq: AABBBAABAB | 1 6 ABA B
+tempseq: AABBBABB
+current seq: AABBBAABAB | 2 0 A BBA
+tempseq: BBAABBBAABAB
+never visited
+1000672
+current seq: BBAABBBAABAB | 0 0 B AA
+tempseq: AABAABBBAABAB
+never visited
+1000674
+1000675
+current seq: BBAABBBAABAB | 0 0 B AA
+tempseq: AABAABBBAABAB
+current seq: BBAABBBAABAB | 1 8 ABA B
+tempseq: BBAABBBABB
+current seq: BBAABBBAABAB | 2 2 A BBA
+tempseq: BBBBAABBBAABAB
+never visited
+1000677
+1000678
+current seq: BBAABBBAABAB | 0 0 B AA
+tempseq: AABAABBBAABAB
+current seq: BBAABBBAABAB | 1 8 ABA B
+tempseq: BBAABBBABB
+current seq: BBAABBBAABAB | 2 2 A BBA
+tempseq: BBBBAABBBAABAB
+1000679
+current seq: AABBBAABAB | 0 2 B AA
+tempseq: AAAABBAABAB
+current seq: AABBBAABAB | 1 6 ABA B
+tempseq: AABBBABB
+current seq: AABBBAABAB | 2 0 A BBA
+tempseq: BBAABBBAABAB
+1000680
+current seq: BBBBAABAB | 0 0 B AA
+tempseq: AABBBAABAB
+current seq: BBBBAABAB | 1 5 ABA B
+tempseq: BBBBABB
+current seq: BBBBAABAB | 2 4 A BBA
+tempseq: BBBBBBAABAB
+never visited
+1000682
+current seq: BBBBBBAABAB | 0 0 B AA
+tempseq: AABBBBBAABAB
+never visited
+1000684
+current seq: AABBBBBAABAB | 0 2 B AA
+tempseq: AAAABBBBAABAB
+never visited
+1000686
+1000687
+current seq: AABBBBBAABAB | 0 2 B AA
+tempseq: AAAABBBBAABAB
+current seq: AABBBBBAABAB | 1 8 ABA B
+tempseq: AABBBBBABB
+current seq: AABBBBBAABAB | 2 0 A BBA
+tempseq: BBAABBBBBAABAB
+never visited
+1000689
+1000690
+current seq: AABBBBBAABAB | 0 2 B AA
+tempseq: AAAABBBBAABAB
+current seq: AABBBBBAABAB | 1 8 ABA B
+tempseq: AABBBBBABB
+current seq: AABBBBBAABAB | 2 0 A BBA
+tempseq: BBAABBBBBAABAB
+1000691
+current seq: BBBBBBAABAB | 0 0 B AA
+tempseq: AABBBBBAABAB
+current seq: BBBBBBAABAB | 1 7 ABA B
+tempseq: BBBBBBABB
+current seq: BBBBBBAABAB | 2 6 A BBA
+tempseq: BBBBBBBBAABAB
+never visited
+1000693
+current seq: BBBBBBBBAABAB | 0 0 B AA
+tempseq: AABBBBBBBAABAB
+never visited
+1000695
+1000696
+current seq: BBBBBBBBAABAB | 0 0 B AA
+tempseq: AABBBBBBBAABAB
+current seq: BBBBBBBBAABAB | 1 9 ABA B
+tempseq: BBBBBBBBABB
+current seq: BBBBBBBBAABAB | 2 8 A BBA
+tempseq: BBBBBBBBBBAABAB
+never visited
+1000698
+1000699
+current seq: BBBBBBBBAABAB | 0 0 B AA
+tempseq: AABBBBBBBAABAB
+current seq: BBBBBBBBAABAB | 1 9 ABA B
+tempseq: BBBBBBBBABB
+current seq: BBBBBBBBAABAB | 2 8 A BBA
+tempseq: BBBBBBBBBBAABAB
+1000700
+current seq: BBBBBBAABAB | 0 0 B AA
+tempseq: AABBBBBAABAB
+current seq: BBBBBBAABAB | 1 7 ABA B
+tempseq: BBBBBBABB
+current seq: BBBBBBAABAB | 2 6 A BBA
+tempseq: BBBBBBBBAABAB
+1000701
+current seq: BBBBAABAB | 0 0 B AA
+tempseq: AABBBAABAB
+current seq: BBBBAABAB | 1 5 ABA B
+tempseq: BBBBABB
+current seq: BBBBAABAB | 2 4 A BBA
+tempseq: BBBBBBAABAB
+1000702
+current seq: BBAABAB | 0 0 B AA
+tempseq: AABAABAB
+current seq: BBAABAB | 1 3 ABA B
+tempseq: BBABB
+current seq: BBAABAB | 2 2 A BBA
+tempseq: BBBBAABAB
+1000703
+current seq: AABAB | 0 2 B AA
+tempseq: AAAAAB
+current seq: AABAB | 1 1 ABA B
+tempseq: ABB
+current seq: AABAB | 2 0 A BBA
+tempseq: BBAABAB
+1000704
+current seq: BBAB | 0 0 B AA
+tempseq: AABAB
+current seq: BBAB | 2 2 A BBA
+tempseq: BBBBAB
+1000705
+current seq: AB | 0 1 B AA
+tempseq: AAA
+current seq: AB | 2 0 A BBA
+tempseq: BBAB
+1000706
+current seq: AABA | 0 2 B AA
+tempseq: AAAAA
+current seq: AABA | 1 1 ABA B
+tempseq: AB
+current seq: AABA | 2 0 A BBA
+tempseq: BBAABA
+never visited
+1000708
+current seq: BBAABA | 0 0 B AA
+tempseq: AABAABA
+never visited
+1000710
+current seq: AABAABA | 0 2 B AA
+tempseq: AAAAAABA
+never visited
+1000712
+current seq: AAAAAABA | 0 6 B AA
+tempseq: AAAAAAAAA
+current seq: AAAAAABA | 1 5 ABA B
+tempseq: AAAAAB
+current seq: AAAAAABA | 2 0 A BBA
+tempseq: BBAAAAAABA
+never visited
+1000714
+current seq: BBAAAAAABA | 0 0 B AA
+tempseq: AABAAAAAABA
+never visited
+1000716
+current seq: AABAAAAAABA | 0 2 B AA
+tempseq: AAAAAAAAAABA
+never visited
+1000718
+current seq: AAAAAAAAAABA | 0 10 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AAAAAAAAAABA | 1 9 ABA B
+tempseq: AAAAAAAAAB
+current seq: AAAAAAAAAABA | 2 0 A BBA
+tempseq: BBAAAAAAAAAABA
+never visited
+1000720
+current seq: BBAAAAAAAAAABA | 0 0 B AA
+tempseq: AABAAAAAAAAAABA
+never visited
+1000722
+1000723
+current seq: BBAAAAAAAAAABA | 0 0 B AA
+tempseq: AABAAAAAAAAAABA
+current seq: BBAAAAAAAAAABA | 1 11 ABA B
+tempseq: BBAAAAAAAAAB
+current seq: BBAAAAAAAAAABA | 2 2 A BBA
+tempseq: BBBBAAAAAAAAAABA
+never visited
+1000725
+1000726
+current seq: BBAAAAAAAAAABA | 0 0 B AA
+tempseq: AABAAAAAAAAAABA
+current seq: BBAAAAAAAAAABA | 1 11 ABA B
+tempseq: BBAAAAAAAAAB
+current seq: BBAAAAAAAAAABA | 2 2 A BBA
+tempseq: BBBBAAAAAAAAAABA
+1000727
+current seq: AAAAAAAAAABA | 0 10 B AA
+tempseq: AAAAAAAAAAAAA
+current seq: AAAAAAAAAABA | 1 9 ABA B
+tempseq: AAAAAAAAAB
+current seq: AAAAAAAAAABA | 2 0 A BBA
+tempseq: BBAAAAAAAAAABA
+1000728
+current seq: AABAAAAAABA | 0 2 B AA
+tempseq: AAAAAAAAAABA
+current seq: AABAAAAAABA | 1 1 ABA B
+tempseq: ABAAAAABA
+never visited
+1000730
+current seq: ABAAAAABA | 0 1 B AA
+tempseq: AAAAAAAABA
+never visited
+1000732
+current seq: AAAAAAAABA | 0 8 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAAAAABA | 1 7 ABA B
+tempseq: AAAAAAAB
+current seq: AAAAAAAABA | 2 0 A BBA
+tempseq: BBAAAAAAAABA
+never visited
+1000734
+1000735
+current seq: AAAAAAAABA | 0 8 B AA
+tempseq: AAAAAAAAAAA
+current seq: AAAAAAAABA | 1 7 ABA B
+tempseq: AAAAAAAB
+current seq: AAAAAAAABA | 2 0 A BBA
+tempseq: BBAAAAAAAABA
+1000736
+current seq: ABAAAAABA | 0 1 B AA
+tempseq: AAAAAAAABA
+current seq: ABAAAAABA | 1 0 ABA B
+tempseq: BAAAABA
+never visited
+1000738
+current seq: BAAAABA | 0 0 B AA
+tempseq: AAAAAABA
+current seq: BAAAABA | 1 4 ABA B
+tempseq: BAAAB
+current seq: BAAAABA | 2 1 A BBA
+tempseq: BBBAAAABA
+never visited
+1000740
+1000741
+current seq: BAAAABA | 0 0 B AA
+tempseq: AAAAAABA
+current seq: BAAAABA | 1 4 ABA B
+tempseq: BAAAB
+current seq: BAAAABA | 2 1 A BBA
+tempseq: BBBAAAABA
+1000742
+current seq: ABAAAAABA | 0 1 B AA
+tempseq: AAAAAAAABA
+current seq: ABAAAAABA | 1 0 ABA B
+tempseq: BAAAABA
+current seq: ABAAAAABA | 2 0 A BBA
+tempseq: BBABAAAAABA
+never visited
+1000744
+current seq: BBABAAAAABA | 0 0 B AA
+tempseq: AABABAAAAABA
+never visited
+1000746
+1000747
+current seq: BBABAAAAABA | 0 0 B AA
+tempseq: AABABAAAAABA
+current seq: BBABAAAAABA | 1 2 ABA B
+tempseq: BBBAAAABA
+current seq: BBABAAAAABA | 2 2 A BBA
+tempseq: BBBBABAAAAABA
+never visited
+1000749
+1000750
+current seq: BBABAAAAABA | 0 0 B AA
+tempseq: AABABAAAAABA
+current seq: BBABAAAAABA | 1 2 ABA B
+tempseq: BBBAAAABA
+current seq: BBABAAAAABA | 2 2 A BBA
+tempseq: BBBBABAAAAABA
+1000751
+current seq: ABAAAAABA | 0 1 B AA
+tempseq: AAAAAAAABA
+current seq: ABAAAAABA | 1 0 ABA B
+tempseq: BAAAABA
+current seq: ABAAAAABA | 2 0 A BBA
+tempseq: BBABAAAAABA
+1000752
+current seq: AABAAAAAABA | 0 2 B AA
+tempseq: AAAAAAAAAABA
+current seq: AABAAAAAABA | 1 1 ABA B
+tempseq: ABAAAAABA
+current seq: AABAAAAAABA | 2 0 A BBA
+tempseq: BBAABAAAAAABA
+never visited
+1000754
+current seq: BBAABAAAAAABA | 0 0 B AA
+tempseq: AABAABAAAAAABA
+never visited
+1000756
+current seq: AABAABAAAAAABA | 0 2 B AA
+tempseq: AAAAAABAAAAAABA
+never visited
+1000758
+1000759
+current seq: AABAABAAAAAABA | 0 2 B AA
+tempseq: AAAAAABAAAAAABA
+current seq: AABAABAAAAAABA | 1 1 ABA B
+tempseq: ABABAAAAAABA
+never visited
+1000761
+1000762
+current seq: AABAABAAAAAABA | 0 2 B AA
+tempseq: AAAAAABAAAAAABA
+current seq: AABAABAAAAAABA | 1 1 ABA B
+tempseq: ABABAAAAAABA
+current seq: AABAABAAAAAABA | 2 0 A BBA
+tempseq: BBAABAABAAAAAABA
+never visited
+1000764
+1000765
+current seq: AABAABAAAAAABA | 0 2 B AA
+tempseq: AAAAAABAAAAAABA
+current seq: AABAABAAAAAABA | 1 1 ABA B
+tempseq: ABABAAAAAABA
+current seq: AABAABAAAAAABA | 2 0 A BBA
+tempseq: BBAABAABAAAAAABA
+1000766
+current seq: BBAABAAAAAABA | 0 0 B AA
+tempseq: AABAABAAAAAABA
+current seq: BBAABAAAAAABA | 1 3 ABA B
+tempseq: BBABAAAAABA
+current seq: BBAABAAAAAABA | 2 2 A BBA
+tempseq: BBBBAABAAAAAABA
+never visited
+1000768
+current seq: BBBBAABAAAAAABA | 0 0 B AA
+tempseq: AABBBAABAAAAAABA
+never visited
+1000770
+1000771
+current seq: BBBBAABAAAAAABA | 0 0 B AA
+tempseq: AABBBAABAAAAAABA
+current seq: BBBBAABAAAAAABA | 1 5 ABA B
+tempseq: BBBBABAAAAABA
+current seq: BBBBAABAAAAAABA | 2 4 A BBA
+tempseq: BBBBBBAABAAAAAABA
+never visited
+1000773
+1000774
+current seq: BBBBAABAAAAAABA | 0 0 B AA
+tempseq: AABBBAABAAAAAABA
+current seq: BBBBAABAAAAAABA | 1 5 ABA B
+tempseq: BBBBABAAAAABA
+current seq: BBBBAABAAAAAABA | 2 4 A BBA
+tempseq: BBBBBBAABAAAAAABA
+1000775
+current seq: BBAABAAAAAABA | 0 0 B AA
+tempseq: AABAABAAAAAABA
+current seq: BBAABAAAAAABA | 1 3 ABA B
+tempseq: BBABAAAAABA
+current seq: BBAABAAAAAABA | 2 2 A BBA
+tempseq: BBBBAABAAAAAABA
+1000776
+current seq: AABAAAAAABA | 0 2 B AA
+tempseq: AAAAAAAAAABA
+current seq: AABAAAAAABA | 1 1 ABA B
+tempseq: ABAAAAABA
+current seq: AABAAAAAABA | 2 0 A BBA
+tempseq: BBAABAAAAAABA
+1000777
+current seq: BBAAAAAABA | 0 0 B AA
+tempseq: AABAAAAAABA
+current seq: BBAAAAAABA | 1 7 ABA B
+tempseq: BBAAAAAB
+current seq: BBAAAAAABA | 2 2 A BBA
+tempseq: BBBBAAAAAABA
+never visited
+1000779
+current seq: BBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBAAAAAABA
+never visited
+1000781
+current seq: AABBBAAAAAABA | 0 2 B AA
+tempseq: AAAABBAAAAAABA
+never visited
+1000783
+current seq: AAAABBAAAAAABA | 0 4 B AA
+tempseq: AAAAAABAAAAAABA
+current seq: AAAABBAAAAAABA | 1 11 ABA B
+tempseq: AAAABBAAAAAB
+current seq: AAAABBAAAAAABA | 2 0 A BBA
+tempseq: BBAAAABBAAAAAABA
+never visited
+1000785
+1000786
+current seq: AAAABBAAAAAABA | 0 4 B AA
+tempseq: AAAAAABAAAAAABA
+current seq: AAAABBAAAAAABA | 1 11 ABA B
+tempseq: AAAABBAAAAAB
+current seq: AAAABBAAAAAABA | 2 0 A BBA
+tempseq: BBAAAABBAAAAAABA
+1000787
+current seq: AABBBAAAAAABA | 0 2 B AA
+tempseq: AAAABBAAAAAABA
+current seq: AABBBAAAAAABA | 1 10 ABA B
+tempseq: AABBBAAAAAB
+current seq: AABBBAAAAAABA | 2 0 A BBA
+tempseq: BBAABBBAAAAAABA
+never visited
+1000789
+current seq: BBAABBBAAAAAABA | 0 0 B AA
+tempseq: AABAABBBAAAAAABA
+never visited
+1000791
+1000792
+current seq: BBAABBBAAAAAABA | 0 0 B AA
+tempseq: AABAABBBAAAAAABA
+current seq: BBAABBBAAAAAABA | 1 12 ABA B
+tempseq: BBAABBBAAAAAB
+current seq: BBAABBBAAAAAABA | 2 2 A BBA
+tempseq: BBBBAABBBAAAAAABA
+never visited
+1000794
+1000795
+current seq: BBAABBBAAAAAABA | 0 0 B AA
+tempseq: AABAABBBAAAAAABA
+current seq: BBAABBBAAAAAABA | 1 12 ABA B
+tempseq: BBAABBBAAAAAB
+current seq: BBAABBBAAAAAABA | 2 2 A BBA
+tempseq: BBBBAABBBAAAAAABA
+1000796
+current seq: AABBBAAAAAABA | 0 2 B AA
+tempseq: AAAABBAAAAAABA
+current seq: AABBBAAAAAABA | 1 10 ABA B
+tempseq: AABBBAAAAAB
+current seq: AABBBAAAAAABA | 2 0 A BBA
+tempseq: BBAABBBAAAAAABA
+1000797
+current seq: BBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBAAAAAABA
+current seq: BBBBAAAAAABA | 1 9 ABA B
+tempseq: BBBBAAAAAB
+current seq: BBBBAAAAAABA | 2 4 A BBA
+tempseq: BBBBBBAAAAAABA
+never visited
+1000799
+current seq: BBBBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBBBAAAAAABA
+never visited
+1000801
+current seq: AABBBBBAAAAAABA | 0 2 B AA
+tempseq: AAAABBBBAAAAAABA
+never visited
+1000803
+1000804
+current seq: AABBBBBAAAAAABA | 0 2 B AA
+tempseq: AAAABBBBAAAAAABA
+current seq: AABBBBBAAAAAABA | 1 12 ABA B
+tempseq: AABBBBBAAAAAB
+current seq: AABBBBBAAAAAABA | 2 0 A BBA
+tempseq: BBAABBBBBAAAAAABA
+never visited
+1000806
+1000807
+current seq: AABBBBBAAAAAABA | 0 2 B AA
+tempseq: AAAABBBBAAAAAABA
+current seq: AABBBBBAAAAAABA | 1 12 ABA B
+tempseq: AABBBBBAAAAAB
+current seq: AABBBBBAAAAAABA | 2 0 A BBA
+tempseq: BBAABBBBBAAAAAABA
+1000808
+current seq: BBBBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBBBAAAAAABA
+current seq: BBBBBBAAAAAABA | 1 11 ABA B
+tempseq: BBBBBBAAAAAB
+current seq: BBBBBBAAAAAABA | 2 6 A BBA
+tempseq: BBBBBBBBAAAAAABA
+never visited
+1000810
+current seq: BBBBBBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBBBBBAAAAAABA
+never visited
+1000812
+1000813
+current seq: BBBBBBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBBBBBAAAAAABA
+current seq: BBBBBBBBAAAAAABA | 1 13 ABA B
+tempseq: BBBBBBBBAAAAAB
+current seq: BBBBBBBBAAAAAABA | 2 8 A BBA
+tempseq: BBBBBBBBBBAAAAAABA
+never visited
+1000815
+1000816
+current seq: BBBBBBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBBBBBAAAAAABA
+current seq: BBBBBBBBAAAAAABA | 1 13 ABA B
+tempseq: BBBBBBBBAAAAAB
+current seq: BBBBBBBBAAAAAABA | 2 8 A BBA
+tempseq: BBBBBBBBBBAAAAAABA
+1000817
+current seq: BBBBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBBBAAAAAABA
+current seq: BBBBBBAAAAAABA | 1 11 ABA B
+tempseq: BBBBBBAAAAAB
+current seq: BBBBBBAAAAAABA | 2 6 A BBA
+tempseq: BBBBBBBBAAAAAABA
+1000818
+current seq: BBBBAAAAAABA | 0 0 B AA
+tempseq: AABBBAAAAAABA
+current seq: BBBBAAAAAABA | 1 9 ABA B
+tempseq: BBBBAAAAAB
+current seq: BBBBAAAAAABA | 2 4 A BBA
+tempseq: BBBBBBAAAAAABA
+1000819
+current seq: BBAAAAAABA | 0 0 B AA
+tempseq: AABAAAAAABA
+current seq: BBAAAAAABA | 1 7 ABA B
+tempseq: BBAAAAAB
+current seq: BBAAAAAABA | 2 2 A BBA
+tempseq: BBBBAAAAAABA
+1000820
+current seq: AAAAAABA | 0 6 B AA
+tempseq: AAAAAAAAA
+current seq: AAAAAABA | 1 5 ABA B
+tempseq: AAAAAB
+current seq: AAAAAABA | 2 0 A BBA
+tempseq: BBAAAAAABA
+1000821
+current seq: AABAABA | 0 2 B AA
+tempseq: AAAAAABA
+current seq: AABAABA | 1 1 ABA B
+tempseq: ABABA
+never visited
+1000823
+current seq: ABABA | 0 1 B AA
+tempseq: AAAABA
+never visited
+1000825
+current seq: AAAABA | 0 4 B AA
+tempseq: AAAAAAA
+current seq: AAAABA | 1 3 ABA B
+tempseq: AAAB
+current seq: AAAABA | 2 0 A BBA
+tempseq: BBAAAABA
+never visited
+1000827
+current seq: BBAAAABA | 0 0 B AA
+tempseq: AABAAAABA
+never visited
+1000829
+current seq: AABAAAABA | 0 2 B AA
+tempseq: AAAAAAAABA
+current seq: AABAAAABA | 1 1 ABA B
+tempseq: ABAAABA
+never visited
+1000831
+current seq: ABAAABA | 0 1 B AA
+tempseq: AAAAAABA
+current seq: ABAAABA | 1 0 ABA B
+tempseq: BAABA
+never visited
+1000833
+1000834
+current seq: ABAAABA | 0 1 B AA
+tempseq: AAAAAABA
+current seq: ABAAABA | 1 0 ABA B
+tempseq: BAABA
+current seq: ABAAABA | 2 0 A BBA
+tempseq: BBABAAABA
+never visited
+1000836
+1000837
+current seq: ABAAABA | 0 1 B AA
+tempseq: AAAAAABA
+current seq: ABAAABA | 1 0 ABA B
+tempseq: BAABA
+current seq: ABAAABA | 2 0 A BBA
+tempseq: BBABAAABA
+1000838
+current seq: AABAAAABA | 0 2 B AA
+tempseq: AAAAAAAABA
+current seq: AABAAAABA | 1 1 ABA B
+tempseq: ABAAABA
+current seq: AABAAAABA | 2 0 A BBA
+tempseq: BBAABAAAABA
+never visited
+1000840
+current seq: BBAABAAAABA | 0 0 B AA
+tempseq: AABAABAAAABA
+never visited
+1000842
+1000843
+current seq: BBAABAAAABA | 0 0 B AA
+tempseq: AABAABAAAABA
+current seq: BBAABAAAABA | 1 3 ABA B
+tempseq: BBABAAABA
+current seq: BBAABAAAABA | 2 2 A BBA
+tempseq: BBBBAABAAAABA
+never visited
+1000845
+1000846
+current seq: BBAABAAAABA | 0 0 B AA
+tempseq: AABAABAAAABA
+current seq: BBAABAAAABA | 1 3 ABA B
+tempseq: BBABAAABA
+current seq: BBAABAAAABA | 2 2 A BBA
+tempseq: BBBBAABAAAABA
+1000847
+current seq: AABAAAABA | 0 2 B AA
+tempseq: AAAAAAAABA
+current seq: AABAAAABA | 1 1 ABA B
+tempseq: ABAAABA
+current seq: AABAAAABA | 2 0 A BBA
+tempseq: BBAABAAAABA
+1000848
+current seq: BBAAAABA | 0 0 B AA
+tempseq: AABAAAABA
+current seq: BBAAAABA | 1 5 ABA B
+tempseq: BBAAAB
+current seq: BBAAAABA | 2 2 A BBA
+tempseq: BBBBAAAABA
+never visited
+1000850
+current seq: BBBBAAAABA | 0 0 B AA
+tempseq: AABBBAAAABA
+never visited
+1000852
+current seq: AABBBAAAABA | 0 2 B AA
+tempseq: AAAABBAAAABA
+never visited
+1000854
+1000855
+current seq: AABBBAAAABA | 0 2 B AA
+tempseq: AAAABBAAAABA
+current seq: AABBBAAAABA | 1 8 ABA B
+tempseq: AABBBAAAB
+current seq: AABBBAAAABA | 2 0 A BBA
+tempseq: BBAABBBAAAABA
+never visited
+1000857
+1000858
+current seq: AABBBAAAABA | 0 2 B AA
+tempseq: AAAABBAAAABA
+current seq: AABBBAAAABA | 1 8 ABA B
+tempseq: AABBBAAAB
+current seq: AABBBAAAABA | 2 0 A BBA
+tempseq: BBAABBBAAAABA
+1000859
+current seq: BBBBAAAABA | 0 0 B AA
+tempseq: AABBBAAAABA
+current seq: BBBBAAAABA | 1 7 ABA B
+tempseq: BBBBAAAB
+current seq: BBBBAAAABA | 2 4 A BBA
+tempseq: BBBBBBAAAABA
+never visited
+1000861
+current seq: BBBBBBAAAABA | 0 0 B AA
+tempseq: AABBBBBAAAABA
+never visited
+1000863
+1000864
+current seq: BBBBBBAAAABA | 0 0 B AA
+tempseq: AABBBBBAAAABA
+current seq: BBBBBBAAAABA | 1 9 ABA B
+tempseq: BBBBBBAAAB
+current seq: BBBBBBAAAABA | 2 6 A BBA
+tempseq: BBBBBBBBAAAABA
+never visited
+1000866
+1000867
+current seq: BBBBBBAAAABA | 0 0 B AA
+tempseq: AABBBBBAAAABA
+current seq: BBBBBBAAAABA | 1 9 ABA B
+tempseq: BBBBBBAAAB
+current seq: BBBBBBAAAABA | 2 6 A BBA
+tempseq: BBBBBBBBAAAABA
+1000868
+current seq: BBBBAAAABA | 0 0 B AA
+tempseq: AABBBAAAABA
+current seq: BBBBAAAABA | 1 7 ABA B
+tempseq: BBBBAAAB
+current seq: BBBBAAAABA | 2 4 A BBA
+tempseq: BBBBBBAAAABA
+1000869
+current seq: BBAAAABA | 0 0 B AA
+tempseq: AABAAAABA
+current seq: BBAAAABA | 1 5 ABA B
+tempseq: BBAAAB
+current seq: BBAAAABA | 2 2 A BBA
+tempseq: BBBBAAAABA
+1000870
+current seq: AAAABA | 0 4 B AA
+tempseq: AAAAAAA
+current seq: AAAABA | 1 3 ABA B
+tempseq: AAAB
+current seq: AAAABA | 2 0 A BBA
+tempseq: BBAAAABA
+1000871
+current seq: ABABA | 0 1 B AA
+tempseq: AAAABA
+current seq: ABABA | 1 0 ABA B
+tempseq: BBA
+current seq: ABABA | 2 0 A BBA
+tempseq: BBABABA
+never visited
+1000873
+current seq: BBABABA | 0 0 B AA
+tempseq: AABABABA
+never visited
+1000875
+current seq: AABABABA | 0 2 B AA
+tempseq: AAAAABABA
+never visited
+1000877
+current seq: AAAAABABA | 0 5 B AA
+tempseq: AAAAAAAABA
+current seq: AAAAABABA | 1 4 ABA B
+tempseq: AAAABBA
+never visited
+1000879
+current seq: AAAABBA | 0 4 B AA
+tempseq: AAAAAABA
+current seq: AAAABBA | 2 0 A BBA
+tempseq: BBAAAABBA
+never visited
+1000881
+1000882
+current seq: AAAABBA | 0 4 B AA
+tempseq: AAAAAABA
+current seq: AAAABBA | 2 0 A BBA
+tempseq: BBAAAABBA
+1000883
+current seq: AAAAABABA | 0 5 B AA
+tempseq: AAAAAAAABA
+current seq: AAAAABABA | 1 4 ABA B
+tempseq: AAAABBA
+current seq: AAAAABABA | 2 0 A BBA
+tempseq: BBAAAAABABA
+never visited
+1000885
+current seq: BBAAAAABABA | 0 0 B AA
+tempseq: AABAAAAABABA
+never visited
+1000887
+1000888
+current seq: BBAAAAABABA | 0 0 B AA
+tempseq: AABAAAAABABA
+current seq: BBAAAAABABA | 1 6 ABA B
+tempseq: BBAAAABBA
+current seq: BBAAAAABABA | 2 2 A BBA
+tempseq: BBBBAAAAABABA
+never visited
+1000890
+1000891
+current seq: BBAAAAABABA | 0 0 B AA
+tempseq: AABAAAAABABA
+current seq: BBAAAAABABA | 1 6 ABA B
+tempseq: BBAAAABBA
+current seq: BBAAAAABABA | 2 2 A BBA
+tempseq: BBBBAAAAABABA
+1000892
+current seq: AAAAABABA | 0 5 B AA
+tempseq: AAAAAAAABA
+current seq: AAAAABABA | 1 4 ABA B
+tempseq: AAAABBA
+current seq: AAAAABABA | 2 0 A BBA
+tempseq: BBAAAAABABA
+1000893
+current seq: AABABABA | 0 2 B AA
+tempseq: AAAAABABA
+current seq: AABABABA | 1 1 ABA B
+tempseq: ABBABA
+never visited
+1000895
+current seq: ABBABA | 0 1 B AA
+tempseq: AAABABA
+never visited
+1000897
+current seq: AAABABA | 0 3 B AA
+tempseq: AAAAAABA
+current seq: AAABABA | 1 2 ABA B
+tempseq: AABBA
+current seq: AAABABA | 2 0 A BBA
+tempseq: BBAAABABA
+never visited
+1000899
+1000900
+current seq: AAABABA | 0 3 B AA
+tempseq: AAAAAABA
+current seq: AAABABA | 1 2 ABA B
+tempseq: AABBA
+current seq: AAABABA | 2 0 A BBA
+tempseq: BBAAABABA
+1000901
+current seq: ABBABA | 0 1 B AA
+tempseq: AAABABA
+current seq: ABBABA | 1 3 ABA B
+tempseq: ABBB
+current seq: ABBABA | 2 0 A BBA
+tempseq: BBABBABA
+never visited
+1000903
+current seq: BBABBABA | 0 0 B AA
+tempseq: AABABBABA
+never visited
+1000905
+1000906
+current seq: BBABBABA | 0 0 B AA
+tempseq: AABABBABA
+current seq: BBABBABA | 1 5 ABA B
+tempseq: BBABBB
+current seq: BBABBABA | 2 2 A BBA
+tempseq: BBBBABBABA
+never visited
+1000908
+1000909
+current seq: BBABBABA | 0 0 B AA
+tempseq: AABABBABA
+current seq: BBABBABA | 1 5 ABA B
+tempseq: BBABBB
+current seq: BBABBABA | 2 2 A BBA
+tempseq: BBBBABBABA
+1000910
+current seq: ABBABA | 0 1 B AA
+tempseq: AAABABA
+current seq: ABBABA | 1 3 ABA B
+tempseq: ABBB
+current seq: ABBABA | 2 0 A BBA
+tempseq: BBABBABA
+1000911
+current seq: AABABABA | 0 2 B AA
+tempseq: AAAAABABA
+current seq: AABABABA | 1 1 ABA B
+tempseq: ABBABA
+current seq: AABABABA | 2 0 A BBA
+tempseq: BBAABABABA
+never visited
+1000913
+current seq: BBAABABABA | 0 0 B AA
+tempseq: AABAABABABA
+never visited
+1000915
+current seq: AABAABABABA | 0 2 B AA
+tempseq: AAAAAABABABA
+never visited
+1000917
+1000918
+current seq: AABAABABABA | 0 2 B AA
+tempseq: AAAAAABABABA
+current seq: AABAABABABA | 1 1 ABA B
+tempseq: ABABABABA
+never visited
+1000920
+1000921
+current seq: AABAABABABA | 0 2 B AA
+tempseq: AAAAAABABABA
+current seq: AABAABABABA | 1 1 ABA B
+tempseq: ABABABABA
+current seq: AABAABABABA | 2 0 A BBA
+tempseq: BBAABAABABABA
+never visited
+1000923
+1000924
+current seq: AABAABABABA | 0 2 B AA
+tempseq: AAAAAABABABA
+current seq: AABAABABABA | 1 1 ABA B
+tempseq: ABABABABA
+current seq: AABAABABABA | 2 0 A BBA
+tempseq: BBAABAABABABA
+1000925
+current seq: BBAABABABA | 0 0 B AA
+tempseq: AABAABABABA
+current seq: BBAABABABA | 1 3 ABA B
+tempseq: BBABBABA
+current seq: BBAABABABA | 2 2 A BBA
+tempseq: BBBBAABABABA
+never visited
+1000927
+current seq: BBBBAABABABA | 0 0 B AA
+tempseq: AABBBAABABABA
+never visited
+1000929
+1000930
+current seq: BBBBAABABABA | 0 0 B AA
+tempseq: AABBBAABABABA
+current seq: BBBBAABABABA | 1 5 ABA B
+tempseq: BBBBABBABA
+current seq: BBBBAABABABA | 2 4 A BBA
+tempseq: BBBBBBAABABABA
+never visited
+1000932
+1000933
+current seq: BBBBAABABABA | 0 0 B AA
+tempseq: AABBBAABABABA
+current seq: BBBBAABABABA | 1 5 ABA B
+tempseq: BBBBABBABA
+current seq: BBBBAABABABA | 2 4 A BBA
+tempseq: BBBBBBAABABABA
+1000934
+current seq: BBAABABABA | 0 0 B AA
+tempseq: AABAABABABA
+current seq: BBAABABABA | 1 3 ABA B
+tempseq: BBABBABA
+current seq: BBAABABABA | 2 2 A BBA
+tempseq: BBBBAABABABA
+1000935
+current seq: AABABABA | 0 2 B AA
+tempseq: AAAAABABA
+current seq: AABABABA | 1 1 ABA B
+tempseq: ABBABA
+current seq: AABABABA | 2 0 A BBA
+tempseq: BBAABABABA
+1000936
+current seq: BBABABA | 0 0 B AA
+tempseq: AABABABA
+current seq: BBABABA | 1 2 ABA B
+tempseq: BBBBA
+never visited
+1000938
+current seq: BBBBA | 0 0 B AA
+tempseq: AABBBA
+never visited
+1000940
+current seq: AABBBA | 0 2 B AA
+tempseq: AAAABBA
+current seq: AABBBA | 2 0 A BBA
+tempseq: BBAABBBA
+never visited
+1000942
+current seq: BBAABBBA | 0 0 B AA
+tempseq: AABAABBBA
+never visited
+1000944
+1000945
+current seq: BBAABBBA | 0 0 B AA
+tempseq: AABAABBBA
+current seq: BBAABBBA | 2 2 A BBA
+tempseq: BBBBAABBBA
+never visited
+1000947
+1000948
+current seq: BBAABBBA | 0 0 B AA
+tempseq: AABAABBBA
+current seq: BBAABBBA | 2 2 A BBA
+tempseq: BBBBAABBBA
+1000949
+current seq: AABBBA | 0 2 B AA
+tempseq: AAAABBA
+current seq: AABBBA | 2 0 A BBA
+tempseq: BBAABBBA
+1000950
+current seq: BBBBA | 0 0 B AA
+tempseq: AABBBA
+current seq: BBBBA | 2 4 A BBA
+tempseq: BBBBBBA
+never visited
+1000952
+current seq: BBBBBBA | 0 0 B AA
+tempseq: AABBBBBA
+never visited
+1000954
+current seq: AABBBBBA | 0 2 B AA
+tempseq: AAAABBBBA
+never visited
+1000956
+1000957
+current seq: AABBBBBA | 0 2 B AA
+tempseq: AAAABBBBA
+current seq: AABBBBBA | 2 0 A BBA
+tempseq: BBAABBBBBA
+never visited
+1000959
+1000960
+current seq: AABBBBBA | 0 2 B AA
+tempseq: AAAABBBBA
+current seq: AABBBBBA | 2 0 A BBA
+tempseq: BBAABBBBBA
+1000961
+current seq: BBBBBBA | 0 0 B AA
+tempseq: AABBBBBA
+current seq: BBBBBBA | 2 6 A BBA
+tempseq: BBBBBBBBA
+never visited
+1000963
+current seq: BBBBBBBBA | 0 0 B AA
+tempseq: AABBBBBBBA
+never visited
+1000965
+1000966
+current seq: BBBBBBBBA | 0 0 B AA
+tempseq: AABBBBBBBA
+current seq: BBBBBBBBA | 2 8 A BBA
+tempseq: BBBBBBBBBBA
+never visited
+1000968
+1000969
+current seq: BBBBBBBBA | 0 0 B AA
+tempseq: AABBBBBBBA
+current seq: BBBBBBBBA | 2 8 A BBA
+tempseq: BBBBBBBBBBA
+1000970
+current seq: BBBBBBA | 0 0 B AA
+tempseq: AABBBBBA
+current seq: BBBBBBA | 2 6 A BBA
+tempseq: BBBBBBBBA
+1000971
+current seq: BBBBA | 0 0 B AA
+tempseq: AABBBA
+current seq: BBBBA | 2 4 A BBA
+tempseq: BBBBBBA
+1000972
+current seq: BBABABA | 0 0 B AA
+tempseq: AABABABA
+current seq: BBABABA | 1 2 ABA B
+tempseq: BBBBA
+current seq: BBABABA | 2 2 A BBA
+tempseq: BBBBABABA
+never visited
+1000974
+current seq: BBBBABABA | 0 0 B AA
+tempseq: AABBBABABA
+never visited
+1000976
+current seq: AABBBABABA | 0 2 B AA
+tempseq: AAAABBABABA
+never visited
+1000978
+current seq: AAAABBABABA | 0 4 B AA
+tempseq: AAAAAABABABA
+current seq: AAAABBABABA | 1 6 ABA B
+tempseq: AAAABBBBA
+current seq: AAAABBABABA | 2 0 A BBA
+tempseq: BBAAAABBABABA
+never visited
+1000980
+1000981
+current seq: AAAABBABABA | 0 4 B AA
+tempseq: AAAAAABABABA
+current seq: AAAABBABABA | 1 6 ABA B
+tempseq: AAAABBBBA
+current seq: AAAABBABABA | 2 0 A BBA
+tempseq: BBAAAABBABABA
+1000982
+current seq: AABBBABABA | 0 2 B AA
+tempseq: AAAABBABABA
+current seq: AABBBABABA | 1 5 ABA B
+tempseq: AABBBBBA
+current seq: AABBBABABA | 2 0 A BBA
+tempseq: BBAABBBABABA
+never visited
+1000984
+current seq: BBAABBBABABA | 0 0 B AA
+tempseq: AABAABBBABABA
+never visited
+1000986
+1000987
+current seq: BBAABBBABABA | 0 0 B AA
+tempseq: AABAABBBABABA
+current seq: BBAABBBABABA | 1 7 ABA B
+tempseq: BBAABBBBBA
+current seq: BBAABBBABABA | 2 2 A BBA
+tempseq: BBBBAABBBABABA
+never visited
+1000989
+1000990
+current seq: BBAABBBABABA | 0 0 B AA
+tempseq: AABAABBBABABA
+current seq: BBAABBBABABA | 1 7 ABA B
+tempseq: BBAABBBBBA
+current seq: BBAABBBABABA | 2 2 A BBA
+tempseq: BBBBAABBBABABA
+1000991
+current seq: AABBBABABA | 0 2 B AA
+tempseq: AAAABBABABA
+current seq: AABBBABABA | 1 5 ABA B
+tempseq: AABBBBBA
+current seq: AABBBABABA | 2 0 A BBA
+tempseq: BBAABBBABABA
+1000992
+current seq: BBBBABABA | 0 0 B AA
+tempseq: AABBBABABA
+current seq: BBBBABABA | 1 4 ABA B
+tempseq: BBBBBBA
+current seq: BBBBABABA | 2 4 A BBA
+tempseq: BBBBBBABABA
+never visited
+1000994
+current seq: BBBBBBABABA | 0 0 B AA
+tempseq: AABBBBBABABA
+never visited
+1000996
+current seq: AABBBBBABABA | 0 2 B AA
+tempseq: AAAABBBBABABA
+never visited
+1000998
+1000999
+current seq: AABBBBBABABA | 0 2 B AA
+tempseq: AAAABBBBABABA
+current seq: AABBBBBABABA | 1 7 ABA B
+tempseq: AABBBBBBBA
+current seq: AABBBBBABABA | 2 0 A BBA
+tempseq: BBAABBBBBABABA
+never visited
+1001001
+1001002
+current seq: AABBBBBABABA | 0 2 B AA
+tempseq: AAAABBBBABABA
+current seq: AABBBBBABABA | 1 7 ABA B
+tempseq: AABBBBBBBA
+current seq: AABBBBBABABA | 2 0 A BBA
+tempseq: BBAABBBBBABABA
+1001003
+current seq: BBBBBBABABA | 0 0 B AA
+tempseq: AABBBBBABABA
+current seq: BBBBBBABABA | 1 6 ABA B
+tempseq: BBBBBBBBA
+current seq: BBBBBBABABA | 2 6 A BBA
+tempseq: BBBBBBBBABABA
+never visited
+1001005
+current seq: BBBBBBBBABABA | 0 0 B AA
+tempseq: AABBBBBBBABABA
+never visited
+1001007
+1001008
+current seq: BBBBBBBBABABA | 0 0 B AA
+tempseq: AABBBBBBBABABA
+current seq: BBBBBBBBABABA | 1 8 ABA B
+tempseq: BBBBBBBBBBA
+current seq: BBBBBBBBABABA | 2 8 A BBA
+tempseq: BBBBBBBBBBABABA
+never visited
+1001010
+1001011
+current seq: BBBBBBBBABABA | 0 0 B AA
+tempseq: AABBBBBBBABABA
+current seq: BBBBBBBBABABA | 1 8 ABA B
+tempseq: BBBBBBBBBBA
+current seq: BBBBBBBBABABA | 2 8 A BBA
+tempseq: BBBBBBBBBBABABA
+1001012
+current seq: BBBBBBABABA | 0 0 B AA
+tempseq: AABBBBBABABA
+current seq: BBBBBBABABA | 1 6 ABA B
+tempseq: BBBBBBBBA
+current seq: BBBBBBABABA | 2 6 A BBA
+tempseq: BBBBBBBBABABA
+1001013
+current seq: BBBBABABA | 0 0 B AA
+tempseq: AABBBABABA
+current seq: BBBBABABA | 1 4 ABA B
+tempseq: BBBBBBA
+current seq: BBBBABABA | 2 4 A BBA
+tempseq: BBBBBBABABA
+1001014
+current seq: BBABABA | 0 0 B AA
+tempseq: AABABABA
+current seq: BBABABA | 1 2 ABA B
+tempseq: BBBBA
+current seq: BBABABA | 2 2 A BBA
+tempseq: BBBBABABA
+1001015
+current seq: ABABA | 0 1 B AA
+tempseq: AAAABA
+current seq: ABABA | 1 0 ABA B
+tempseq: BBA
+current seq: ABABA | 2 0 A BBA
+tempseq: BBABABA
+1001016
+current seq: AABAABA | 0 2 B AA
+tempseq: AAAAAABA
+current seq: AABAABA | 1 1 ABA B
+tempseq: ABABA
+current seq: AABAABA | 2 0 A BBA
+tempseq: BBAABAABA
+never visited
+1001018
+current seq: BBAABAABA | 0 0 B AA
+tempseq: AABAABAABA
+never visited
+1001020
+current seq: AABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABA
+never visited
+1001022
+current seq: AAAAAABAABA | 0 6 B AA
+tempseq: AAAAAAAAAABA
+current seq: AAAAAABAABA | 1 5 ABA B
+tempseq: AAAAABABA
+current seq: AAAAAABAABA | 2 0 A BBA
+tempseq: BBAAAAAABAABA
+never visited
+1001024
+current seq: BBAAAAAABAABA | 0 0 B AA
+tempseq: AABAAAAAABAABA
+never visited
+1001026
+current seq: AABAAAAAABAABA | 0 2 B AA
+tempseq: AAAAAAAAAABAABA
+never visited
+1001028
+1001029
+current seq: AABAAAAAABAABA | 0 2 B AA
+tempseq: AAAAAAAAAABAABA
+current seq: AABAAAAAABAABA | 1 1 ABA B
+tempseq: ABAAAAABAABA
+never visited
+1001031
+1001032
+current seq: AABAAAAAABAABA | 0 2 B AA
+tempseq: AAAAAAAAAABAABA
+current seq: AABAAAAAABAABA | 1 1 ABA B
+tempseq: ABAAAAABAABA
+current seq: AABAAAAAABAABA | 2 0 A BBA
+tempseq: BBAABAAAAAABAABA
+never visited
+1001034
+1001035
+current seq: AABAAAAAABAABA | 0 2 B AA
+tempseq: AAAAAAAAAABAABA
+current seq: AABAAAAAABAABA | 1 1 ABA B
+tempseq: ABAAAAABAABA
+current seq: AABAAAAAABAABA | 2 0 A BBA
+tempseq: BBAABAAAAAABAABA
+1001036
+current seq: BBAAAAAABAABA | 0 0 B AA
+tempseq: AABAAAAAABAABA
+current seq: BBAAAAAABAABA | 1 7 ABA B
+tempseq: BBAAAAABABA
+current seq: BBAAAAAABAABA | 2 2 A BBA
+tempseq: BBBBAAAAAABAABA
+never visited
+1001038
+current seq: BBBBAAAAAABAABA | 0 0 B AA
+tempseq: AABBBAAAAAABAABA
+never visited
+1001040
+1001041
+current seq: BBBBAAAAAABAABA | 0 0 B AA
+tempseq: AABBBAAAAAABAABA
+current seq: BBBBAAAAAABAABA | 1 9 ABA B
+tempseq: BBBBAAAAABABA
+current seq: BBBBAAAAAABAABA | 2 4 A BBA
+tempseq: BBBBBBAAAAAABAABA
+never visited
+1001043
+1001044
+current seq: BBBBAAAAAABAABA | 0 0 B AA
+tempseq: AABBBAAAAAABAABA
+current seq: BBBBAAAAAABAABA | 1 9 ABA B
+tempseq: BBBBAAAAABABA
+current seq: BBBBAAAAAABAABA | 2 4 A BBA
+tempseq: BBBBBBAAAAAABAABA
+1001045
+current seq: BBAAAAAABAABA | 0 0 B AA
+tempseq: AABAAAAAABAABA
+current seq: BBAAAAAABAABA | 1 7 ABA B
+tempseq: BBAAAAABABA
+current seq: BBAAAAAABAABA | 2 2 A BBA
+tempseq: BBBBAAAAAABAABA
+1001046
+current seq: AAAAAABAABA | 0 6 B AA
+tempseq: AAAAAAAAAABA
+current seq: AAAAAABAABA | 1 5 ABA B
+tempseq: AAAAABABA
+current seq: AAAAAABAABA | 2 0 A BBA
+tempseq: BBAAAAAABAABA
+1001047
+current seq: AABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABA
+current seq: AABAABAABA | 1 1 ABA B
+tempseq: ABABAABA
+never visited
+1001049
+current seq: ABABAABA | 0 1 B AA
+tempseq: AAAABAABA
+never visited
+1001051
+current seq: AAAABAABA | 0 4 B AA
+tempseq: AAAAAAAABA
+current seq: AAAABAABA | 1 3 ABA B
+tempseq: AAABABA
+current seq: AAAABAABA | 2 0 A BBA
+tempseq: BBAAAABAABA
+never visited
+1001053
+current seq: BBAAAABAABA | 0 0 B AA
+tempseq: AABAAAABAABA
+never visited
+1001055
+1001056
+current seq: BBAAAABAABA | 0 0 B AA
+tempseq: AABAAAABAABA
+current seq: BBAAAABAABA | 1 5 ABA B
+tempseq: BBAAABABA
+current seq: BBAAAABAABA | 2 2 A BBA
+tempseq: BBBBAAAABAABA
+never visited
+1001058
+1001059
+current seq: BBAAAABAABA | 0 0 B AA
+tempseq: AABAAAABAABA
+current seq: BBAAAABAABA | 1 5 ABA B
+tempseq: BBAAABABA
+current seq: BBAAAABAABA | 2 2 A BBA
+tempseq: BBBBAAAABAABA
+1001060
+current seq: AAAABAABA | 0 4 B AA
+tempseq: AAAAAAAABA
+current seq: AAAABAABA | 1 3 ABA B
+tempseq: AAABABA
+current seq: AAAABAABA | 2 0 A BBA
+tempseq: BBAAAABAABA
+1001061
+current seq: ABABAABA | 0 1 B AA
+tempseq: AAAABAABA
+current seq: ABABAABA | 1 0 ABA B
+tempseq: BBAABA
+current seq: ABABAABA | 2 0 A BBA
+tempseq: BBABABAABA
+never visited
+1001063
+current seq: BBABABAABA | 0 0 B AA
+tempseq: AABABABAABA
+never visited
+1001065
+current seq: AABABABAABA | 0 2 B AA
+tempseq: AAAAABABAABA
+never visited
+1001067
+1001068
+current seq: AABABABAABA | 0 2 B AA
+tempseq: AAAAABABAABA
+current seq: AABABABAABA | 1 1 ABA B
+tempseq: ABBABAABA
+never visited
+1001070
+1001071
+current seq: AABABABAABA | 0 2 B AA
+tempseq: AAAAABABAABA
+current seq: AABABABAABA | 1 1 ABA B
+tempseq: ABBABAABA
+current seq: AABABABAABA | 2 0 A BBA
+tempseq: BBAABABABAABA
+never visited
+1001073
+1001074
+current seq: AABABABAABA | 0 2 B AA
+tempseq: AAAAABABAABA
+current seq: AABABABAABA | 1 1 ABA B
+tempseq: ABBABAABA
+current seq: AABABABAABA | 2 0 A BBA
+tempseq: BBAABABABAABA
+1001075
+current seq: BBABABAABA | 0 0 B AA
+tempseq: AABABABAABA
+current seq: BBABABAABA | 1 2 ABA B
+tempseq: BBBBAABA
+never visited
+1001077
+current seq: BBBBAABA | 0 0 B AA
+tempseq: AABBBAABA
+never visited
+1001079
+1001080
+current seq: BBBBAABA | 0 0 B AA
+tempseq: AABBBAABA
+current seq: BBBBAABA | 1 5 ABA B
+tempseq: BBBBAB
+current seq: BBBBAABA | 2 4 A BBA
+tempseq: BBBBBBAABA
+never visited
+1001082
+1001083
+current seq: BBBBAABA | 0 0 B AA
+tempseq: AABBBAABA
+current seq: BBBBAABA | 1 5 ABA B
+tempseq: BBBBAB
+current seq: BBBBAABA | 2 4 A BBA
+tempseq: BBBBBBAABA
+1001084
+current seq: BBABABAABA | 0 0 B AA
+tempseq: AABABABAABA
+current seq: BBABABAABA | 1 2 ABA B
+tempseq: BBBBAABA
+current seq: BBABABAABA | 2 2 A BBA
+tempseq: BBBBABABAABA
+never visited
+1001086
+current seq: BBBBABABAABA | 0 0 B AA
+tempseq: AABBBABABAABA
+never visited
+1001088
+1001089
+current seq: BBBBABABAABA | 0 0 B AA
+tempseq: AABBBABABAABA
+current seq: BBBBABABAABA | 1 4 ABA B
+tempseq: BBBBBBAABA
+current seq: BBBBABABAABA | 2 4 A BBA
+tempseq: BBBBBBABABAABA
+never visited
+1001091
+1001092
+current seq: BBBBABABAABA | 0 0 B AA
+tempseq: AABBBABABAABA
+current seq: BBBBABABAABA | 1 4 ABA B
+tempseq: BBBBBBAABA
+current seq: BBBBABABAABA | 2 4 A BBA
+tempseq: BBBBBBABABAABA
+1001093
+current seq: BBABABAABA | 0 0 B AA
+tempseq: AABABABAABA
+current seq: BBABABAABA | 1 2 ABA B
+tempseq: BBBBAABA
+current seq: BBABABAABA | 2 2 A BBA
+tempseq: BBBBABABAABA
+1001094
+current seq: ABABAABA | 0 1 B AA
+tempseq: AAAABAABA
+current seq: ABABAABA | 1 0 ABA B
+tempseq: BBAABA
+current seq: ABABAABA | 2 0 A BBA
+tempseq: BBABABAABA
+1001095
+current seq: AABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABA
+current seq: AABAABAABA | 1 1 ABA B
+tempseq: ABABAABA
+current seq: AABAABAABA | 2 0 A BBA
+tempseq: BBAABAABAABA
+never visited
+1001097
+current seq: BBAABAABAABA | 0 0 B AA
+tempseq: AABAABAABAABA
+never visited
+1001099
+current seq: AABAABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABAABA
+never visited
+1001101
+current seq: AAAAAABAABAABA | 0 6 B AA
+tempseq: AAAAAAAAAABAABA
+current seq: AAAAAABAABAABA | 1 5 ABA B
+tempseq: AAAAABABAABA
+current seq: AAAAAABAABAABA | 2 0 A BBA
+tempseq: BBAAAAAABAABAABA
+never visited
+1001103
+1001104
+current seq: AAAAAABAABAABA | 0 6 B AA
+tempseq: AAAAAAAAAABAABA
+current seq: AAAAAABAABAABA | 1 5 ABA B
+tempseq: AAAAABABAABA
+current seq: AAAAAABAABAABA | 2 0 A BBA
+tempseq: BBAAAAAABAABAABA
+1001105
+current seq: AABAABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABAABA
+current seq: AABAABAABAABA | 1 1 ABA B
+tempseq: ABABAABAABA
+never visited
+1001107
+current seq: ABABAABAABA | 0 1 B AA
+tempseq: AAAABAABAABA
+never visited
+1001109
+1001110
+current seq: ABABAABAABA | 0 1 B AA
+tempseq: AAAABAABAABA
+current seq: ABABAABAABA | 1 0 ABA B
+tempseq: BBAABAABA
+current seq: ABABAABAABA | 2 0 A BBA
+tempseq: BBABABAABAABA
+never visited
+1001112
+1001113
+current seq: ABABAABAABA | 0 1 B AA
+tempseq: AAAABAABAABA
+current seq: ABABAABAABA | 1 0 ABA B
+tempseq: BBAABAABA
+current seq: ABABAABAABA | 2 0 A BBA
+tempseq: BBABABAABAABA
+1001114
+current seq: AABAABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABAABA
+current seq: AABAABAABAABA | 1 1 ABA B
+tempseq: ABABAABAABA
+current seq: AABAABAABAABA | 2 0 A BBA
+tempseq: BBAABAABAABAABA
+never visited
+1001116
+current seq: BBAABAABAABAABA | 0 0 B AA
+tempseq: AABAABAABAABAABA
+never visited
+1001118
+1001119
+current seq: BBAABAABAABAABA | 0 0 B AA
+tempseq: AABAABAABAABAABA
+current seq: BBAABAABAABAABA | 1 3 ABA B
+tempseq: BBABABAABAABA
+current seq: BBAABAABAABAABA | 2 2 A BBA
+tempseq: BBBBAABAABAABAABA
+never visited
+1001121
+1001122
+current seq: BBAABAABAABAABA | 0 0 B AA
+tempseq: AABAABAABAABAABA
+current seq: BBAABAABAABAABA | 1 3 ABA B
+tempseq: BBABABAABAABA
+current seq: BBAABAABAABAABA | 2 2 A BBA
+tempseq: BBBBAABAABAABAABA
+1001123
+current seq: AABAABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABAABA
+current seq: AABAABAABAABA | 1 1 ABA B
+tempseq: ABABAABAABA
+current seq: AABAABAABAABA | 2 0 A BBA
+tempseq: BBAABAABAABAABA
+1001124
+current seq: BBAABAABAABA | 0 0 B AA
+tempseq: AABAABAABAABA
+current seq: BBAABAABAABA | 1 3 ABA B
+tempseq: BBABABAABA
+current seq: BBAABAABAABA | 2 2 A BBA
+tempseq: BBBBAABAABAABA
+never visited
+1001126
+current seq: BBBBAABAABAABA | 0 0 B AA
+tempseq: AABBBAABAABAABA
+never visited
+1001128
+current seq: AABBBAABAABAABA | 0 2 B AA
+tempseq: AAAABBAABAABAABA
+never visited
+1001130
+1001131
+current seq: AABBBAABAABAABA | 0 2 B AA
+tempseq: AAAABBAABAABAABA
+current seq: AABBBAABAABAABA | 1 6 ABA B
+tempseq: AABBBABABAABA
+current seq: AABBBAABAABAABA | 2 0 A BBA
+tempseq: BBAABBBAABAABAABA
+never visited
+1001133
+1001134
+current seq: AABBBAABAABAABA | 0 2 B AA
+tempseq: AAAABBAABAABAABA
+current seq: AABBBAABAABAABA | 1 6 ABA B
+tempseq: AABBBABABAABA
+current seq: AABBBAABAABAABA | 2 0 A BBA
+tempseq: BBAABBBAABAABAABA
+1001135
+current seq: BBBBAABAABAABA | 0 0 B AA
+tempseq: AABBBAABAABAABA
+current seq: BBBBAABAABAABA | 1 5 ABA B
+tempseq: BBBBABABAABA
+current seq: BBBBAABAABAABA | 2 4 A BBA
+tempseq: BBBBBBAABAABAABA
+never visited
+1001137
+current seq: BBBBBBAABAABAABA | 0 0 B AA
+tempseq: AABBBBBAABAABAABA
+never visited
+1001139
+1001140
+current seq: BBBBBBAABAABAABA | 0 0 B AA
+tempseq: AABBBBBAABAABAABA
+current seq: BBBBBBAABAABAABA | 1 7 ABA B
+tempseq: BBBBBBABABAABA
+current seq: BBBBBBAABAABAABA | 2 6 A BBA
+tempseq: BBBBBBBBAABAABAABA
+never visited
+1001142
+1001143
+current seq: BBBBBBAABAABAABA | 0 0 B AA
+tempseq: AABBBBBAABAABAABA
+current seq: BBBBBBAABAABAABA | 1 7 ABA B
+tempseq: BBBBBBABABAABA
+current seq: BBBBBBAABAABAABA | 2 6 A BBA
+tempseq: BBBBBBBBAABAABAABA
+1001144
+current seq: BBBBAABAABAABA | 0 0 B AA
+tempseq: AABBBAABAABAABA
+current seq: BBBBAABAABAABA | 1 5 ABA B
+tempseq: BBBBABABAABA
+current seq: BBBBAABAABAABA | 2 4 A BBA
+tempseq: BBBBBBAABAABAABA
+1001145
+current seq: BBAABAABAABA | 0 0 B AA
+tempseq: AABAABAABAABA
+current seq: BBAABAABAABA | 1 3 ABA B
+tempseq: BBABABAABA
+current seq: BBAABAABAABA | 2 2 A BBA
+tempseq: BBBBAABAABAABA
+1001146
+current seq: AABAABAABA | 0 2 B AA
+tempseq: AAAAAABAABA
+current seq: AABAABAABA | 1 1 ABA B
+tempseq: ABABAABA
+current seq: AABAABAABA | 2 0 A BBA
+tempseq: BBAABAABAABA
+1001147
+current seq: BBAABAABA | 0 0 B AA
+tempseq: AABAABAABA
+current seq: BBAABAABA | 1 3 ABA B
+tempseq: BBABABA
+current seq: BBAABAABA | 2 2 A BBA
+tempseq: BBBBAABAABA
+never visited
+1001149
+current seq: BBBBAABAABA | 0 0 B AA
+tempseq: AABBBAABAABA
+never visited
+1001151
+current seq: AABBBAABAABA | 0 2 B AA
+tempseq: AAAABBAABAABA
+never visited
+1001153
+current seq: AAAABBAABAABA | 0 4 B AA
+tempseq: AAAAAABAABAABA
+current seq: AAAABBAABAABA | 1 7 ABA B
+tempseq: AAAABBABABA
+current seq: AAAABBAABAABA | 2 0 A BBA
+tempseq: BBAAAABBAABAABA
+never visited
+1001155
+current seq: BBAAAABBAABAABA | 0 0 B AA
+tempseq: AABAAAABBAABAABA
+never visited
+1001157
+1001158
+current seq: BBAAAABBAABAABA | 0 0 B AA
+tempseq: AABAAAABBAABAABA
+current seq: BBAAAABBAABAABA | 1 9 ABA B
+tempseq: BBAAAABBABABA
+current seq: BBAAAABBAABAABA | 2 2 A BBA
+tempseq: BBBBAAAABBAABAABA
+never visited
+1001160
+1001161
+current seq: BBAAAABBAABAABA | 0 0 B AA
+tempseq: AABAAAABBAABAABA
+current seq: BBAAAABBAABAABA | 1 9 ABA B
+tempseq: BBAAAABBABABA
+current seq: BBAAAABBAABAABA | 2 2 A BBA
+tempseq: BBBBAAAABBAABAABA
+1001162
+current seq: AAAABBAABAABA | 0 4 B AA
+tempseq: AAAAAABAABAABA
+current seq: AAAABBAABAABA | 1 7 ABA B
+tempseq: AAAABBABABA
+current seq: AAAABBAABAABA | 2 0 A BBA
+tempseq: BBAAAABBAABAABA
+1001163
+current seq: AABBBAABAABA | 0 2 B AA
+tempseq: AAAABBAABAABA
+current seq: AABBBAABAABA | 1 6 ABA B
+tempseq: AABBBABABA
+current seq: AABBBAABAABA | 2 0 A BBA
+tempseq: BBAABBBAABAABA
+never visited
+1001165
+current seq: BBAABBBAABAABA | 0 0 B AA
+tempseq: AABAABBBAABAABA
+never visited
+1001167
+current seq: AABAABBBAABAABA | 0 2 B AA
+tempseq: AAAAAABBBAABAABA
+never visited
+1001169
+1001170
+current seq: AABAABBBAABAABA | 0 2 B AA
+tempseq: AAAAAABBBAABAABA
+current seq: AABAABBBAABAABA | 1 1 ABA B
+tempseq: ABABBBAABAABA
+never visited
+1001172
+1001173
+current seq: AABAABBBAABAABA | 0 2 B AA
+tempseq: AAAAAABBBAABAABA
+current seq: AABAABBBAABAABA | 1 1 ABA B
+tempseq: ABABBBAABAABA
+current seq: AABAABBBAABAABA | 2 0 A BBA
+tempseq: BBAABAABBBAABAABA
+never visited
+1001175
+1001176
+current seq: AABAABBBAABAABA | 0 2 B AA
+tempseq: AAAAAABBBAABAABA
+current seq: AABAABBBAABAABA | 1 1 ABA B
+tempseq: ABABBBAABAABA
+current seq: AABAABBBAABAABA | 2 0 A BBA
+tempseq: BBAABAABBBAABAABA
+1001177
+current seq: BBAABBBAABAABA | 0 0 B AA
+tempseq: AABAABBBAABAABA
+current seq: BBAABBBAABAABA | 1 8 ABA B
+tempseq: BBAABBBABABA
+current seq: BBAABBBAABAABA | 2 2 A BBA
+tempseq: BBBBAABBBAABAABA
+never visited
+1001179
+current seq: BBBBAABBBAABAABA | 0 0 B AA
+tempseq: AABBBAABBBAABAABA
+never visited
+1001181
+1001182
+current seq: BBBBAABBBAABAABA | 0 0 B AA
+tempseq: AABBBAABBBAABAABA
+current seq: BBBBAABBBAABAABA | 1 10 ABA B
+tempseq: BBBBAABBBABABA
+current seq: BBBBAABBBAABAABA | 2 4 A BBA
+tempseq: BBBBBBAABBBAABAABA
+never visited
+1001184
+1001185
+current seq: BBBBAABBBAABAABA | 0 0 B AA
+tempseq: AABBBAABBBAABAABA
+current seq: BBBBAABBBAABAABA | 1 10 ABA B
+tempseq: BBBBAABBBABABA
+current seq: BBBBAABBBAABAABA | 2 4 A BBA
+tempseq: BBBBBBAABBBAABAABA
+1001186
+current seq: BBAABBBAABAABA | 0 0 B AA
+tempseq: AABAABBBAABAABA
+current seq: BBAABBBAABAABA | 1 8 ABA B
+tempseq: BBAABBBABABA
+current seq: BBAABBBAABAABA | 2 2 A BBA
+tempseq: BBBBAABBBAABAABA
+1001187
+current seq: AABBBAABAABA | 0 2 B AA
+tempseq: AAAABBAABAABA
+current seq: AABBBAABAABA | 1 6 ABA B
+tempseq: AABBBABABA
+current seq: AABBBAABAABA | 2 0 A BBA
+tempseq: BBAABBBAABAABA
+1001188
+current seq: BBBBAABAABA | 0 0 B AA
+tempseq: AABBBAABAABA
+current seq: BBBBAABAABA | 1 5 ABA B
+tempseq: BBBBABABA
+current seq: BBBBAABAABA | 2 4 A BBA
+tempseq: BBBBBBAABAABA
+never visited
+1001190
+current seq: BBBBBBAABAABA | 0 0 B AA
+tempseq: AABBBBBAABAABA
+never visited
+1001192
+current seq: AABBBBBAABAABA | 0 2 B AA
+tempseq: AAAABBBBAABAABA
+never visited
+1001194
+current seq: AAAABBBBAABAABA | 0 4 B AA
+tempseq: AAAAAABBBAABAABA
+current seq: AAAABBBBAABAABA | 1 9 ABA B
+tempseq: AAAABBBBABABA
+current seq: AAAABBBBAABAABA | 2 0 A BBA
+tempseq: BBAAAABBBBAABAABA
+never visited
+1001196
+1001197
+current seq: AAAABBBBAABAABA | 0 4 B AA
+tempseq: AAAAAABBBAABAABA
+current seq: AAAABBBBAABAABA | 1 9 ABA B
+tempseq: AAAABBBBABABA
+current seq: AAAABBBBAABAABA | 2 0 A BBA
+tempseq: BBAAAABBBBAABAABA
+1001198
+current seq: AAB

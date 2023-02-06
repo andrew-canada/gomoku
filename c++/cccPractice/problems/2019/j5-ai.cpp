@@ -20,13 +20,13 @@ bool dfs(int step, string now)
         else
             return false;
     }
-    for (int i = 0; i < len2; i++)
+    for (int i = 0; i < 3; i++)
     {
-        int pos = now.find(b[i], 0);
+        int pos = now.find(a[i], 0);
         while (pos != string::npos)
         {
             tmp = now;
-            now.replace(pos, len2, a[i]);
+            now.replace(pos, b[i].size(), b[i]);
             vec.push_back(make_pair(i + 1, make_pair(pos + 1, now)));
             if (dfs(step + 1, now))
                 return true;
