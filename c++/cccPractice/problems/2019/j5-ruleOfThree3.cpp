@@ -24,7 +24,6 @@ vector<string> results;
 
 bool solve(int currentSteps, string cs)
 {
-    string cs = ns.top();
     if (currentSteps == steps)
     {
         return cs == ts;
@@ -44,9 +43,8 @@ bool solve(int currentSteps, string cs)
                 return true;
             }
             // nums.push(to_string(i + 1) + " " + to_string(index + 1));
-            currentSteps++;
-            nnf = true;
-            break;
+            ns.pop();
+            index = cs.find(rro[i]);
         }
     }
     if (!nnf)
