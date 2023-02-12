@@ -25,6 +25,8 @@ int numPushed = 0;
 bool nnf; // new node found
 vector<string> results;
 
+int abcde = 1;
+
 int main()
 {
 #ifdef LOCAL
@@ -50,6 +52,7 @@ int main()
 
     while (true)
     {
+        printf("count:%d\n", abcde);
         string cs = ns.top();
         printf("%d\n", visited.size());
         if (cs == ts)
@@ -70,6 +73,7 @@ int main()
         visited.push_back(cs);
         for (int i = 0; i < 3; i++)
         {
+            abcde++;
             int index = cs.find(rro[i]);
             if (index != string::npos && ns.size() <= steps)
             {
