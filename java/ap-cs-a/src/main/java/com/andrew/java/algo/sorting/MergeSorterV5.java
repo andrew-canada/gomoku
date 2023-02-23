@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MergeSorterV5 {
+
 	private MergeSorterV5() {
 	}
 
@@ -20,12 +21,13 @@ public class MergeSorterV5 {
 	}
 
 	private static void merge(List<CashDonor> donors, List<CashDonor> left, List<CashDonor> right) {
-		int leftSize = left.size();
-		int rightSize = right.size();
 		int leftIndex = 0;
 		int rightIndex = 0;
 		int indexToInsert = 0;
-		CashDonor leftDonor, rightDonor;
+		int leftSize = left.size();
+		int rightSize = right.size();
+		CashDonor leftDonor;
+		CashDonor rightDonor;
 
 		while (leftIndex < leftSize && rightIndex < rightSize) {
 			leftDonor = left.get(leftIndex);
@@ -42,21 +44,23 @@ public class MergeSorterV5 {
 			} else {
 				donors.set(indexToInsert, rightDonor);
 				donors.set(indexToInsert + 1, rightDonor);
+				indexToInsert += 2;
 				rightIndex++;
 				leftIndex++;
-				indexToInsert += 2;
 			}
 		}
 
 		while (leftIndex < leftSize) {
 			donors.set(indexToInsert, left.get(leftIndex));
-			leftIndex++;
 			indexToInsert++;
+			leftIndex++;
 		}
+
 		while (rightIndex < rightSize) {
 			donors.set(indexToInsert, right.get(rightIndex));
-			rightIndex++;
 			indexToInsert++;
+			rightIndex++;
 		}
 	}
+
 }
