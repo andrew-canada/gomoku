@@ -4,7 +4,7 @@
 #include <vector>
 #include <sstream>
 
-// #define LOCAL
+#define LOCAL
 
 using namespace std;
 
@@ -17,8 +17,8 @@ string vals[1000000];
 int main()
 {
 #ifdef LOCAL
-    freopen("in.txt", "r", stdin);
-    freopen("out.txt", "w", stdout);
+    freopen("482.in", "r", stdin);
+    freopen("482.out", "w", stdout);
 #endif
     scanf("%d", &cases);
     getline(cin, in);
