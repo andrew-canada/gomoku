@@ -8,7 +8,7 @@
 
 using namespace std;
 
-#define LOCAL
+// #define LOCAL
 typedef map<string, int> msi;
 typedef map<string, vector<string>> msvs;
 typedef vector<pair<string, int>> vpsi;
