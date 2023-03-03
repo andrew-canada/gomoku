@@ -51,4 +51,12 @@ class QuickSorterTest {
 		unsortedDonors.stream().forEach(System.out::println);
 	}
 
+	@Test
+	void testQuickSortV5() {
+		QuickSorterV5.quickSort(unsortedDonors);
+		Assertions.assertEquals(donorsByDonation, unsortedDonors);
+		System.out.println();
+		unsortedDonors.stream().forEach(System.out::println);
+	}
+
 }

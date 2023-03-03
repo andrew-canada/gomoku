@@ -1,12 +1,13 @@
 #include <stdio.h>
 
 int sw[100001];
-int se[100001];
 int n;
 
 int t1;
 int t2;
 int maxTie;
+
+int val;
 
 int main()
 {
@@ -15,15 +16,12 @@ int main()
     {
         scanf("%d", &sw[i]);
     }
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &se[i]);
-    }
 
     for (int i = 0; i < n; i++)
     {
         t1 += sw[i];
-        t2 += se[i];
+        scanf("%d", &val);
+        t2 += val;
         if (t1 == t2)
         {
             maxTie = i + 1;

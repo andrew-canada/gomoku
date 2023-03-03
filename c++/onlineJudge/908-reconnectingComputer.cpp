@@ -5,7 +5,7 @@
 
 using namespace std;
 
-#define LOCAL
+// #define LOCAL
 #define REP(i, a, b) for (int i = int(a); i <= int(b - 1); i++)
 
 typedef tuple<int, int, int> iii;
@@ -102,10 +102,10 @@ bool isSameSet(int a, int b)
 
 void unionSet(int a, int b)
 {
-    // if (!isSameSet(a, b))
-    // {
-    int x = findSet(a);
-    int y = findSet(b);
-    ufdSet[a] = b;
-    //}
+    if (!isSameSet(a, b))
+    {
+        int x = findSet(a);
+        int y = findSet(b);
+        ufdSet[x] = y;
+    }
 }
