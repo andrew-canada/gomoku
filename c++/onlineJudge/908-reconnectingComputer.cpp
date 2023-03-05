@@ -22,6 +22,7 @@ void initSet(int s);
 int findSet(int n);
 bool isSameSet(int a, int b);
 void unionSet(int a, int b);
+bool isFirst = true;
 
 int main()
 {
@@ -29,18 +30,22 @@ int main()
     freopen("908-2.in", "r", stdin);
     freopen("908.out", "w", stdout);
 #endif
-    while (true)
+    while (scanf(" %d", &nodes) != EOF)
     {
+        if (isFirst)
+        {
+            isFirst = false;
+        }
+        else
+        {
+            printf("\n");
+        }
         int totWeight = 0;
         int numTaken = 1;
         int orig = 0;
         edgeList.clear();
         ufdSet.clear();
 
-        if (scanf(" %d", &nodes) == EOF)
-        {
-            break;
-        }
         REP(i, 0, nodes - 1)
         {
             scanf("%*d %*d %d", &w);
@@ -80,7 +85,7 @@ int main()
             }
         }
 
-        printf("%d\n\n", totWeight);
+        printf("%d\n", totWeight);
     }
 }
 
