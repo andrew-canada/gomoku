@@ -97,4 +97,12 @@ class MergeSorterTest {
 		unsortedDonors.stream().forEach(System.out::println);
 	}
 
+	@Test
+	void testMergeSortV7() {
+		MergeSorterV7.mergeSort(unsortedDonors);
+		Assertions.assertEquals(donorsByDonation, unsortedDonors);
+		System.out.println();
+		unsortedDonors.stream().forEach(System.out::println);
+	}
+
 }
