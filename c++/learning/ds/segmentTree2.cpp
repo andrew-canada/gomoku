@@ -9,11 +9,9 @@ typedef vector<int> vi;
 class SegTree
 {
 private:
-    int tSize;
-    vi treeVals;
-    vi tree;
+    int size;
+    vi tree, treeVals;
 
-    // get left position
     int glp(int pos)
     {
         return pos << 1;
@@ -39,7 +37,6 @@ private:
             tree[pos] = conquer(tree[lPos], tree[rPos]);
         }
     }
-
     int conquer(int a, int b)
     {
         if (a == -1)
@@ -50,9 +47,11 @@ private:
         {
             return a;
         }
-        return min(a, b);
+        else
+        {
+            return min(a, b);
+        }
     }
-
     int rmq(int pos, int l, int r, int i, int j)
     {
         if (i > j)
@@ -64,28 +63,26 @@ private:
             return tree[pos];
         }
         int mid = (l + r) / 2;
-        return conquer(rmq(glp(pos), l, mid, i, min(mid, j)),
+        return conquer(rmq(glp(pos), l, mid, i, min(j, mid)),
                        rmq(grp(pos), mid + 1, r, max(i, mid + 1), j));
     }
 
 public:
-    SegTree(int size) : tSize(size), tree(size * 4) {}
-    SegTree(vi &vals) : SegTree(vals.size())
+    SegTree(int sz) : size(sz), tree(size * 4) {}
+    SegTree(vi vals) : SegTree(vals.size())
     {
         treeVals = vals;
-        build(1, 0, tSize - 1);
+        build(1, 0, size - 1);
     }
     int rmq(int i, int j)
     {
-        return rmq(1, 0, tSize - 1, i, j);
+        return rmq(1, 0, size - 1, i, j);
     }
 };
 
 int main()
 {
-    vi vals = {5, 3, 2, 6, 4, 4, 1, 9};
+    vi vals = {2, 6, 5, 3, 3, 7, 8, 1};
     SegTree st(vals);
-    printf("rmq (1, 3): %d\n", st.rmq(1, 3));
-    printf("rmq (2, 2): %d\n", st.rmq(2, 2));
-    printf("rmq (1, 8): %d\n", st.rmq(1, 8));
+    printf("rmq (0, 7): %d\n", st.rmq(0, 7));
 }
