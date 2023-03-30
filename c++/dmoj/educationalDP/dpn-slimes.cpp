@@ -14,7 +14,7 @@ ll psa[405];
 int main()
 {
     scanf("%d", &n);
-    memset(dp, 0, sizeof(dp));
+    memset(dp, 2147483647, sizeof(dp));
     REP(i, 0, n)
     {
         scanf("%d", &psa[i]);
@@ -27,8 +27,9 @@ int main()
             ll r = l + len - 1;
             REP(i, l, r + 1)
             {
-                dp[l][r] = min(dp[l][r], );
+                dp[l][r] = min(dp[l][r], dp[l][i] + dp[i][r]);
             }
+            dp[l][r] += psa[r] - psa[l];
         }
     }
     printf("%d", dp[0][n - 1]);
