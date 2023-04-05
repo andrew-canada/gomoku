@@ -26,20 +26,21 @@ int main()
             int r = l + len - 1;
             int i = l + 1;
             int j = r;
-            while (j <= i)
+            while (i <= j)
             {
-                if (dp[l][i - 1] && dp[l][i - 1] == dp[j][r] &&)
+                if (dp[l][i - 1] && dp[l][i - 1] == dp[j][r] && (i == j || dp[i][j - 1]))
                 {
-                    dp[l][r] = max(dp[l][r], );
+                    dp[l][r] = max(dp[l][r], dp[l][i - 1] + dp[i][j - 1] + dp[j][r]);
                     mb = max(mb, dp[l][r]);
+                    break;
                 }
-                if (dp[i - 1] - dp[l - 1] > dp[r] - dp[j - 1])
+                if (psa[i - 1] - psa[l - 1] > psa[r] - psa[j - 1])
                 {
-                    i++;
+                    j--;
                 }
                 else
                 {
-                    j--;
+                    i++;
                 }
             }
         }
