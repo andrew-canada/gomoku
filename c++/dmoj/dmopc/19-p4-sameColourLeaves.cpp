@@ -16,6 +16,17 @@ int v1, v2;
 
 pair<int, int> dfs(int n1, int par)
 {
+    ll nr = 1, nb = 1;
+    for (int n2 : adj[n1])
+    {
+        if (n2 != par)
+        {
+            auto [r, b] = dfs(n2, n1);
+            nr = nr * r % 1000000007;
+            nb = nb * b % 1000000007;
+        }
+    }
+    return {nr, nb};
 }
 
 int main()
@@ -28,4 +39,6 @@ int main()
         adj[v1].pb(v2);
         adj[v2].pb(v1);
     }
+    auto [r, b] = dfs(1, -1);
+    printf("%d", (r + b) % 1000000007);
 }
