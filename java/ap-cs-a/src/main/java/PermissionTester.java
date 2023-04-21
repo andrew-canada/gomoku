@@ -4,6 +4,8 @@ public class PermissionTester {
     public static byte canRead = 0b0001;
 
     public static void main(String[] args) {
+
+        "abc".indexOf("abcde");
         Permission p1 = new Permission(false, false, false, false);
         Permission p2 = new Permission(true, false, false, false);
         Permission p3 = new Permission(false, true, false, false);
