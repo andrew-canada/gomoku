@@ -136,4 +136,19 @@ class LinearSearcherTest {
 		Assertions.assertEquals(5,
 				LinearSearcherV4.linearSearchSorted(donorsByDonation, new CashDonor("john", 350, 350)));
 	}
+
+	@Test
+	void testLinearSearchUnsortedV5() {
+		Assertions.assertEquals(-1,
+				LinearSearcherV5.linearSearchUnsorted(unsortedDonors, new CashDonor("stev", -55, -55)));
+		Assertions.assertEquals(5, LinearSearcherV5.linearSearchUnsorted(unsortedDonors, new CashDonor("joe", 1, 1)));
+	}
+
+	@Test
+	void testLinearSearchSortedV5() {
+		Assertions.assertEquals(0,
+				LinearSearcherV5.linearSearchSorted(donorsByDonation, new CashDonor("steve", -55, -55)));
+		Assertions.assertEquals(5,
+				LinearSearcherV5.linearSearchSorted(donorsByDonation, new CashDonor("john", 350, 350)));
+	}
 }
