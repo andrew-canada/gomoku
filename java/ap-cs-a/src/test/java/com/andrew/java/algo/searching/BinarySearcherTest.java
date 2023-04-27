@@ -118,4 +118,20 @@ class BinarySearcherTest {
 				BinarySearcherV4.binarySearchIteratively(donorsByDonation, new CashDonor("joe", 1, 1)));
 	}
 
+	@Test
+	void testBinarySearchRecursiveV5() {
+		Assertions.assertEquals(6,
+				BinarySearcherV5.binarySearchRecursively(donorsByDonation, new CashDonor("bob", 500, 500)));
+		Assertions.assertEquals(4,
+				BinarySearcherV5.binarySearchRecursively(donorsByDonation, new CashDonor("joe", 1, 1)));
+	}
+
+	@Test
+	void testBinarySearchIterativeV5() {
+		Assertions.assertEquals(6,
+				BinarySearcherV5.binarySearchIteratively(donorsByDonation, new CashDonor("bob", 500, 500)));
+		Assertions.assertEquals(4,
+				BinarySearcherV5.binarySearchIteratively(donorsByDonation, new CashDonor("joe", 1, 1)));
+	}
+
 }

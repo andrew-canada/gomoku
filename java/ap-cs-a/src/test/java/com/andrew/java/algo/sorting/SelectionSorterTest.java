@@ -68,4 +68,13 @@ class SelectionSorterTest {
 		donorsByDonation.stream().forEach(System.out::println);
 	}
 
+	@Test
+	void testSelectionSortV6() {
+		List<CashDonor> sortedDonors = SelectionSorterV6.selectionSort(unsortedDonors);
+		Assertions.assertEquals(donorsByDonation, sortedDonors);
+
+		System.out.println();
+		donorsByDonation.stream().forEach(System.out::println);
+	}
+
 }
