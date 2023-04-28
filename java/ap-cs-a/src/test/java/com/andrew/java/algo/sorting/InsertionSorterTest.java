@@ -30,6 +30,13 @@ class InsertionSorterTest {
 			new CashDonor("bob", 500, 500), new CashDonor("steve", -55, -55), new CashDonor("steve", -55, -55),
 			new CashDonor("steve", -55, -55), new CashDonor("joe", 1, 1), new CashDonor("john", 350, 350)));
 
+	List<CardDonor> cardDonorsByDonation = new ArrayList<>(Arrays.asList(new CardDonor("steve", -55, -55),
+			new CardDonor("steve", -55, -55), new CardDonor("steve", -55, -55), new CardDonor("steve", -55, -55),
+			new CardDonor("joe", 1, 1), new CardDonor("john", 350, 350), new CardDonor("bob", 500, 500)));
+	List<CardDonor> unsortedCardDonors = new ArrayList<>(Arrays.asList(new CardDonor("steve", -55, -55),
+			new CardDonor("bob", 500, 500), new CardDonor("steve", -55, -55), new CardDonor("steve", -55, -55),
+			new CardDonor("steve", -55, -55), new CardDonor("joe", 1, 1), new CardDonor("john", 350, 350)));
+
 	@Test
 	void testSort() {
 		List<DebugDuck> newSortedDucks = InsertionSorter.sort(ducks);
@@ -82,6 +89,15 @@ class InsertionSorterTest {
 		List<CashDonor> sortResult = InsertionSorterV5.insertionSort(unsortedDonors);
 
 		Assertions.assertEquals(donorsByDonation, sortResult);
+
+		sortResult.stream().forEach(System.out::println);
+	}
+
+	@Test
+	void testInsertionSortV6() {
+		List<CardDonor> sortResult = InsertionSorterV6.insertionSort(unsortedCardDonors);
+
+		Assertions.assertEquals(cardDonorsByDonation, sortResult);
 
 		sortResult.stream().forEach(System.out::println);
 	}
