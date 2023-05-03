@@ -20,6 +20,13 @@ class QuickSorterTest {
 			new CashDonor("bob", 500, 500), new CashDonor("steve", -55, -55), new CashDonor("steve", -55, -55),
 			new CashDonor("steve", -55, -55), new CashDonor("joe", 1, 1), new CashDonor("john", 350, 350)));
 
+	List<CardDonor> cardDonorsByDonation = new ArrayList<>(Arrays.asList(new CardDonor("steve", -55, -55),
+			new CardDonor("steve", -55, -55), new CardDonor("steve", -55, -55), new CardDonor("steve", -55, -55),
+			new CardDonor("joe", 1, 1), new CardDonor("john", 350, 350), new CardDonor("bob", 500, 500)));
+	List<CardDonor> unsortedCardDonors = new ArrayList<>(Arrays.asList(new CardDonor("steve", -55, -55),
+			new CardDonor("bob", 500, 500), new CardDonor("steve", -55, -55), new CardDonor("steve", -55, -55),
+			new CardDonor("steve", -55, -55), new CardDonor("joe", 1, 1), new CardDonor("john", 350, 350)));
+
 	@Test
 	void testQuickSortV1() {
 		QuickSorterV1.quickSort(numbers);
@@ -57,6 +64,14 @@ class QuickSorterTest {
 		Assertions.assertEquals(donorsByDonation, unsortedDonors);
 		System.out.println();
 		unsortedDonors.stream().forEach(System.out::println);
+	}
+
+	@Test
+	void testQuickSortV6() {
+		QuickSorterV6.quickSort(unsortedCardDonors);
+		Assertions.assertEquals(cardDonorsByDonation, unsortedCardDonors);
+		System.out.println();
+		unsortedCardDonors.stream().forEach(System.out::println);
 	}
 
 }
