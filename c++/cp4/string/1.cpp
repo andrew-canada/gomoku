@@ -2,6 +2,7 @@
 #include <cstring>
 #include <vector>
 #include <ctype.h>
+#include <string>
 
 using namespace std;
 
@@ -28,6 +29,8 @@ int main()
 {
     freopen("1.in", "r", stdin);
     freopen("1.out", "w", stdout);
+
+    char *tok;
 
     // 1
     while (1)
@@ -85,5 +88,17 @@ int main()
         vowels += isvowel(str[i]);
     }
     int consonants = alphas - vowels;
-    printf("%d %d %d", digits, consonants, vowels);
+    printf("%d %d %d\n", digits, consonants, vowels);
+
+    // 4
+    vector<string> tokens;
+    char str3[] = "I love CS3233 Competitive Programming. i also love AlGoRiThM ";
+    for (tok = strtok(str3, " ."); tok; tok = strtok(NULL, " ."))
+    {
+        tokens.push_back(tok);
+    }
+    for (string s : tokens)
+    {
+        printf("%s , ", s.c_str());
+    }
 }
