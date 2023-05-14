@@ -41,7 +41,6 @@ int main()
         adj[v1].pb(v2);
         adj[v2].pb(v1);
     }
-    int r = dfsr(1, -1);
-    int b = dfsb(1, -1);
+    auto [r, b] = dfs(1, -1);
     printf("%d", (r + b) % 1000000007);
 }
