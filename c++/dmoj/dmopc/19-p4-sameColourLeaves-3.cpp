@@ -6,33 +6,38 @@ using namespace std;
 
 typedef long long ll;
 
+#define LOCAL
 #define REP(i, a, b) for (int i = int(a); i < int(b); i++)
 #define pb push_back
 
 int n;
 vector<int> adj[300005];
 char col[300005];
+bool vis[300005];
 int v1, v2;
+int numNodes;
+int numTrees;
 
-pair<int, int> dfs(int n1, int par)
+int dfs(int n1)
 {
-    ll nr = 1, nb = 1;
+    ll num = 1;
+    vis[n1] = true;
     for (int n2 : adj[n1])
     {
-        if (n2 != par)
+        if (!vis[n2] && col[n2 - 1] == col[n1 - 1])
         {
-            auto [r, b] = dfs(n2, n1);
-            if (col[n2 - 1] == 'R')
-            {
-                nr = (r * nr + r) % 1000000007;
-            }
+            ll nodes = dfs(n2);
+            num = nodes + 1;
         }
     }
-    return {nr, nb};
+    return num;
 }
 
 int main()
 {
+#ifdef LOCAL
+    freopen("19p4.in", "r", stdin);
+#endif
     scanf("%d", &n);
     scanf("%s", &col);
     REP(i, 0, n - 1)
@@ -41,6 +46,13 @@ int main()
         adj[v1].pb(v2);
         adj[v2].pb(v1);
     }
-    auto [r, b] = dfs(1, -1);
-    printf("%d", (r + b) % 1000000007);
+    for (int i = 1; i <= n; i++)
+    {
+        if (!vis[i])
+        {
+            numNodes = dfs(i) % 1000000007;
+            numTrees += numNodes * (numNodes + 1) / 2 % 1000000007;
+        }
+    }
+    printf("%d", numTrees);
 }

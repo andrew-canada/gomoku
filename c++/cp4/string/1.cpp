@@ -3,6 +3,8 @@
 #include <vector>
 #include <ctype.h>
 #include <string>
+#include <map>
+#include <algorithm>
 
 using namespace std;
 
@@ -101,4 +103,32 @@ int main()
     {
         printf("%s , ", s.c_str());
     }
+    printf("\n");
+
+    // 5
+    map<string, int> freq;
+    for (string s : tokens)
+    {
+        freq[s]++;
+    }
+    auto max = max_element(freq.begin(), freq.end(), [](auto &e1, auto &e2)
+                           { return e1.second < e2.second; });
+    printf("%s: %d\n", max->first.c_str(), max->second);
+
+    // 6
+    char c;
+    int totChar = 0, numS = 0, num7 = 0;
+    while (scanf("%c", &c), c != '\n')
+    {
+        totChar++;
+        if (c == 's')
+        {
+            numS++;
+        }
+        else if (c == '7')
+        {
+            num7++;
+        }
+    }
+    printf("%d %d %d\n", totChar, numS, num7);
 }
