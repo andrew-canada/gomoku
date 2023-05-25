@@ -2,7 +2,7 @@
 #include <cstring>
 #include <algorithm>
 
-// #define LOCAL
+#define LOCAL
 #define REP(i, a, b) for (int i = int(a); i <= int(b - 1); i++)
 
 int r, c, pr, pc;
