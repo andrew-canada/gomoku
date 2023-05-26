@@ -18,22 +18,21 @@ int main()
         scanf("%d %d %d", &p[i], &w[i], &d[i]);
     }
 
-    int low = 0;
-    int high = n;
-    int mid;
+    int low = 0, high = 1e9;
     while (low < high)
     {
-        mid = (low + high) / 2;
-        if (getDist(high) > getDist(mid))
+        int mid = (low + high) / 2;
+        ll cur = getDist(mid), nxt = getDist(mid + 1);
+        if (cur <= nxt)
         {
-            high = mid - 1;
+            high = mid;
         }
         else
         {
             low = mid + 1;
         }
     }
-    printf("%d", getDist(low));
+    printf("%lld", getDist(low));
 }
 
 ll getDist(int pos)
