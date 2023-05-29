@@ -16,6 +16,9 @@ public class StudentTest {
 			System.out.println(s.getScore());
 		}
 
+		System.out.println(s1);
+		System.out.println(ss1);
+
 	}
 
 }

@@ -24,4 +24,9 @@ public class Student {
 	public double getScore() {
 		return grade * 2;
 	}
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", grade=" + grade + "]";
+	}
 }
