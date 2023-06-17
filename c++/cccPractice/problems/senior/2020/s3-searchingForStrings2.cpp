@@ -16,17 +16,16 @@ int numPerms;
 
 ll getHash(ll hash1, ll hash2)
 {
-    return hash1 * 7 + hash2 * 11;
+    return hash1 * 31 + hash2 * 5;
 }
 
 int main()
 {
     fgets(n, 200005, stdin);
     fgets(h, 200005, stdin);
+    n[strlen(n) - 1] = '\0';
+    h[strlen(h) - 1] = '\0';
     int ln = strlen(n), lh = strlen(h);
-    n[ln - 1] = '\0';
-    h[lh - 1] = '\0';
-
     string sn(n), sh(h);
     for (char c : sn)
     {
@@ -35,7 +34,7 @@ int main()
 
     ll curHash1 = 0, curHash2 = 0;
     ll hashVal1 = 1, hashVal2 = 1;
-    for (int i = 0; i < ln; i++)
+    for (int i = 0; i < ln - 1; i++)
     {
         hashVal1 = hashVal1 * 26 % H1;
         hashVal2 = hashVal2 * 26 % H2;
@@ -47,26 +46,28 @@ int main()
         curHash1 = (curHash1 * 26 + sh[i] - 'a') % H1;
         curHash2 = (curHash2 * 26 + sh[i] - 'a') % H2;
         bool isPerm = true;
-        if (i >= ln - 1)
-        {
-            for (int i = 0; i < 26; i++)
-            {
-                if (freqN[i] != freqH[i])
-                {
-                    isPerm = false;
-                    break;
-                }
-            }
 
-            if (isPerm && hashedPerms.find(getHash(curHash1, curHash2)) == hashedPerms.end())
-            {
-                hashedPerms.insert(getHash(curHash1, curHash2));
-                numPerms++;
-            }
-            curHash1 = (curHash1 - (sh[i - ln + 1] - 'a') * hashVal1 + H1) % H1;
-            curHash2 = (curHash2 - (sh[i - ln + 1] - 'a' * hashVal2 + H2) % H2);
-            freqH[sh[i - ln + 1] - 'a']--;
+        if (i < ln - 1)
+        {
+            continue;
         }
+        for (int i = 0; i < 26; i++)
+        {
+            if (freqN[i] != freqH[i])
+            {
+                isPerm = false;
+                break;
+            }
+        }
+
+        if (isPerm && hashedPerms.find(getHash(curHash1, curHash2)) == hashedPerms.end())
+        {
+            hashedPerms.insert(getHash(curHash1, curHash2));
+            numPerms++;
+        }
+        curHash1 = ((curHash1 - (sh[i - ln + 1] - 'a') * hashVal1) % H1 + H1) % H1;
+        curHash2 = ((curHash2 - (sh[i - ln + 1] - 'a') * hashVal2) % H2 + H2) % H2;
+        freqH[sh[i - ln + 1] - 'a']--;
     }
     printf("%d", numPerms);
 }
