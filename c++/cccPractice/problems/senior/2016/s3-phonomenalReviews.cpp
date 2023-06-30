@@ -72,6 +72,7 @@ int main()
     d = calculateDiameter();
     int numPho = accumulate(isPho, isPho + n, 0);
     printf("%d", 2 * (numPho - 1) - d);
+    printf("\n%d %d", 2 * (numPho - 1), d);
 }
 
 int getFarthestNode(int start)

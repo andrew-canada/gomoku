@@ -33,7 +33,10 @@ int main()
         adjL[n2].push_back(n1);
     }
 
-    markInducedNodes(0, 0);
+    vis[ind] = true;
+    markInducedNodes(ind, 0);
+    fill(vis, vis + n, 0);
+    vis[start] = true;
     markInducedNodes(start, 0);
     int numPho = 0;
     for (bool b : induced)
