@@ -51,6 +51,7 @@ bool connectsAll(int hoseLen)
 {
     REP(i, 0, h)
     {
+        bool connected = true;
         int hoseEnd = houses[i] + hoseLen;
         int remHyd = hyd - 1;
         REP(j, i, h)
@@ -64,9 +65,35 @@ bool connectsAll(int hoseLen)
                 }
                 else
                 {
-                    return false;
+                    connected = false;
+                    break;
                 }
             }
+        }
+        if (!connected)
+        {
+            continue;
+        }
+        REP(j, 0, i)
+        {
+            int curHouse = houses[j] + 1000000;
+            if (curHouse - hoseEnd > hoseLen)
+            {
+                if (remHyd > 0)
+                {
+                    remHyd--;
+                    hoseEnd = curHouse + hoseLen;
+                }
+                else
+                {
+                    connected = false;
+                    break;
+                }
+            }
+        }
+        if (!connected)
+        {
+            continue;
         }
         return true;
     }
