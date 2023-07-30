@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="vO-7l8l8gaEEgQ-sKOoH" name="main">
-        <mxGraphModel dx="952" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="704" dy="433" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -73,42 +73,42 @@
         </mxGraphModel>
     </diagram>
     <diagram id="tfm2XFSI1eBPwG1bIVBB" name="getTriangles">
-        <mxGraphModel dx="952" dy="568" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+        <mxGraphModel dx="704" dy="433" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-1" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="QdjWpBxs0jjYrh1YkwHm-2" target="QdjWpBxs0jjYrh1YkwHm-5">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-1" value="" style="edgeStyle=none;html=1;" parent="1" source="QdjWpBxs0jjYrh1YkwHm-2" target="QdjWpBxs0jjYrh1YkwHm-5" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-2" value="i = 0" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-2" value="i = 0" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="165" y="40" width="45" height="20" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-3" value="N" style="edgeStyle=none;html=1;" edge="1" parent="1" source="QdjWpBxs0jjYrh1YkwHm-5" target="QdjWpBxs0jjYrh1YkwHm-6">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-3" value="N" style="edgeStyle=none;html=1;" parent="1" source="QdjWpBxs0jjYrh1YkwHm-5" target="QdjWpBxs0jjYrh1YkwHm-6" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-4" value="Y" style="edgeStyle=none;html=1;" edge="1" parent="1" source="QdjWpBxs0jjYrh1YkwHm-5" target="QdjWpBxs0jjYrh1YkwHm-8">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-4" value="Y" style="edgeStyle=none;html=1;" parent="1" source="QdjWpBxs0jjYrh1YkwHm-5" target="QdjWpBxs0jjYrh1YkwHm-8" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-5" value="i &amp;lt; c&lt;br&gt;i++" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-5" value="i &amp;lt; c&lt;br&gt;i++" style="rhombus;whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="165" y="90" width="55" height="50" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-6" value="print nt" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-6" value="print nt" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="425" y="102.5" width="55" height="25" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-7" value="" style="edgeStyle=none;html=1;" edge="1" parent="1" source="QdjWpBxs0jjYrh1YkwHm-8" target="QdjWpBxs0jjYrh1YkwHm-10">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-7" value="" style="edgeStyle=none;html=1;" parent="1" source="QdjWpBxs0jjYrh1YkwHm-8" target="QdjWpBxs0jjYrh1YkwHm-10" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-8" value="int opp = (i + c/2)&lt;br&gt;int p = (num points from i to opp)" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-8" value="int opp = (i + c/2)&lt;br&gt;int p = (num points from i to opp)" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="102.5" y="210" width="180" height="35" as="geometry"/>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-9" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="QdjWpBxs0jjYrh1YkwHm-10" target="QdjWpBxs0jjYrh1YkwHm-5">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-9" style="edgeStyle=none;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="QdjWpBxs0jjYrh1YkwHm-10" target="QdjWpBxs0jjYrh1YkwHm-5" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <Array as="points">
                             <mxPoint x="70" y="220"/>
                         </Array>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="QdjWpBxs0jjYrh1YkwHm-10" value="subtract non-fulfilling triangles&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=1;" vertex="1" parent="1">
+                <mxCell id="QdjWpBxs0jjYrh1YkwHm-10" value="subtract non-fulfilling triangles&lt;br&gt;" style="whiteSpace=wrap;html=1;rounded=1;" parent="1" vertex="1">
                     <mxGeometry x="107.5" y="280" width="170" height="47.5" as="geometry"/>
                 </mxCell>
             </root>
