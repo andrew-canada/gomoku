@@ -2,6 +2,7 @@
 #include <vector>
 #include <queue>
 #include <set>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,13 +11,14 @@ using namespace std;
 int n, w, d;
 bool vis[200005];
 int dist[200005];
-int sub[200005];
+int stn[200005];
 vector<int> wAdj[200005];
 queue<int> path;
 multiset<int> time;
 
 int main()
 {
+    memset(dist, 0, sizeof(dist));
     scanf("%d%d%d", &n, &w, &d);
     int n1, n2;
     REP(i, 0, w)
@@ -41,9 +43,26 @@ int main()
             }
         }
     }
-    int station;
     REP(i, 0, n)
     {
-        scanf("%d", &station);
-        }
+        scanf("%d", &stn[i]);
+        time.insert(i + dist[stn[i]]);
+    }
+    int sn1, sn2;
+    int st1, st2;
+    int l1, l2;
+    REP(i, 0, d)
+    {
+        scanf("%d%d", &sn1, &sn2);
+        st1 = stn[sn1];
+        st2 = stn[sn2];
+        l1 = sn1 - 1 + dist[st1];
+        l2 = sn2 - 1 + dist[st2];
+        time.erase(time.find(l1));
+        time.erase(time.find(l2));
+        swap(st1, st2);
+        time.insert(sn1 - 1 + dist[st1]);
+        time.insert(sn2 - 1 + dist[st2]);
+        printf("%d", *time.begin());
+    }
 }
