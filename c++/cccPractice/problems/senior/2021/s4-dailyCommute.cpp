@@ -13,6 +13,7 @@ int n, w, d;
 bool vis[200005];
 int dist[200005];
 int stn[200005];
+int ind[200005];
 vector<int> wAdj[200005];
 queue<int> path;
 multiset<int> time;
@@ -25,12 +26,12 @@ int main()
     REP(i, 1, w)
     {
         scanf("%d%d", &n1, &n2);
-        wAdj[n1].push_back(n2);
+        wAdj[n2].push_back(n1);
     }
 
-    vis[1] = true;
-    dist[1] = 0;
-    path.push(1);
+    vis[n] = true;
+    dist[n] = 0;
+    path.push(n);
     while (!path.empty())
     {
         int cur = path.front();
@@ -48,23 +49,25 @@ int main()
     REP(i, 1, n)
     {
         scanf("%d", &stn[i]);
-        time.insert(i + dist[stn[i]]);
+        ind[stn[i]] = i - 1;
+    }
+    REP(i, 1, n)
+    {
+        time.insert(ind[i] + dist[i]);
     }
     int sn1, sn2;
     int st1, st2;
-    int l1, l2;
     REP(i, 1, d)
     {
         scanf("%d%d", &sn1, &sn2);
         st1 = stn[sn1];
         st2 = stn[sn2];
-        l1 = sn1 - 1 + dist[st1];
-        l2 = sn2 - 1 + dist[st2];
-        time.erase(time.find(l1));
-        time.erase(time.find(l2));
-        swap(st1, st2);
-        time.insert(sn1 - 1 + dist[st1]);
-        time.insert(sn2 - 1 + dist[st2]);
-        printf("%d", *time.begin());
+        time.erase(time.lower_bound(ind[st1] + dist[st1]));
+        time.erase(time.lower_bound(ind[st2] + dist[st2]));
+        swap(ind[st1], ind[st2]);
+        swap(stn[sn1], stn[sn2]);
+        time.insert(ind[st1] + dist[st1]);
+        time.insert(ind[st2] + dist[st2]);
+        printf("%d\n", *time.begin());
     }
 }
