@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <vector>
-// #include <algorithm>
 #include <cstring>
 
 using namespace std;
@@ -9,7 +8,6 @@ using namespace std;
 #define MIN(a, b) ((a) < (b) ? (a) : (b))
 
 char seats[1000005];
-// int groups[] = {0, 1, 2};
 int psa[3][1000005];
 int swaps = 0;
 int n = 0;
@@ -29,10 +27,6 @@ int main()
             psa[i][j] = psa[i][j - 1] + (seats[j - 1] == 'A' + i);
         }
     }
-    // do
-    // {
-    //     getSwaps(groups[0], groups[1], groups[2]);
-    // } while (next_permutation(groups, groups + 3));
     getSwaps(0, 1, 2);
     printf("%d", swaps);
 }
@@ -44,35 +38,26 @@ int getPeople(int g, int s1, int len)
 
 void getSwaps(int a, int b, int c)
 {
-    int sAB, sAC;
-    int totA = getPeople(a, 1, n);
-    int totB = getPeople(b, 1, n);
-    int totC = getPeople(c, 1, n);
+    int sAB = 1000005, sAC = 1000005;
+    int totA = psa[a][n];
+    int totB = psa[b][n];
+    int totC = psa[c][n];
 
-    REP(i, 1, n)
+    REP(i, 0, n - totA - totB)
     {
         int nonAinA = totA - getPeople(a, i, totA);
-        int nonBinB = totB - getPeople(b, i + totA, i + totA + totB);
+        int nonBinB = totB - getPeople(b, i + totA, totB);
         int BinA = getPeople(b, i, totA);
-        int AinB = getPeople(a, i + totA, i + totA + totB);
-        sAB = nonAinA + nonBinB - MIN(BinA, AinB);
+        int AinB = getPeople(a, i + totA, totB);
+        sAB = MIN(sAB, nonAinA + nonBinB - MIN(BinA, AinB));
     }
-    REP(i, 1, n)
+    REP(i, 0, n - totA - totC)
     {
         int nonAinA = totA - getPeople(a, i, totA);
-        int nonCinC = totC - getPeople(c, i + totA, i + totA + totC);
+        int nonCinC = totC - getPeople(c, i + totA, totC);
         int CinA = getPeople(c, i, totA);
-        int AinC = getPeople(a, i + totA, i + totA + totC);
-        sAC = nonAinA + nonCinC - MIN(CinA, AinC);
+        int AinC = getPeople(a, i + totA, totC);
+        sAC = MIN(sAC, nonAinA + nonCinC - MIN(CinA, AinC));
     }
     swaps = MIN(sAB, sAC);
-    // int totA = psa[a][n];
-    // int totB = psa[b][n];
-    // REP(i, 0, n)
-    // {
-    //     int BinA = getPeople(a, i, totB);
-    //     int AinB = getPeople(b, i, totA);
-
-    //     swaps = MIN(swaps, 2);
-    // }
 }
