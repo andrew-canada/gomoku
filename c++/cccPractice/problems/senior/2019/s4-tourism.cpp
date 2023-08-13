@@ -27,24 +27,26 @@ int main()
         pref[i] = MAX(pref[i - 1], atr[i]);
         dp[i] = pref[i];
     }
-    RREP(i, k, 1)
+    RREP(i, k - 1, 1)
     {
         suf[i] = MAX(suf[i + 1], atr[i]);
         dp[i] = MAX(dp[i], suf[i] + (i < k ? dp[i + 1] : 0));
+        // dp[i] = MAX(dp[i], suf[i]);
     }
     REP(i, 1, totDays - 1)
     {
         REP(j, k * i + 1, MIN(k * (i + 1), n))
         {
-            // pref[j] = ((j > k * i) ? MAX(pref[j - 1], atr[j]) : atr[j]);
-            pref[j] = MAX(pref[j - 1], atr[j]);
+            pref[j] = ((j > k * i) ? MAX(pref[j - 1], atr[j]) : atr[j]);
+            // pref[j] = MAX(pref[j - 1], atr[j]);
         }
-        REP(j, MIN(n, k * (i + 1)), k * i + 1)
+        RREP(j, MIN(n, k * (i + 1)) - 1, k * i)
         {
-            // suf[j] = ((j < MIN(n, k * (i + 1) - 1)) ? suf[i] = MAX(suf[j + 1], atr[j]) : atr[j]);
-            suf[j] = MAX(suf[j + 1], atr[j]);
+            suf[j] = ((j < MIN(n, k * (i + 1) - 1)) ? suf[i] = MAX(suf[j + 1], atr[j]) : atr[j]);
+            // suf[j] = MAX(suf[j + 1], atr[j]);
             dp[j] = MAX(dp[j], suf[j] + (j < MIN(n, k * (i + 1)) ? dp[i + 1] : 0));
+            // dp[j] = MAX(dp[j], suf[j] + dp[j - k]);
         }
     }
-    printf("%d", dp[totDays]);
+    printf("%d", dp[n]);
 }
