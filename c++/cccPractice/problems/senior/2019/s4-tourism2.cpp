@@ -48,11 +48,11 @@ int main()
         {
             suf[j] = (j < MIN(n, k * (i + 1))) ? MAX(suf[j + 1], atr[j]) : atr[j];
         }
-        int revDay = k * (i - 1) + lastDay;
-        int nextRevDay = revDay + k;
-        if (revDay < k * nextRevDay && nextRevDay <= n)
+        int prevDay = k * (i - 1) + lastDay;
+        int nextDay = prevDay + k;
+        if (prevDay < k * nextDay && nextDay <= n)
         {
-            dp[nextRevDay] = MAX(pref[nextRevDay] + revDP[revDay], revSum[revDay + 1]);
+            dp[nextDay] = MAX(pref[nextDay] + revDP[prevDay], revSum[prevDay + 1]);
         }
         RREP(j, MIN(n, k * (i + 1)), k * i + 1)
         {
