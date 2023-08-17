@@ -50,7 +50,7 @@ int main()
             const pair<int, pair<int, int>> &a, const pair<int, pair<int, int>> &b)>>
         q([](const auto &a, const auto &b)
           { return a.first > b.first; });
-    q.push({0, {start, thick}});
+    q.push({0, {thick, start}});
     while (!q.empty())
     {
         pair<int, pair<int, int>> cur = q.top();
@@ -69,7 +69,7 @@ int main()
         {
             if (cur.second.second - edge.second.second > 0)
             {
-                q.push({cur.first + edge.second.first, {edge.first, cur.second.second - edge.second.second}});
+                q.push({cur.first + edge.second.first, {cur.second.second - edge.second.second, edge.first}});
                 // printf("\tpushing back %d with time %d and wear %d\n", edge.first, cur.first+edge.second.first, cur.second.second-edge.second.second);
             }
         }
