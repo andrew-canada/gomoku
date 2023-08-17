@@ -19,7 +19,7 @@ ll revDP[1000005];
 
 int main()
 {
-    freopen("s4.in", "r", stdin);
+    // freopen("s4.in", "r", stdin);
     scanf("%d%d", &n, &k);
     REP(i, 1, n)
     {
@@ -48,11 +48,16 @@ int main()
         {
             suf[j] = (j < MIN(n, k * (i + 1))) ? MAX(suf[j + 1], atr[j]) : atr[j];
         }
-        int prevDay = k * (i - 1) + lastDay;
-        int nextDay = prevDay + k;
-        if (prevDay < k * nextDay && nextDay <= n)
+        int curDayIdxOfLastAttr = k * (i - 1) + lastDay;
+        // int nextDayIdxOfLastAttr = curDayIdxOfLastAttr + k;
+        // if (curDayIdxOfLastAttr < k * nextDayIdxOfLastAttr && nextDayIdxOfLastAttr <= n)
+        // {
+        //     dp[nextDayIdxOfLastAttr] = MAX(pref[nextDayIdxOfLastAttr] + revDP[curDayIdxOfLastAttr], revSum[curDayIdxOfLastAttr + 1]);
+        // }
+        for (int nextDayIdxOfLastAttr = curDayIdxOfLastAttr + k; nextDayIdxOfLastAttr <= curDayIdxOfLastAttr + k && curDayIdxOfLastAttr < k * i && nextDayIdxOfLastAttr <= n; nextDayIdxOfLastAttr++)
         {
-            dp[nextDay] = MAX(pref[nextDay] + revDP[prevDay], revSum[prevDay + 1]);
+            dp[nextDayIdxOfLastAttr] = MAX(pref[nextDayIdxOfLastAttr] + revDP[curDayIdxOfLastAttr], revSum[curDayIdxOfLastAttr + 1]);
+            curDayIdxOfLastAttr += (nextDayIdxOfLastAttr - curDayIdxOfLastAttr == k);
         }
         RREP(j, MIN(n, k * (i + 1)), k * i + 1)
         {
