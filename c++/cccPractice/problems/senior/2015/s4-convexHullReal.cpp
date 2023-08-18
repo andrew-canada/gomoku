@@ -35,20 +35,20 @@ int main()
     {
         int s, e, t, h;
         scanf("%d%d%d%d", &s, &e, &t, &h);
-        adjL[s].push_back({t, h, e});
-        adjL[e].push_back({t, h, s});
+        adjL[s].push_back({t, e, h});
+        adjL[e].push_back({t, s, h});
     }
     scanf("%d%d", &n1, &n2);
-    pq.push({0, k, n1});
-    int dmg, time;
+    pq.push({0, n1, k});
     while (!pq.empty())
     {
         Path cur = pq.top();
         pq.pop();
-        if (cur.time > dist[cur.node][cur.thick])
+        if (cur.thick <= hull[cur.node])
         {
             continue;
         }
+        hull[cur.node] = cur.thick;
         if (cur.node == n2)
         {
             printf("%d", cur.time);
@@ -56,12 +56,9 @@ int main()
         }
         for (const Path &p : adjL[cur.node])
         {
-            if (p.thick < cur.thick)
+            if (cur.thick > p.thick)
             {
-                dmg = cur.thick - p.thick;
-                time = p.time + cur.time;
-                dist[p.node][dmg] = time;
-                pq.push({time, dmg, p.node});
+                pq.push({cur.time + p.time, p.node, cur.thick - p.thick});
             }
         }
     }
