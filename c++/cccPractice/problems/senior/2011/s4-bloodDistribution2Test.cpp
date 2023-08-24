@@ -34,6 +34,7 @@ int dinic();
 int main()
 {
     freopen("s4.in", "r", stdin);
+    freopen("s4.out", "w", stdout);
     int cap;
     REP(i, 1, 8)
     {
@@ -47,15 +48,24 @@ int main()
     }
     REP(i, 9, 16)
     {
-        addE(1, i, INF);
+        addE(1, i, el[i][0].cap);
     }
     for (int i = 10; i <= 16; i += 2)
     {
-        addE(2, i, INF);
+        addE(2, i, el[i][0].cap);
     }
-    addE(3, 11, INF), addE(3, 12, INF), addE(3, 15, INF), addE(3, 16, INF), addE(4, 12, INF), addE(4, 16, INF);
-    addE(5, 13, INF), addE(5, 14, INF), addE(5, 15, INF), addE(5, 16, INF), addE(6, 14, INF), addE(6, 16, INF);
-    addE(7, 15, INF), addE(7, 16, INF), addE(8, 16, INF);
+    // a-
+    addE(3, 11, el[11][0].cap), addE(3, 12, el[12][0].cap), addE(3, 15, el[15][0].cap), addE(3, 16, el[16][0].cap);
+    // a+
+    addE(4, 12, el[12][0].cap), addE(4, 16, el[16][0].cap);
+    // b-
+    addE(5, 13, el[13][0].cap), addE(5, 14, el[14][0].cap), addE(5, 15, el[15][0].cap), addE(5, 16, el[16][0].cap);
+    // b+
+    addE(6, 14, el[14][0].cap), addE(6, 16, el[16][0].cap);
+    // ab-
+    addE(7, 15, el[15][0].cap), addE(7, 16, el[16][0].cap);
+    // ab+
+    addE(8, 16, el[16][0].cap);
     printf("%d", dinic());
 }
 
@@ -86,7 +96,7 @@ int dfs(int cur, int nxt[], int flow)
             if (bn > 0)
             {
                 curE.flow += bn;
-                curE.residual->flow -= bn;
+                curE.residual->flow += bn;
                 return bn;
             }
         }
@@ -114,6 +124,11 @@ bool bfs()
             }
         }
     }
+    REP(i, 0, 17)
+    {
+        printf("%d ", lvl[i]);
+    }
+    printf("\n");
     return lvl[17] != -1;
 }
 

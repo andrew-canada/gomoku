@@ -34,6 +34,7 @@ int dinic();
 int main()
 {
     freopen("s4.in", "r", stdin);
+    freopen("s4-4.out", "w", stdout);
     int cap;
     REP(i, 1, 8)
     {
@@ -86,7 +87,7 @@ int dfs(int cur, int nxt[], int flow)
             if (bn > 0)
             {
                 curE.flow += bn;
-                curE.residual->flow -= bn;
+                curE.residual->flow += bn;
                 return bn;
             }
         }
@@ -114,6 +115,11 @@ bool bfs()
             }
         }
     }
+    REP(i, 0, 17)
+    {
+        printf("%d ", lvl[i]);
+    }
+    printf("\n");
     return lvl[17] != -1;
 }
 
