@@ -20,8 +20,6 @@ int dfs(int cur, int flow);
 
 int main()
 {
-    freopen("s4.in", "r", stdin);
-    freopen("s4-2.out", "w", stdout);
     REP(i, 1, 8)
     {
         scanf("%d", &adjL[0][i]);
@@ -38,8 +36,11 @@ int main()
     {
         adjL[2][i] = INF;
     }
-    adjL[3][12] = adjL[3][11] = adjL[3][15] = adjL[3][16] = adjL[4][12] = adjL[4][16] = adjL[5][13] = INF;
-    adjL[5][14] = adjL[5][15] = adjL[5][16] = adjL[6][14] = adjL[6][16] = adjL[7][15] = adjL[7][16] = adjL[8][16] = INF;
+    adjL[3][12] = adjL[12][17], adjL[3][11] = adjL[11][17], adjL[3][15] = adjL[15][17];
+    adjL[3][16] = adjL[16][17], adjL[4][12] = adjL[12][17], adjL[4][16] = adjL[16][17];
+    adjL[5][13] = adjL[13][17], adjL[5][14] = adjL[14][17], adjL[5][15] = adjL[15][17];
+    adjL[5][16] = adjL[16][17], adjL[6][14] = adjL[14][17], adjL[6][16] = adjL[16][17];
+    adjL[7][15] = adjL[15][17], adjL[7][16] = adjL[16][17], adjL[8][16] = adjL[16][17];
     int curBlood;
 
     while (bfs())
@@ -75,11 +76,6 @@ bool bfs()
             }
         }
     }
-    REP(i, 0, 17)
-    {
-        printf("%d ", lvl[i]);
-    }
-    printf("\n");
     if (lvl[17] == -1)
     {
         return false;
