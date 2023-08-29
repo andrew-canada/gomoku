@@ -24,7 +24,7 @@ struct edge
 
 int maxFl;
 int lvl[20];
-vector<edge> el[20];
+vector<edge *> el[20];
 
 void addE(int from, int to, int cap);
 int dfs(int cur, int nxt[], int flow);
@@ -33,7 +33,7 @@ int dinic();
 
 int main()
 {
-    freopen("s4.in", "r", stdin);
+    // freopen("s4.in", "r", stdin);
     int cap;
     REP(i, 1, 8)
     {
@@ -65,8 +65,8 @@ void addE(int from, int to, int cap)
     edge *e2 = new edge(to, from, 0);
     e1->residual = e2;
     e2->residual = e1;
-    el[from].push_back(*e1);
-    el[to].push_back(*e2);
+    el[from].push_back(e1);
+    el[to].push_back(e2);
 }
 
 int dfs(int cur, int nxt[], int flow)
@@ -78,15 +78,15 @@ int dfs(int cur, int nxt[], int flow)
     int ne = el[cur].size();
     for (; nxt[cur] < ne; nxt[cur]++)
     {
-        edge &curE = el[cur][nxt[cur]];
-        int remCap = curE.cap - curE.flow;
-        if (remCap > 0 && lvl[curE.to] == lvl[cur] + 1)
+        edge *curE = el[cur][nxt[cur]];
+        int remCap = curE->cap - curE->flow;
+        if (remCap > 0 && lvl[curE->to] == lvl[cur] + 1)
         {
-            int bn = dfs(curE.to, nxt, MIN(flow, remCap));
+            int bn = dfs(curE->to, nxt, MIN(flow, remCap));
             if (bn > 0)
             {
-                curE.flow += bn;
-                curE.residual->flow -= bn;
+                curE->flow += bn;
+                curE->residual->flow -= bn;
                 return bn;
             }
         }
@@ -104,16 +104,17 @@ bool bfs()
     {
         int cur = q.front();
         q.pop();
-        for (edge e : el[cur])
+        for (edge *e : el[cur])
         {
-            int cap = e.cap - e.flow;
-            if (cap > 0 && lvl[e.to] == -1)
+            int cap = e->cap - e->flow;
+            if (cap > 0 && lvl[e->to] == -1)
             {
-                lvl[e.to] = lvl[cur] + 1;
-                q.push(e.to);
+                lvl[e->to] = lvl[cur] + 1;
+                q.push(e->to);
             }
         }
     }
+    printf("\n");
     return lvl[17] != -1;
 }
 
