@@ -24,12 +24,14 @@ void dfs(int n1, int par)
         dp[n1][0] = INF;
         dp[n1][1] = 0;
         dp[n1][2] = cost[n1];
+        printf("s1,%d,%d,%d,%d,%d\n", n1, bArr[n1], dp[n1][0], dp[n1][1], dp[n1][2]);
         for (int n2 : adjList[n1])
         {
             if (n2 == par)
                 continue;
             dp[n1][1] += dp[n2][1];
             dp[n1][2] += dp[n2][0];
+            printf("s2,%d,%d,%d,%d,%d,%d,%d,%d,%d\n", n1, bArr[n1], dp[n1][0], dp[n1][1], dp[n1][2], n2, dp[n2][0], dp[n2][1], dp[n2][2]);
         }
     }
     else
@@ -42,21 +44,26 @@ void dfs(int n1, int par)
                 continue;
             offSum += dp[n2][0];
             oneSum += dp[n2][1];
+            printf("s3,%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%lld\n", n1, bArr[n1], dp[n1][0], dp[n1][1], dp[n1][2], n2, dp[n2][0], dp[n2][1], dp[n2][2], offSum, oneSum);
         }
         dp[n1][0] = min(offSum + cost[n1], oneSum);
         dp[n1][1] = INF;
         dp[n1][2] = INF;
+        printf("s4,%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%lld\n", n1, bArr[n1], dp[n1][0], dp[n1][1], dp[n1][2], -1, -1, -1, -1, offSum, oneSum);
+
         for (int n2 : adjList[n1])
         {
             if (n2 == par)
                 continue;
             dp[n1][2] = min(dp[n1][2], offSum - dp[n2][0] + dp[n2][2] + cost[n1]);
             dp[n1][1] = min(dp[n1][1], oneSum - dp[n2][1] + dp[n2][2]);
+            printf("s5,%d,%d,%d,%d,%d,%d,%d,%d,%d,%lld,%lld\n", n1, bArr[n1], dp[n1][0], dp[n1][1], dp[n1][2], -1, -1, -1, -1, offSum, oneSum);
         }
     }
 
     dp[n1][1] = min(dp[n1][1], dp[n1][2]);
     dp[n1][0] = min(dp[n1][0], dp[n1][1]);
+    printf("s6,%d,%d,%d,%d,%d\n", n1, bArr[n1], dp[n1][0], dp[n1][1], dp[n1][2]);
 }
 
 int main()
