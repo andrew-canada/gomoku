@@ -14,7 +14,7 @@ vector<int> st;
 int main()
 {
     scanf("%d%d", &n, &m);
-    REP(i, 0, m - 1)
+    REP(i, 1, m)
     {
         scanf("%d%d%d", &sI, &eI, &gcd);
         diff[sI][gcd]++;
