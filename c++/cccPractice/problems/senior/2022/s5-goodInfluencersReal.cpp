@@ -4,16 +4,20 @@
 
 using namespace std;
 
+typedef long long ll;
+
 #define REP(i, a, b) for (int i = int(a); i <= int(b); i++)
-#define INF 200005
+#define MIN(a, b) ((a) < (b) ? (a) : (b))
+#define MAXN 200005
+#define INF 1000000000
 
 int n;
 int s1, s2;
-char status[INF];
-bool yn[INF];
-int cost[INF];
-int dp[INF][3];
-vector<int> adjL[INF];
+char status[MAXN];
+bool yesno[MAXN];
+int cost[MAXN];
+ll dp[MAXN][3];
+vector<int> adjL[MAXN];
 
 void dfs(int cur, int par);
 
@@ -29,27 +33,59 @@ int main()
     scanf("%s", &status);
     REP(i, 1, n)
     {
-        yn[i] = (status[i - 1] == 'Y');
+        yesno[i] = (status[i - 1] == 'Y');
     }
     REP(i, 1, n)
     {
         scanf("%d", &cost[i]);
     }
     dfs(1, -1);
-    printf("%d", min({dp[1][0], dp[1][1], dp[1][2]}));
+    printf("%d", dp[1][1]);
 }
 
 void dfs(int cur, int par)
 {
-    dp[cur][0] = dp[cur][1] = dp[cur][2] = cost[cur];
-    for (int s : adjL[cur])
+    for (int nxt : adjL[cur])
     {
-        if (s == par)
+        if (nxt != par)
         {
-            continue;
+            dfs(nxt, cur);
         }
-        dfs(s, cur);
-        dp[cur][0] += min({dp[s][0], dp[s][1], dp[s][2]});
-        dp[cur][2] += min({dp[s][0], dp[s][1], dp[s][2]});
     }
+    if (yesno[cur])
+    {
+        dp[cur][0] = INF, dp[cur][1] = 0, dp[cur][2] = cost[cur];
+        for (int nxt : adjL[cur])
+        {
+            if (nxt != par)
+            {
+                dp[cur][1] += dp[nxt][1];
+                dp[cur][2] += dp[nxt][0];
+            }
+        }
+    }
+    else
+    {
+        ll subSum = 0, costSum = 0;
+        for (int nxt : adjL[cur])
+        {
+            if (nxt != par)
+            {
+                subSum += dp[nxt][0];
+                costSum += dp[nxt][1];
+            }
+        }
+        dp[cur][0] = MIN(cost[cur] + subSum, costSum);
+        dp[cur][1] = INF, dp[cur][2] = INF;
+        for (int nxt : adjL[cur])
+        {
+            if (nxt != par)
+            {
+                dp[cur][1] = MIN(dp[cur][1], costSum - dp[nxt][1] + dp[nxt][2]);
+                dp[cur][2] = MIN(dp[cur][2], subSum - dp[nxt][0] + dp[nxt][2] + cost[cur]);
+            }
+        }
+    }
+    dp[cur][1] = MIN(dp[cur][1], dp[cur][2]);
+    dp[cur][0] = MIN(dp[cur][0], dp[cur][1]);
 }
