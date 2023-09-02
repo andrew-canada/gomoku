@@ -24,7 +24,7 @@ void dfs(int cur, int par);
 int main()
 {
     scanf("%d", &n);
-    REP(i, 1, n)
+    REP(i, 1, n - 1)
     {
         scanf("%d%d", &s1, &s2);
         adjL[s1].push_back(s2);
@@ -40,7 +40,7 @@ int main()
         scanf("%d", &cost[i]);
     }
     dfs(1, -1);
-    printf("%d", dp[1][1]);
+    printf("%lld", dp[1][1]);
 }
 
 void dfs(int cur, int par)
