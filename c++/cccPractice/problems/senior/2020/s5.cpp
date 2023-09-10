@@ -11,6 +11,7 @@ double totProb;
 
 int main()
 {
+    // freopen("s5.in", "r", stdin);
     scanf("%d", &n);
     REP(i, 0, n - 1)
     {
@@ -21,13 +22,14 @@ int main()
         printf("1");
         return 0;
     }
+    last[fav[n - 1]] = n - 1;
     for (int i = n - 2; i >= 0; i--)
     {
         if (fav[i] == fav[0])
         {
             dp[i] = 1;
         }
-        else if (last[i])
+        else if (last[fav[i]])
         {
             dp[i] = dp[last[fav[i]]];
         }
@@ -35,6 +37,11 @@ int main()
         {
             dp[i] = (1 + totProb) / (n - i);
         }
+        totProb += dp[i];
+        if (!last[fav[i]])
+        {
+            last[fav[i]] = i;
+        }
     }
-    printf("%.6f", totProb / n);
+    printf("%.8f", totProb / n);
 }
