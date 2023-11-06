@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <algorithm>
 
-#define REP(i, a, b) for (int i = int(a); i < int(b); i++)
+#define REP(i, a, b) for (int i = int(a); i <= int(b); i++)
 
 using namespace std;
 
@@ -14,17 +14,18 @@ int maxSugar(int p1, int l, int r, bool canTake);
 
 int main()
 {
-    scanf("%d%d", &n, &m);
-    REP(i, 0, n)
+    scanf("%d", &n);
+    REP(i, 1, n)
     {
         scanf("%d", &line1[i]);
     }
-    REP(i, 0, m)
+    scanf("%d", &m);
+    REP(i, 1, m)
     {
         scanf("%d", &line2[i]);
     }
-    sort(line2, line2 + m);
-    printf("%d", maxSugar(0, 0, 1, false));
+    sort(line2, line2 + m + 1);
+    printf("%d", maxSugar(1, 1, m, true));
 }
 
 int maxSugar(int p1, int l, int r, bool canTake)
@@ -34,18 +35,34 @@ int maxSugar(int p1, int l, int r, bool canTake)
     {
         return dp[p1][l][r][canTake];
     }
-    if (l > r)
+    if (p1 > n && l > r)
     {
+        dp[p1][l][r][canTake] = sugar;
+        return sugar;
     }
     if (canTake)
     {
-        if (l == m)
+        if (p1 <= n)
         {
-            return dp[p1][l][r][canTake] = maxSugar(p1 + 1, l, r, true);
+            sugar = max(sugar, line1[p1] + maxSugar(p1 + 1, l, r, false));
+            sugar = max(sugar, maxSugar(p1 + 1, l, r, true));
         }
-        return dp[p1][l][r][canTake] = max(dp[p1][l][r][canTake], maxSugar(p1, l, r, false));
+        if (l <= r)
+        {
+            sugar = max(sugar, line2[r] + maxSugar(p1, l, r - 1, false));
+        }
     }
     else
     {
+        if (p1 <= n)
+        {
+            sugar = max(sugar, maxSugar(p1 + 1, l, r, true));
+        }
+        if (l <= r)
+        {
+            sugar = max(sugar, maxSugar(p1, l + 1, r, true));
+        }
     }
+    dp[p1][l][r][canTake] = sugar;
+    return sugar;
 }
