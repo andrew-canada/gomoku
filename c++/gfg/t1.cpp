@@ -1,20 +1,21 @@
 class Solution
-{
-public:
-    // arr: input array
-    // n: size of array
-    // Function to rearrange an array so that arr[i] becomes arr[arr[i]]
-    // with O(1) extra space.
-    void arrange(long long arr[], int n)
-    {
-        for (int i = 0; i < n; i++)
-        {
-            arr[i] = arr[i] + (arr[arr[i]] % n) * n;
+{   
+    public:
+    //Function to return list of integers visited in snake pattern in matrix.
+    vector<int> snakePattern(vector<vector<int> > matrix)
+    {   
+        vector<int> snake;
+        for(int i = 0; i<matrix.size(); i++){
+            if(i%2==0){
+                for(int j = 0; j<matrix[i].size(); j++){
+                    snake.push_back(matrix[i][j]);
+                }
+            }else{
+                for(int j = matrix[i].size()-1; j>=0; j--){
+                    snake.push_back(matrix[i][j]);
+                }
+            }
         }
-        for (int i = 0; i < n; i++)
-        {
-            arr[i] = arr[i] / n;
-        }
-        return;
+        return snake;
     }
 };
