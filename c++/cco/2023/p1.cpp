@@ -17,6 +17,7 @@ int main()
         scanf("%d", &sums[i]);
     }
     num += nCk(k, sums[0]);
+
     printf("%d", num);
 }
 
