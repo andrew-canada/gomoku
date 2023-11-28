@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /*
 
 Problem Statement:
@@ -24,17 +25,24 @@ a real mountain. Can you tell her the minimum cost required to do so?
 
 =======
 >>>>>>> e425406001bcf6e6c0d5f31887dd731ad6e25efd
+=======
+// n columns of pixels of height Hn
+// peak is higher than left and right
+// result only has one peak
+// (i, j, k) -> peak j increments for cost Hi+Hj+Hk
+// minimize cost to create single peak
+
+>>>>>>> bdbaae5f4cfdb578d93ca75f37de4d1648dfcca0
 #include <bits/stdc++.h>
 
 using namespace std;
 
 #define REP(i, a, b) for (int i = int(a); i <= int(b); i++)
 
-int h[1000005];
-<<<<<<< HEAD
-int dp[1000005];
-=======
->>>>>>> e425406001bcf6e6c0d5f31887dd731ad6e25efd
+const int MAXN = 1000005;
+int cost;
+int h[MAXN];
+int dp[MAXN];
 
 int main()
 {
@@ -44,32 +52,34 @@ int main()
     {
         scanf("%d", &h[i]);
     }
-<<<<<<< HEAD
-
-    dp[0] = 0;
-    dp[1] = 0;
 
     REP(i, 2, n)
+    int ch;
+    int peaks = 1;
+    while (peaks > 0)
     {
-        dp[i] = INT_MAX;
-        REP(j, 1, i - 1)
+        peaks = 0;
+        REP(i, 1, n)
         {
-            if (h[j] <= h[i])
+            if (i - 1 >= 0 && i + 1 <= n)
             {
-                int cost = dp[j] + h[i] + h[i + 1];
-                dp[i] = min(dp[i], cost);
+                if (h[i] > h[i - 1] && h[i] > h[i + 1])
+                {
+                }
+            }
+            if (i + 1 <= n)
+            {
+                if (h[i] > h[i + 1])
+                {
+                }
+            }
+            ch = max(h[i - 1], h[i + 1]);
+            if (ch > h[i])
+            {
+                peaks++;
+                h[i - 1] = h[i] = h[i + 1] = ch;
             }
         }
     }
-
-    int minCost = INT_MAX;
-    REP(i, 1, n)
-    {
-        minCost = min(minCost, dp[i]);
-    }
-
-    printf("%d\n", minCost);
-    return 0;
-=======
->>>>>>> e425406001bcf6e6c0d5f31887dd731ad6e25efd
+    printf("%d", cost);
 }
