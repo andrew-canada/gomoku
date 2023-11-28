@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 
 Problem Statement:
@@ -21,6 +22,8 @@ a real mountain. Can you tell her the minimum cost required to do so?
 
 */
 
+=======
+>>>>>>> e425406001bcf6e6c0d5f31887dd731ad6e25efd
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -28,7 +31,10 @@ using namespace std;
 #define REP(i, a, b) for (int i = int(a); i <= int(b); i++)
 
 int h[1000005];
+<<<<<<< HEAD
 int dp[1000005];
+=======
+>>>>>>> e425406001bcf6e6c0d5f31887dd731ad6e25efd
 
 int main()
 {
@@ -38,6 +44,7 @@ int main()
     {
         scanf("%d", &h[i]);
     }
+<<<<<<< HEAD
 
     dp[0] = 0;
     dp[1] = 0;
@@ -63,4 +70,6 @@ int main()
 
     printf("%d\n", minCost);
     return 0;
+=======
+>>>>>>> e425406001bcf6e6c0d5f31887dd731ad6e25efd
 }
