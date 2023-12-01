@@ -27,12 +27,13 @@ struct edge
 };
 
 void add(int a, int b, int c);
+bool bfs();
 int dfs(int cur, int par);
-int bfs(int cur, int par);
 int dinic();
 
-vector<edge *> adjL[20];
 const int INF = 0x3f3f3f3f;
+vector<edge *> adjL[20];
+int lvl[20], nxt[20];
 
 int main()
 {
@@ -64,30 +65,70 @@ int main()
 void add(int a, int b, int c)
 {
     edge *e1 = new edge(a, b, c);
-    edge *e2 = new edge(b, a, c);
+    edge *e2 = new edge(b, a, 0);
     e1->back = e2;
     e2->back = e1;
     adjL[a].push_back(e1);
     adjL[b].push_back(e2);
 }
 
-int dfs(int cur, int par)
+bool bfs()
 {
+    queue<int> q;
+    q.push(0);
+    memset(lvl, INF, sizeof(lvl));
+    lvl[0] = 0;
+    int cur;
+    while (!q.empty())
+    {
+        cur = q.front();
+        q.pop();
+        for (edge *e : adjL[cur])
+        {
+            if (lvl[e->b] == INF && e->c - e->f > 0)
+            {
+                q.push(e->b);
+                lvl[e->b] = lvl[cur] + 1;
+            }
+        }
+    }
+    return lvl[17] != INF;
 }
 
-int bfs(int cur, int par)
+int dfs(int cur, int f, int nxt[])
 {
-    queue<edge> q;
-    queue ct;
+    if (cur == 17)
+    {
+        return f;
+    }
+    for (int n = adjL[cur].size(); nxt[cur] < n; nxt[cur]++)
+    {
+        edge *e = adjL[cur][nxt[cur]];
+        if (e->c - e->f > 0 && lvl[e->b] == lvl[e->a] + 1)
+        {
+            int flow = dfs(e->b, min(f, e->c - e->f), nxt);
+            if (flow > 0)
+            {
+                e->f += flow;
+                e->back->f -= flow;
+                return flow;
+            }
+        }
+    }
+    return 0;
 }
 
 int dinic()
 {
-    int patients = 0;
-    int type;
-    while (type = bfs(0, -1))
+    int mf = 0;
+    int f;
+    while (bfs())
     {
-        patients += dfs(type, -1);
+        memset(nxt, 0, sizeof(nxt));
+        while (f = dfs(0, INF, nxt))
+        {
+            mf += f;
+        }
     }
-    return patients;
+    return mf;
 }
