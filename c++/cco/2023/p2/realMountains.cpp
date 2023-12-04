@@ -29,24 +29,26 @@ int main()
         peaks = 0;
         REP(i, 1, n)
         {
-            if (i - 1 >= 0 && i + 1 <= n)
-            {
-                if (h[i] > h[i - 1] && h[i] > h[i + 1])
-                {
-                }
-            }
-            if (i + 1 <= n)
-            {
-                if (h[i] > h[i + 1])
-                {
-                }
-            }
-            ch = max(h[i - 1], h[i + 1]);
-            if (ch > h[i])
+            if (i - 1 >= 1 && i + 1 <= n && h[i] > h[i - 1] && h[i] > h[i + 1])
             {
                 peaks++;
-                h[i - 1] = h[i] = h[i + 1] = ch;
             }
+            else if (i + 1 <= n && h[i] > h[i + 1])
+            {
+                peaks++;
+                h[i + 1] = h[i];
+            }
+            else if (i - 1 >= 1 && h[i] > h[i - 1])
+            {
+                peaks++;
+                h[i - 1] = h[i];
+            }
+            // ch = max(h[i - 1], h[i + 1]);
+            // if (ch > h[i])
+            // {
+            //     peaks++;
+            //     h[i - 1] = h[i] = h[i + 1] = ch;
+            // }
         }
     }
     printf("%d", cost);
