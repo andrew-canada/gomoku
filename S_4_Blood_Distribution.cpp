@@ -28,7 +28,7 @@ struct edge
 
 void add(int a, int b, int c);
 bool bfs();
-int dfs(int cur, int par);
+int dfs(int cur, int f);
 int dinic();
 
 const int INF = 0x3f3f3f3f;
@@ -95,7 +95,7 @@ bool bfs()
     return lvl[17] != INF;
 }
 
-int dfs(int cur, int f, int nxt[])
+int dfs(int cur, int f)
 {
     if (cur == 17)
     {
@@ -106,7 +106,7 @@ int dfs(int cur, int f, int nxt[])
         edge *e = adjL[cur][nxt[cur]];
         if (e->c - e->f > 0 && lvl[e->b] == lvl[e->a] + 1)
         {
-            int flow = dfs(e->b, min(f, e->c - e->f), nxt);
+            int flow = dfs(e->b, min(f, e->c - e->f));
             if (flow > 0)
             {
                 e->f += flow;
@@ -125,7 +125,7 @@ int dinic()
     while (bfs())
     {
         memset(nxt, 0, sizeof(nxt));
-        while (f = dfs(0, INF, nxt))
+        while (f = dfs(0, INF))
         {
             mf += f;
         }

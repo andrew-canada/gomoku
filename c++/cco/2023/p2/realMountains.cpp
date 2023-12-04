@@ -43,6 +43,7 @@ const int MAXN = 1000005;
 int cost;
 int h[MAXN];
 int dp[MAXN];
+bool p[MAXN];
 
 int main()
 {
@@ -63,24 +64,29 @@ int main()
         {
             if (i - 1 >= 1 && i + 1 <= n && h[i] > h[i - 1] && h[i] > h[i + 1])
             {
+                p[i]=1;
                 peaks++;
             }
-            else if (i + 1 <= n && h[i] > h[i + 1])
-            {
-                peaks++;
-                h[i + 1] = h[i];
-            }
-            else if (i - 1 >= 1 && h[i] > h[i - 1])
-            {
-                peaks++;
-                h[i - 1] = h[i];
-            }
+            // else if (i + 1 <= n && h[i] > h[i + 1])
+            // {
+            //     peaks++;
+            //     h[i + 1] = h[i];
+            // }
+            // else if (i - 1 >= 1 && h[i] > h[i - 1])
+            // {
+            //     peaks++;
+            //     h[i - 1] = h[i];
+            // }
             // ch = max(h[i - 1], h[i + 1]);
             // if (ch > h[i])
             // {
             //     peaks++;
             //     h[i - 1] = h[i] = h[i + 1] = ch;
             // }
+        }
+        if(peaks==0){
+            if(h[n]>h[n-1]){
+            }
         }
     }
     printf("%d", cost);
