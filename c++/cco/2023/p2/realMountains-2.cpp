@@ -9,6 +9,7 @@
 using namespace std;
 
 #define REP(i, a, b) for (int i = int(a); i <= int(b); i++)
+#define INF 0x3f3f3f3f
 
 const int MAXN = 1000005;
 int cost;
@@ -16,6 +17,7 @@ int h[MAXN];
 int dp[MAXN];
 vector<int> p;
 bool isP[MAXN];
+set<int> minH;
 
 int main()
 {
@@ -24,6 +26,7 @@ int main()
     REP(i, 1, n)
     {
         scanf("%d", &h[i]);
+        minH.insert(h[i]);
     }
 
     REP(i, 2, n)
@@ -35,11 +38,13 @@ int main()
         if (h[1] > h[2])
         {
             isP[1] = 1;
+            p.push_back(1);
             peaks++;
         }
         if (h[n] > h[n - 1])
         {
             isP[n] = 1;
+            p.push_back(n);
             peaks++;
         }
         REP(i, 1, n)
@@ -47,16 +52,24 @@ int main()
             if (i - 1 >= 1 && i + 1 <= n && h[i] > h[i - 1] && h[i] > h[i + 1])
             {
                 isP[i] = 1;
+                p.push_back(i);
                 peaks++;
             }
         }
-        if (peaks == 0 || peaks == 1)
+        if (peaks < 2)
         {
             break;
         }
-        REP(i, 1, n)
+        int mh;
+        REP(i, 0, p.size() - 1)
         {
-            // find values between peaks
+            mh = min(p[i], p[i + 1]);
+            REP(j, p[i] + 1, p[i + 1])
+            {
+                while (h[j] < mh)
+                {
+                }
+            }
         }
     }
     printf("%d", cost);
