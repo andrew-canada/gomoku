@@ -31,6 +31,11 @@ int main()
     {
         scanf("%d", &currentHeight[i]);
         minPos[i] = {currentHeight[i], i};
+        if (currentHeight[i] > maxVal)
+        {
+            maxVal = currentHeight[i];
+            maxIdx = i;
+        }
     }
     REP(i, 1, maxIdx - 1)
     {
@@ -40,14 +45,126 @@ int main()
     {
         finalHeight[i] = max(finalHeight[i + 1], currentHeight[i]);
     }
-    sort(minPos + 1, minPos + 1 + n);
-    int first, last;
-    int curH, curIdx;
-    REP(i, 1, n)
-    {
-        curH = minPos[i].first, curIdx = minPos[i].second;
-        // if (minPos[i].first < currentHeight[])
-    }
 
+    while (true)
+    {
+        sort(minPos + 1, minPos + 1 + n);
+        int first, last;
+        int curH, curIdx;
+        int numH;
+        vector<int> valley;
+        int minValley;
+        REP(i, 1, n)
+        {
+            if (minPos[i].first < finalHeight[minPos[i].second])
+            {
+                minValley = minPos[i].first;
+                break;
+            }
+        }
+        REP(i, 1, n)
+        {
+            if (minPos[i].first > minValley)
+            {
+                break;
+            }
+            if (minPos[i].first == minValley)
+            {
+                if (minPos[i].first < finalHeight[minPos[i].second])
+                {
+                    valley.pb(i);
+                }
+            }
+        }
+        if (valley.size() == 0)
+        {
+            break;
+        }
+        if (valley.size() == 1)
+        {
+            int minVal = minPos[valley[0]].first;
+            int minIdx = minPos[valley[0]].second;
+            int idx1, idx2;
+            REP(i, valley[0] + 1, n)
+            {
+                if (minPos[i].first > minVal && minPos[i].second > minIdx)
+                {
+                    idx1 = i;
+                    break;
+                }
+            }
+            REP(i, valley[0] + 1, n)
+            {
+                if (minPos[i].first > minVal && minPos[i].second < minIdx)
+                {
+                    idx2 = i;
+                    break;
+                }
+            }
+            cost += minPos[idx1].first + minVal + minPos[idx2].first;
+            minPos[valley[0]].first++;
+            currentHeight[minPos[valley[0]].second]++;
+        }
+        else
+        {
+            first = valley.front(), last = valley.back();
+            curH = minPos[first].first;
+            int lv, rv, mv;
+            REP(i, 1, first - 1)
+            {
+                if (minPos[i].first > curH && minPos[i].second < minPos[first].second)
+                {
+                    lv = minPos[i].first;
+                    break;
+                }
+            }
+            REP(i, last + 1, n)
+            {
+                if (minPos[i].first > curH && minPos[i].second > minPos[last].second)
+                {
+                    rv = minPos[i].first;
+                    break;
+                }
+            }
+            if (lv >= rv)
+            {
+                REP(i, first, n)
+                {
+                    if (minPos[i].first > minPos[first].first && minPos[i].second > minPos[last].second)
+                    {
+                        cost += lv + minPos[first].first + minPos[i].first;
+                        cost += (minPos[first].first + 1) + minPos[last].first + rv;
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                REP(i, first, n)
+                {
+                    if (minPos[i].first > minPos[last].first && minPos[i].second < minPos[first].second)
+                    {
+                        cost += minPos[i].first + minPos[last].first + rv;
+                        cost += lv + minPos[first].first + (minPos[last].first + 1);
+                        break;
+                    }
+                }
+            }
+            cost += (valley.size() - 2) * (minPos[first].first + 2 * (minPos[first].first + 1));
+            for (int i : valley)
+            {
+                if (minPos[i].first + 1 == finalHeight[minPos[i].second])
+                {
+                    minPos[i].first = INF;
+                    currentHeight[minPos[i].second] = INF;
+                }
+                else
+                {
+                    minPos[i].first++;
+                    currentHeight[minPos[i].second]++;
+                }
+            }
+        }
+    }
     printf("%d", cost);
 }

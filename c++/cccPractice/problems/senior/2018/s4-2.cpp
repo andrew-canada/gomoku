@@ -15,8 +15,7 @@ int main()
 {
     scanf("%d", &n);
     t[1] = 1;
-    t[2] = 1;
-    if (n > 2)
+    if (n > 1)
     {
         calcTrees(n);
     }
