@@ -30,7 +30,6 @@ int main()
         hash2 = hash2 * 26 % mod2;
     }
     bool perm;
-    int np = 0;
     ll hStr1 = 0, hStr2 = 0;
     REP(i, 0, h.length())
     {
@@ -52,7 +51,6 @@ int main()
         }
         if (perm)
         {
-            np++;
             s.insert(hashStr(hStr1, hStr2));
         }
         fH[h[i - n.length() + 1] - 'a']--;
