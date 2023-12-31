@@ -7,7 +7,7 @@ typedef long long ll;
 const int mxN = 1e5, mxX = 100, M = 1e9 + 7;
 
 int n, m;
-int dp[mxN + 1][mxX + 1];
+ll dp[mxN + 1][mxX + 1];
 int arr[mxN + 1];
 
 bool isSafe(int n1)
@@ -24,7 +24,7 @@ int main()
     }
     if (arr[0] == 0)
     {
-        fill(dp[0], dp[0] + n, 1);
+        fill(dp[0], dp[0] + 101, 1);
     }
     dp[0][arr[0]] = 1;
     for (int i = 1; i < n; i++)
@@ -59,7 +59,7 @@ int main()
             dp[i][arr[i]] %= M;
         }
     }
-    int numArr = 0;
+    ll numArr = 0;
     for (int i = 1; i <= m; i++)
     {
         numArr += dp[n - 1][i];
