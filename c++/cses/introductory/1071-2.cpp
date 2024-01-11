@@ -12,24 +12,28 @@ int main()
     {
         int r, c;
         cin >> r >> c;
-        int msl = max(r, c);
-        int ans = (msl - 1) * (msl - 1);
+        ll msl = max(r, c);
+        ll ans = (msl - 1) * (msl - 1);
         if (msl & 1)
         {
             if (msl == r)
             {
+                ans += c;
             }
             else
             {
+                ans += 2 * msl - r;
             }
         }
         else
         {
             if (msl == r)
             {
+                ans += 2 * msl - c;
             }
             else
             {
+                ans += r;
             }
         }
         cout << ans << '\n';
