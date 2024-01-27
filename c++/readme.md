@@ -4,6 +4,8 @@
 
 C:\work\msys64\mingw64\include\c++\12.1.0\bits
 
+pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+
 ## good c++ config json:
 
 ```json
@@ -91,3 +93,30 @@ good debug config
 }
 
 ```
+
+bad
+
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/work/project/git-repo/learning/c++/cccPractice/problems/senior/2021",
+      "program": "c:/work/project/git-repo/learning/c++/cccPractice/problems/senior/2021/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
