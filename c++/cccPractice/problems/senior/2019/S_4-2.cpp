@@ -9,13 +9,13 @@ typedef long long ll;
 const int mxN = 1e6;
 
 int n, k;
-int arr[mxN + 5];
-ll dp[mxN + 5];
+int arr[mxN + 1];
+ll dp[mxN + 1];
 
 struct node
 {
     int mx;
-} st[4 * mxN + 5];
+} st[4 * mxN + 1];
 
 void update(int l, int val, int ti = 1, int tl = 1, int tr = n)
 {
@@ -41,6 +41,10 @@ int query(int l, int r, int ti = 1, int tl = 1, int tr = n)
     if (tl >= l && tr <= r)
     {
         return st[ti].mx;
+    }
+    if (l > r)
+    {
+        return 0;
     }
     int mid = (tl + tr) / 2;
     return max(l <= mid ? query(l, r, ti << 1, tl, mid) : 0,
