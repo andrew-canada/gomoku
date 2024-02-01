@@ -18,20 +18,36 @@ int main()
     {
         cin >> fav[i];
     }
-    if (fav[0] == fav[n - 1])
+    if (fav[1] == fav[n])
     {
         cout << 1;
         return 0;
     }
-    // dp[i] = prob coach steals person i's burger
+    // dp[i] = prob person i gets their burger
     double ans = 0;
     // last person of a burger type
     mp[fav[n]] = n;
-    for (int i = 2; i <= n; i++)
+    for (int i = n - 1; i >= 1; i--)
     {
-        if (fav[i] == fav[n])
+        if (fav[i] == fav[1])
         {
+            dp[i] = 1;
+        }
+        else if (mp[fav[i]])
+        {
+            dp[i] = dp[mp[fav[i]]];
+        }
+        else
+        {
+            // n-i+1 burger remain
+            // 1/numB take coach, rem
+            dp[i] = (ans + 1) / (n - i + 1);
+        }
+        ans += dp[i];
+        if (!mp[fav[i]])
+        {
+            mp[fav[i]] = i;
         }
     }
-    cout << ans;
+    cout << fixed << setprecision(8) << ans / n;
 }

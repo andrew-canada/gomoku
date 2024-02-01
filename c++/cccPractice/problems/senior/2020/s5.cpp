@@ -37,6 +37,7 @@ int main()
         {
             dp[i] = (1 + totProb) / (n - i);
         }
+        printf("%lf\n", dp[i]);
         totProb += dp[i];
         if (!last[fav[i]])
         {
