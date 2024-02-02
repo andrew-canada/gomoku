@@ -13,36 +13,24 @@ int n, m;
 vector<int> adjL[mxN + 1];
 int par[mxN + 1], dp[mxN + 1];
 bool vis[mxN + 1];
-// bool act[mxN + 1];
 
 void dfs(int u)
 {
-    // dp[i] = dist from node n to node i
     dp[u] = (u == n ? 1 : -1e9);
     vis[u] = true;
-    // act[u] = true;
     for (int v : adjL[u])
     {
-        // if (act[v])
-        // {
-        //     cout << "IMPOSSIBLE\n";
-        //     exit(0);
-        // }
-        // else
-        // {
         if (!vis[v])
         {
             par[v] = u;
             dfs(v);
         }
-        //}
         if (dp[v] + 1 > dp[u])
         {
             dp[u] = dp[v] + 1;
             par[u] = v;
         }
     }
-    // act[u] = false;
 }
 
 int main()

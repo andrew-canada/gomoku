@@ -7,9 +7,12 @@ using namespace std;
 
 typedef long long ll;
 
-const int M = 1e9 + 7, mxN = 2e5, mxX = 1e6;
+const int M = 1e9 + 7, mxX = 1e6;
 
-int freq[mxX + 1];
+ll nc2(ll n)
+{
+    return (((n % M) * ((n - 1) % M)) % M * ((M + 1) / 2)) % M;
+}
 
 int main()
 {
@@ -17,9 +20,9 @@ int main()
     cin >> n;
     for (ll i = 1; i <= n; i++)
     {
-        ll r = n / (n / i);
-        ans += n / i * (r * (r + 1) / 2 - i * (i - 1) / 2);
-        i = r;
+        ll nxt = n / (n / i);
+        ans += (n / i % M) * (nc2(nxt + 1) - nc2(i)) % M;
+        i = nxt;
     }
-    cout << ans;
+    cout << ans % M;
 }
