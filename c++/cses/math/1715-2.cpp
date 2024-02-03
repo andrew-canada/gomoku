@@ -9,12 +9,17 @@ typedef long long ll;
 
 const int mxA = 1e6, M = 1e9 + 7;
 
+int freq[200];
 ll inv[mxA + 1], f[mxA + 1], invF[mxA + 1];
 
 int main()
 {
-    ll n, a, b;
-    cin >> n;
+    string s;
+    cin >> s;
+    for (char c : s)
+    {
+        freq[c]++;
+    }
     inv[1] = 1;
     for (int i = 2; i <= mxA; i++)
     {
@@ -26,9 +31,10 @@ int main()
         f[i] = f[i - 1] * i % M;
         invF[i] = invF[i - 1] * inv[i] % M;
     }
-    for (int i = 0; i < n; i++)
+    ll ans = f[s.size()];
+    for (int i = 'a'; i <= 'z'; i++)
     {
-        cin >> a >> b;
-        cout << f[a] * invF[b] % M * invF[a - b] % M << '\n';
+        ans = ans * invF[freq[i]] % M;
     }
+    cout << ans;
 }
