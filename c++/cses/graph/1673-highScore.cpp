@@ -53,9 +53,14 @@ int main()
 {
     cin >> n >> m;
     ll a, b, c;
+    bool cyc = false;
     for (int i = 0; i < m; i++)
     {
         cin >> a >> b >> c, --a, --b, c *= -1;
+        if (c < 0)
+        {
+            cyc = true;
+        }
         el[i] = {a, b, c};
     }
     for (int i = 1; i < n; i++)
@@ -63,7 +68,7 @@ int main()
         dist[i] = INF;
     }
     bellmanFord();
-    if (dist[n - 1] == NINF || (n == 1 && el[0].c < 0))
+    if (dist[n - 1] == NINF || (n == 1 && cyc))
     {
         cout << -1;
     }
