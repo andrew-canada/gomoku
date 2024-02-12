@@ -24,6 +24,7 @@ vector<edge *> adjL[mxN];
 int lvl[mxN], nxt[mxN];
 int n, m;
 bool vis[mxN];
+vector<int> ans;
 
 void add(int u, int v, int c)
 {
@@ -95,16 +96,27 @@ int dinic()
     return mf;
 }
 
-void dfs1(int u = 0)
+bool dfs(int u = 0)
 {
-    vis[u] = true;
+    ans.pb(u);
+    if (u == n - 1)
+    {
+        return true;
+    }
     for (edge *e : adjL[u])
     {
-        if (e->c > e->f && !vis[e->v])
+        if (e->f == 1 && e->real)
         {
-            dfs1(e->v);
+            e->f = 0;
+            if (dfs(e->v))
+            {
+                return true;
+            }
+            e->f = 1;
         }
     }
+    ans.pop_back();
+    return false;
 }
 
 int main()
@@ -115,33 +127,18 @@ int main()
     {
         cin >> u >> v, --u, --v;
         add(u, v, 1);
-        add(v, u, 1);
     }
-    // number of min cut edges is equal to max flow
-    cout << dinic() << '\n';
-    dfs1();
-    for (int i = 0; i < n; i++)
+    int f = dinic();
+    cout << f << '\n';
+    for (int i = 0; i < f; i++)
     {
-        if (vis[i])
+        dfs();
+        cout << ans.size() << '\n';
+        for (int a : ans)
         {
-            for (edge *e : adjL[i])
-            {
-                if (!vis[e->v] && e->real)
-                {
-                    cout << i + 1 << " " << e->v + 1 << '\n';
-                }
-            }
+            cout << a + 1 << " ";
         }
+        cout << '\n';
+        ans.clear();
     }
 }
-
-/*
-6 7
-1 2
-1 3
-1 4
-2 5
-3 5
-4 5
-5 6
-*/

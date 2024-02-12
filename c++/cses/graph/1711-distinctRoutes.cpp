@@ -12,23 +12,22 @@ const int mxN = 5e2, mxM = 1e3, M = 1e9 + 7;
 struct edge
 {
     edge *back;
-    int u, v, c, f;
-    bool real;
-    edge(int u1, int v1, int c1, bool real1)
+    ll u, v, c, f;
+    edge(ll u1, ll v1, ll c1)
     {
-        u = u1, v = v1, c = c1, f = 0, real = real1;
+        u = u1, v = v1, c = c1, f = 0;
     }
 };
 
 vector<edge *> adjL[mxN];
 int lvl[mxN], nxt[mxN];
 int n, m;
-bool vis[mxN];
+vector<int> path;
 
 void add(int u, int v, int c)
 {
-    edge *e1 = new edge(u, v, c, true);
-    edge *e2 = new edge(v, u, 0, false);
+    edge *e1 = new edge(u, v, c);
+    edge *e2 = new edge(v, u, 0);
     e1->back = e2;
     e2->back = e1;
     adjL[u].push_back(e1);
@@ -58,10 +57,11 @@ bool bfs()
     return lvl[n - 1] != INF;
 }
 
-int dfs(int cur, int f)
+ll dfs(int cur, ll f)
 {
     if (cur == n - 1)
     {
+        path.push_back(cur);
         return f;
     }
     for (int num = adjL[cur].size(); nxt[cur] < num; nxt[cur]++)
@@ -69,42 +69,45 @@ int dfs(int cur, int f)
         edge *e = adjL[cur][nxt[cur]];
         if (e->c - e->f > 0 && lvl[e->v] == lvl[e->u] + 1)
         {
-            int flow = dfs(e->v, min(f, e->c - e->f));
+            path.push_back(cur);
+            ll flow = dfs(e->v, min(f, e->c - e->f));
             if (flow > 0)
             {
                 e->f += flow;
                 e->back->f -= flow;
                 return flow;
             }
+            path.pop_back();
         }
     }
     return 0;
 }
 
-int dinic()
+ll dinic()
 {
-    int mf = 0, f;
+    ll mf = 0, f;
+    vector<vector<int>> paths;
     while (bfs())
     {
         memset(nxt, 0, sizeof(nxt));
         while (f = dfs(0, INF))
         {
             mf += f;
+            paths.push_back(path);
+            path.clear();
         }
+    }
+    cout << mf << "\n";
+    for (auto &p : paths)
+    {
+        cout << p.size() << "\n";
+        for (int i : p)
+        {
+            cout << i + 1 << " ";
+        }
+        cout << "\n";
     }
     return mf;
-}
-
-void dfs1(int u = 0)
-{
-    vis[u] = true;
-    for (edge *e : adjL[u])
-    {
-        if (e->c > e->f && !vis[e->v])
-        {
-            dfs1(e->v);
-        }
-    }
 }
 
 int main()
@@ -115,33 +118,6 @@ int main()
     {
         cin >> u >> v, --u, --v;
         add(u, v, 1);
-        add(v, u, 1);
     }
-    // number of min cut edges is equal to max flow
-    cout << dinic() << '\n';
-    dfs1();
-    for (int i = 0; i < n; i++)
-    {
-        if (vis[i])
-        {
-            for (edge *e : adjL[i])
-            {
-                if (!vis[e->v] && e->real)
-                {
-                    cout << i + 1 << " " << e->v + 1 << '\n';
-                }
-            }
-        }
-    }
+    dinic();
 }
-
-/*
-6 7
-1 2
-1 3
-1 4
-2 5
-3 5
-4 5
-5 6
-*/
