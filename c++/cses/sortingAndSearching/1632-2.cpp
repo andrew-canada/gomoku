@@ -37,7 +37,12 @@ int main()
         {
             --it;
             s.erase(it);
-            setn[arr[i][2]] = it[1];
+            setn[arr[i][2]] = (*it)[1];
+        }
+        if (s.size() < k)
+        {
+            ans++;
+            s.insert({arr[i][0], setn[arr[i][2]]});
         }
     }
     cout << ans;
