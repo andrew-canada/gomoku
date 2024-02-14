@@ -9,48 +9,39 @@ typedef long long ll;
 const int mxN = 2e5;
 
 vector<int> adjL[mxN];
-int d[mxN], ans[mxN];
+int n, d[mxN];
+ll ans[mxN], s[mxN];
 
 void dfs(int u = 0, int p = -1)
 {
+    s[u] = 1;
     for (int v : adjL[u])
     {
         if (v == p)
         {
             continue;
         }
+        d[v] = d[u] + 1;
         dfs(v, u);
-        d[u] = max(d[u], d[v] + 1);
+        s[u] += s[v];
     }
 }
 
-void dfs2(int u = 0, int p = -1, int pd = 0)
+void dfs2(int u, ll pd, int p = -1)
 {
-    ans[u] = max(d[u], pd);
-    vector<array<int, 2>> w{{pd, -1}};
+    ans[u] = pd;
     for (int v : adjL[u])
     {
         if (v == p)
         {
             continue;
         }
-        w.pb({d[v] + 1, v});
-    }
-    w.pb({0, -1});
-    sort(w.begin(), w.end(), greater<array<int, 2>>());
-    for (int v : adjL[u])
-    {
-        if (v == p)
-        {
-            continue;
-        }
-        dfs2(v, u, w[0][1] == v ? w[1][0] + 1 : w[0][0] + 1);
+        dfs2(v, pd - s[v] + (n - s[v]), u);
     }
 }
 
 int main()
 {
-    int n;
     cin >> n;
     for (int i = 0, u, v; i < n - 1; i++)
     {
@@ -58,7 +49,12 @@ int main()
         adjL[u].pb(v), adjL[v].pb(u);
     }
     dfs();
-    dfs2();
+    ll sd = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sd += d[i];
+    }
+    dfs2(0, sd);
     for (int i = 0; i < n; i++)
     {
         cout << ans[i] << " ";
