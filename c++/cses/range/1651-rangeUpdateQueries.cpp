@@ -82,7 +82,7 @@ ll qry(int l, int r, int ti = 1, int tl = 0, int tr = n - 1)
     int mid = (tl + tr) / 2;
     psh(ti, tl, mid, tr);
     return (l <= mid ? qry(l, r, 2 * ti, tl, mid) : 0) +
-           (mid < r ? qry(l, r, 2 * ti + 1, mid + 1, r) : 0);
+           (mid < r ? qry(l, r, 2 * ti + 1, mid + 1, tr) : 0);
 }
 
 int main()
