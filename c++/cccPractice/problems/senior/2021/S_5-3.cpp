@@ -7,7 +7,7 @@ using namespace std;
 
 typedef long long ll;
 
-const int mxN = 150000, mxZ = 16;
+const int mxN = 160000, mxZ = 20;
 
 int n, m;
 array<int, 3> arr[mxN + 1];
@@ -69,7 +69,7 @@ int main()
     {
         if (query(arr[i][0], arr[i][1]) != arr[i][2])
         {
-            cout << "IMPOSSIBLE";
+            cout << "Impossible";
             return 0;
         }
     }
