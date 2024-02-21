@@ -73,6 +73,43 @@ topological sort: order the vertices of a directed graph by precedence
 2. use method similar to binary exponentiation
 ```
 
+### strongly connected components
+
+```txt
+strongly connected components = can all nodes visit all other nodes?
+1. store graph with adjL and rev adjL
+2. dfs with adjL and store path
+3. dfs with rev adjL
+```
+
+### eulerian path
+
+```txt
+each edge is visited exactly once
+1. store graph with adjL (edge number)
+2. traverse with dfs, delete edges once visited
+
+for nodes:
+each node is traversed only once
+keep track of in and out degree
+```
+
+### knight tour - warnsdorff
+
+```txt
+move the knight to the position with the most free adjacent edges
+```
+
+## tree
+
+### diameter
+
+```txt
+max distance from one end of tree to another end
+1. dfs to a leaf
+2. dfs to farthest point from leaf
+```
+
 ## math
 
 ### binary exponentiation
