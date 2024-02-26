@@ -110,6 +110,19 @@ max distance from one end of tree to another end
 2. dfs to farthest point from leaf
 ```
 
+### lca
+
+```txt
+lowest common ancestor
+1. build tree with adjL
+2. dfs with binary lifting to find ancestors and node depth
+3. find ancestor using binary lifting (similar to binary search)
+    a) find ancestor of deeper node to make one node equal depth to the other
+    b) binary lift: if i-th ancestor is equal, no change (like binary sort taking lower)
+        if i-th ancestor is not equal, take as ancestor (like binary sort taking higher)
+    c) final answer is parent of ancestor found in b)
+```
+
 ## math
 
 ### binary exponentiation
