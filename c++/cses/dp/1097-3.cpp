@@ -17,6 +17,24 @@ int main()
     {
         cin >> arr[i];
     }
-
+    for (int i = n - 1; i >= 0; i--)
+    {
+        for (int j = i; j < n; j++)
+        {
+            if (i == j)
+            {
+                dp[i][j] = {arr[i], 0};
+                continue;
+            }
+            if (dp[i + 1][j][1] + arr[i] > dp[i][j - 1][1] + arr[j])
+            {
+                dp[i][j] = {dp[i + 1][j][1] + arr[i], dp[i + 1][j][0]};
+            }
+            else
+            {
+                dp[i][j] = {dp[i][j - 1][1] + arr[j], dp[i][j - 1][0]};
+            }
+        }
+    }
     cout << dp[0][n - 1][0];
 }
